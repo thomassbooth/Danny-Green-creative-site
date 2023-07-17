@@ -13,7 +13,7 @@ const Navlinks = () => {
   })
 
   const y = useTransform(scrollYProgress, [0, 0.8], ['0vh', '100vh'])
-  const scale = useTransform(scrollYProgress, [0.8, 1], [1, 0.6])
+  const scale = useTransform(scrollYProgress, [0.6, 1], [1, 0.6])
   const opacity = useTransform(scrollYProgress, [0.9999, 1], [1, 0])
   return (
     <div>
