@@ -18,7 +18,7 @@ const Navlinks = () => {
   return (
     <div>
       <div>
-        <div ref = {targetRef} className = 'pointer-events-none absolute text-[10vw] text-white font-bold z-20 top-0 h-[200vh]'>
+        <div ref = {targetRef} className = 'pointer-events-none absolute text-[10vw] text-black font-bold z-20 top-0 h-[200vh]'>
           <motion.div 
             style = {{y, scale, opacity}}
             className = 'flex justify-center items-center w-screen h-screen'>
