@@ -11,9 +11,20 @@ module.exports = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'otter-back': "url('../../public/images/7-Otter-11.jpg')"
       },
       transformOrigin: {
         'bottom-center': 'bottom center'
+      },
+      colors: {
+        pastel: {
+          gray: {
+            light: '#FAF3F0',
+            dark: '#65647C'
+          },
+          green: '#D4E2D4',
+          
+        }
       }
     },
   },
