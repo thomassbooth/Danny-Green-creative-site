@@ -15,7 +15,6 @@ const HorizontalImages = () => {
     const x = useTransform(scrollYProgress, [0, 0.8], ['0vw', '-320vw'])
 
     const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.6])
-    const opacity = useTransform(scrollYProgress, [0, 0.000001, 0.2], [0, 1, 0])
     
   return (
     <>
