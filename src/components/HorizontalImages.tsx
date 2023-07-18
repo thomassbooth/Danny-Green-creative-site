@@ -15,7 +15,7 @@ const HorizontalImages = () => {
     const x = useTransform(scrollYProgress, [0.2, 0.8], ['0vw', '-330vw'])
 
     const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.6, 1, 1, 0.6])
-    const opacity = useTransform(scrollYProgress, [0, 0.000001], [0, 1])
+    const opacity = useTransform(scrollYProgress, [0, 0.000001, 0.2], [0, 1, 0])
     
   return (
     <section ref = {containerRef} >
@@ -26,9 +26,6 @@ const HorizontalImages = () => {
                 className = 'flex'>
                     <motion.div style = {{scale}}
                         className = 'flex justify-center items-center h-screen bg-otter-back bg-cover bg-center w-[100vw]'>
-                        <motion.div style = {{opacity}}>
-                            Danny Green
-                        </motion.div>
                         
                     </motion.div>
                     <div className = 'w-[10vw]'>
