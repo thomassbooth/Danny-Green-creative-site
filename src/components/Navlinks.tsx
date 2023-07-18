@@ -16,7 +16,7 @@ const Navlinks = () => {
   
   return (
     <div >
-      <img src = '/images/18-Grizzlies-at-dawn.jpg' alt = 'grizzly' className = 'sticky top-0 '/>
+      <img src = '/images/18-Grizzlies-at-dawn.jpg' alt = 'grizzly' className = 'sticky top-0 w-[100vw]'/>
       <div>
         <div ref = {targetRef} className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0 h-[200vh]'>
           <motion.div 
