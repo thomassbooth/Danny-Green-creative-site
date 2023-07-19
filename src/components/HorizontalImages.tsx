@@ -14,14 +14,14 @@ const HorizontalImages = () => {
       target: containerRef,
     })
 
-    const x = useTransform(scrollYProgress, [0.24, 0.86], ['0vw', '-130vw'])
+    const x = useTransform(scrollYProgress, [0.45, 0.86], ['0vw', '-130vw'])
 
     const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.6])
     
   return (
     <>
     <section ref = {containerRef} >
-        <div className = 'h-[850vh]'>
+        <div className = 'h-[450vh]'>
             <div className = 'sticky top-0 w-[230vw] text-[10vw] font-bold text-white'>
                 <motion.div
                 style = {{x}}
