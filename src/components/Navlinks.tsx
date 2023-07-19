@@ -20,7 +20,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
   const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-100vh'])
 
   return (
-    <div ref = {targetRef} className = 'h-[200vh]'>
+    <div ref = {targetRef} className = 'h-[130vh]'>
       <div 
         data-scroll
         data-scroll-speed = '0.2'
@@ -31,8 +31,8 @@ const Navlinks: React.FC<navlinksProps> = () => {
         <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
           <div 
             data-scroll
-            data-scroll-speed = '0.4'
-            className = 'flex text-pastel-gray-light justify-center w-screen mt-[10vh] h-[200vh]'>
+            data-scroll-speed = '0.9'
+            className = 'flex text-pastel-gray-light justify-center w-screen mt-[30vh] h-[130vh]'>
               <p>
                 danny
                 <br/>
@@ -42,12 +42,12 @@ const Navlinks: React.FC<navlinksProps> = () => {
         </div>
       </div>
       <div>
-        <div className = 'absolute z-20 bottom-0 h-screen'>
+        <div className = 'absolute z-20 top-0 h-screen'>
           <div 
             data-scroll
-            data-scroll-speed = '0.85'>
-            <div className = 'transform ml-[10vw] rotate-x-[-5deg] rotate-z-[-5deg] h-screen flex flex-col items-start'>
-                <Text3D primary = {"Polar"} secondary = {"Arctic"}/>
+            data-scroll-speed = '0.2'>
+            <div className = 'transform ml-[5vw] mt-[30vh] rotate-x-[-5deg] rotate-z-[-5deg] h-[130vh] flex flex-col items-start'>
+                
                 <Text3D primary = {"Magestic"} secondary = {"Tigers"}/>
                 <Text3D primary = {"Wild"} secondary = {"Alaska"}/> 
                 <Text3D primary = {"Elusive"} secondary = {"Wolves"}/>
