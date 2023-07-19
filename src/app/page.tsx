@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <main className = 'overflow-clip'>
-      <Navlinks/>
+      
       <HorizontalImages/>
       <div className = 'h-screen'>
 

@@ -3,6 +3,8 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { useRef } from 'react'
+import Text3D from './Text3D'
+import Navlinks from './Navlinks'
 
 const HorizontalImages = () => {
 
@@ -12,33 +14,28 @@ const HorizontalImages = () => {
       target: containerRef,
     })
 
-    const x = useTransform(scrollYProgress, [0, 0.8], ['0vw', '-320vw'])
-
+    const x = useTransform(scrollYProgress, [0.25, 0.8], ['0vw', '-330vw'])
+    const position = useTransform(scrollYProgress, (pos) => {
+        return pos <= 0.5 ? 'relative': 'sticky'
+    }) 
     const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.6])
     
   return (
     <>
     <section ref = {containerRef} >
-        <div className = 'relative h-[600vh] '>
-            <div className = 'sticky top-0 w-[600vw] text-[10vw] font-bold text-gray-100'>
+        <div className = 'h-[1000vh]'>
+            <div className = 'sticky top-0 w-[600vw] text-[10vw] font-bold text-white'>
                 <motion.div
-                style = {{x}}
+                style = {{position, x}}
                 className = 'flex'>
-                    <motion.div style = {{scale}}
-                        className = 'rounded-t-3xl bg-white h-[100vh] w-[100vw]'>
+                    <Navlinks/>
+
+                    <div className = 'flex justify-center items-center h-screen bg-red-500 w-[100vw]'>
                         
-                    </motion.div>
-                    <div className = 'flex justify-center items-center h-screen  w-[100vw]'>
-                        IMAGE 2
                     </div>
-                    <div className = 'w-[10vw]'>
-
-                    </div>
-                    <div className = 'flex justify-center items-center h-screen  w-[100vw]'>
+                    
+                    <div className = 'flex justify-center items-center h-screen bg-red-500 w-[100vw]'>
                         IMAGE 3
-                    </div>
-                    <div className = 'w-[10vw]'>
-
                     </div>
                     <motion.div 
                     style = {{scale}}

@@ -5,42 +5,57 @@ import Text3D from './Text3D'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import Image from 'next/image'
 
-const Navlinks = () => {
+interface navlinksProps {
 
-  
+}
+
+const Navlinks: React.FC<navlinksProps> = () => {
+
+  const targetRef = useRef(null)
+
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  })
+
+  const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-100vh'])
 
   return (
-    <div >
+    <div ref = {targetRef} className = 'h-[200vh]'>
       <div 
         data-scroll
-        data-scroll-speed = '-1'
-        className = 'relative saturate-10 top-0 m-auto h-[130vh] w-[130vw]'>
+        data-scroll-speed = '0.2'
+        className = {`sticky saturate-10 top-0 m-auto h-[130vh] w-[130vw]`}>
         <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
       </div>
       <div>
-        <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0 h-[200vh]'>
-          <motion.div 
+        <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
+          <div 
             data-scroll
-            data-scroll-speed = '-0.5'
-            className = 'flex text-pastel-gray-light justify-center tex items-center w-screen h-screen'>
+            data-scroll-speed = '0.4'
+            className = 'flex text-pastel-gray-light justify-center w-screen mt-[10vh] h-[200vh]'>
               <p>
                 danny
                 <br/>
                 green
               </p>
-          </motion.div>
+          </div>
         </div>
       </div>
-      <motion.div 
-        data-scroll
-        data-scroll-speed = '0.3'
-        className = 'transform ml-[10vw] rotate-x-[-5deg] rotate-z-[-5deg] h-screen flex flex-col items-start  z-20'>
-          <Text3D primary = {"Polar"} secondary = {"Arctic"}/>
-          <Text3D primary = {"Magestic"} secondary = {"Tigers"}/>
-          <Text3D primary = {"Wild"} secondary = {"Alaska"}/> 
-          <Text3D primary = {"Elusive"} secondary = {"Wolves"}/>
-          <Text3D primary = {"British"} secondary = {"Coasts"}/>
-      </motion.div>
+      <div>
+        <div className = 'absolute z-20 bottom-0 h-screen'>
+          <div 
+            data-scroll
+            data-scroll-speed = '0.85'>
+            <div className = 'transform ml-[10vw] rotate-x-[-5deg] rotate-z-[-5deg] h-screen flex flex-col items-start'>
+                <Text3D primary = {"Polar"} secondary = {"Arctic"}/>
+                <Text3D primary = {"Magestic"} secondary = {"Tigers"}/>
+                <Text3D primary = {"Wild"} secondary = {"Alaska"}/> 
+                <Text3D primary = {"Elusive"} secondary = {"Wolves"}/>
+                <Text3D primary = {"British"} secondary = {"Coasts"}/>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
