@@ -18,7 +18,7 @@ const HorizontalImages = () => {
     
     const scale = useTransform(scrollYProgress, [0.55, 0.8], [1, 0.4])
     
-    const rounded = useTransform(scrollYProgress, [0, 0.45, 0.451, 0.8], [0, 0, 200, 700])
+    const rounded = useTransform(scrollYProgress, [0, 0.45, 0.551, 0.8], [0, 0, 100, 900])
     
 
   return (
@@ -31,7 +31,8 @@ const HorizontalImages = () => {
                 className = 'flex'>
                     <motion.div
                         style = {{scale, borderRadius: rounded,
-                        overflow: 'hidden'}}>
+                        overflow: 'hidden',
+                        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
                         <Navlinks/>
                     </motion.div>
                     <div className = 'flex justify-center items-center h-screen bg-white text-black w-[100vw]'>
