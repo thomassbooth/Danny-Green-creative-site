@@ -30,9 +30,9 @@ const HorizontalImages = () => {
                 style = {{x}}
                 className = 'flex'>
                     <motion.div
+                        className = 'border-4 border-gray-300'
                         style = {{scale, borderRadius: rounded,
-                        overflow: 'hidden',
-                        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px'}}>
+                        overflow: 'hidden',}}>
                         <Navlinks/>
                     </motion.div>
                     <div className = 'flex justify-center items-center h-screen bg-white text-black w-[100vw]'>
