@@ -15,19 +15,26 @@ const HorizontalImages = () => {
     })
 
     const x = useTransform(scrollYProgress, [0.45, 0.86], ['0vw', '-130vw'])
-
-    const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.6])
     
+    const scale = useTransform(scrollYProgress, [0.6, 0.8], [1, 0.4])
+    
+    const rounded = useTransform(scrollYProgress, [0.6, 0.8], [1, 700])
+    
+
   return (
     <>
     <section ref = {containerRef} >
         <div className = 'h-[450vh]'>
-            <div className = 'sticky top-0 w-[230vw] text-[10vw] font-bold text-white'>
+            <div className = 'sticky rounded-sm top-0 w-[230vw] text-[10vw] font-bold text-white'>
                 <motion.div
                 style = {{x}}
                 className = 'flex'>
-                    <Navlinks/>
-                    <div className = 'flex justify-center items-center h-screen bg-red-500 w-[100vw]'>
+                    <motion.div
+                        style = {{scale, borderRadius: rounded,
+                        overflow: 'auto'}}>
+                        <Navlinks/>
+                    </motion.div>
+                    <div className = 'flex justify-center items-center h-screen bg-white text-black w-[100vw]'>
                         Image
                     </div>
                 </motion.div>
