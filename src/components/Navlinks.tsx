@@ -7,25 +7,21 @@ import Image from 'next/image'
 
 const Navlinks = () => {
 
-  const targetRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  })
-  const y = useTransform(scrollYProgress, [0, 0.8], ['0vh', '100vh'])
-  const scale = useTransform(scrollYProgress, [0.2, 0.8], [0.7, 0.6])
   
 
   return (
     <div >
-      <div className = 'sticky rounded-b-3xl saturate-10 top-0 h-[110vh]'>
-        <Image src = '/images/18-Grizzlies-at-dawn.jpg' fill = {true} alt = 'grizzly'/>
+      <div 
+        data-scroll
+        data-scroll-speed = '-1'
+        className = 'relative saturate-10 top-0 m-auto h-[130vh] w-[130vw]'>
+        <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
       </div>
       <div>
-        <div ref = {targetRef} className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0 h-[200vh]'>
+        <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0 h-[200vh]'>
           <motion.div 
             data-scroll
             data-scroll-speed = '-0.5'
-            //style = {{y, scale}}
             className = 'flex text-pastel-gray-light justify-center tex items-center w-screen h-screen'>
               <p>
                 danny
@@ -36,6 +32,8 @@ const Navlinks = () => {
         </div>
       </div>
       <motion.div 
+        data-scroll
+        data-scroll-speed = '0.3'
         className = 'transform ml-[10vw] rotate-x-[-5deg] rotate-z-[-5deg] h-screen flex flex-col items-start  z-20'>
           <Text3D primary = {"Polar"} secondary = {"Arctic"}/>
           <Text3D primary = {"Magestic"} secondary = {"Tigers"}/>
