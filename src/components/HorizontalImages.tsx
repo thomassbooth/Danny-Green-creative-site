@@ -14,7 +14,7 @@ const HorizontalImages = () => {
       target: containerRef,
     })
 
-    const x = useTransform(scrollYProgress, [0.22, 0.86], ['0vw', '-130vw'])
+    const x = useTransform(scrollYProgress, [0.24, 0.86], ['0vw', '-130vw'])
 
     const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 1, 0.6])
     
