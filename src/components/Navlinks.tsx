@@ -32,7 +32,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
           <div 
             data-scroll
             data-scroll-speed = '0.9'
-            className = 'flex text-pastel-gray-light justify-center w-screen mt-[30vh] h-[130vh]'>
+            className = 'flex text-pastel-gray-light justify-center w-screen mt-[25vh] h-[130vh]'>
               <p>
                 danny
                 <br/>
