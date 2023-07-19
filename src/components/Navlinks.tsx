@@ -28,7 +28,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
         <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
           <div 
             data-scroll
-            data-scroll-speed = '0.9'
+            data-scroll-speed = '0.6'
             className = 'flex text-pastel-gray-light justify-center w-screen mt-[25vh] h-[130vh]'>
               <p>
                 danny
