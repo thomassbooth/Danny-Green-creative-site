@@ -14,17 +14,17 @@ const HorizontalImages = () => {
       target: containerRef,
     })
 
-    const x = useTransform(scrollYProgress, [0.45, 0.86], ['0vw', '-130vw'])
+    const x = useTransform(scrollYProgress, [0.35, 0.86], ['0vw', '-130vw'])
     
-    const scale = useTransform(scrollYProgress, [0.55, 0.8], [1, 0.4])
+    const scale = useTransform(scrollYProgress, [0.45, 0.8], [1, 0.4])
     
-    const rounded = useTransform(scrollYProgress, [0, 0.45, 0.551, 0.8], [0, 0, 100, 900])
+    const rounded = useTransform(scrollYProgress, [0, 0.35, 0.45, 0.8], [0, 0, 100, 900])
     
 
   return (
     <>
     <section ref = {containerRef} >
-        <div className = 'h-[450vh]'>
+        <div className = 'h-[550vh]'>
             <div className = 'sticky rounded-sm top-0 w-[230vw] text-[10vw] font-bold text-white'>
                 <motion.div
                 style = {{x}}

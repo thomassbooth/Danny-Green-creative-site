@@ -18,38 +18,21 @@ const Navlinks: React.FC<navlinksProps> = () => {
 
   return (
     <div ref = {targetRef} className = 'h-[130vh]'>
-      <motion.div 
+      <div 
         data-scroll
         data-scroll-speed = '0.2'
-        className = {`sticky saturate-10 top-0 m-auto h-[130vh] w-[130vw]`}>
+        className = {`sticky saturate-50 brightness-60 top-0 m-auto h-[130vh] w-[130vw]`}>
         <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
-      </motion.div>
-      <div>
-        <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
-          <div 
-            data-scroll
-            data-scroll-speed = '0.6'
-            className = 'flex text-pastel-gray-light justify-center w-screen mt-[25vh] h-[130vh]'>
-              <p>
-                danny
-                <br/>
-                green
-              </p>
-          </div>
-        </div>
       </div>
-      <div>
-        <div className = 'absolute z-20 top-0 h-screen'>
-          <div 
+      <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
+        <div className = 'flex text-pastel-gray-light justify-center w-screen h-[130vh]'>
+            <p className = 'z-20 mt-[25vh]'
             data-scroll
-            data-scroll-speed = '0.2'>
-            <div className = 'transform ml-[5vw] mt-[30vh] rotate-x-[-5deg] rotate-z-[-5deg] h-[130vh] flex flex-col items-start'>
-                <Text3D primary = {"Magestic"} secondary = {"Tigers"}/>
-                <Text3D primary = {"Wild"} secondary = {"Alaska"}/> 
-                <Text3D primary = {"Elusive"} secondary = {"Wolves"}/>
-                <Text3D primary = {"British"} secondary = {"Coasts"}/>
-            </div>
-          </div>
+            data-scroll-speed = '0.6'>
+              danny
+              <br/>
+              green
+            </p>
         </div>
       </div>
     </div>
@@ -57,3 +40,12 @@ const Navlinks: React.FC<navlinksProps> = () => {
 }
 
 export default Navlinks
+
+
+
+{/* <div className = 'transform ml-[5vw] mt-[30vh] rotate-x-[-5deg] rotate-z-[-5deg] h-[130vh] flex flex-col items-start'>
+                <Text3D primary = {"Magestic"} secondary = {"Tigers"}/>
+                <Text3D primary = {"Wild"} secondary = {"Alaska"}/> 
+                <Text3D primary = {"Elusive"} secondary = {"Wolves"}/>
+                <Text3D primary = {"British"} secondary = {"Coasts"}/>
+            </div> */}
