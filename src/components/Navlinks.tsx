@@ -21,7 +21,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
       <div 
         data-scroll
         data-scroll-speed = '0.2'
-        className = {`sticky saturate-50 brightness-90 top-0 m-auto h-[130vh] w-[130vw]`}>
+        className = {`sticky top-0 m-auto h-[130vh] w-[130vw]`}>
         <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
       </div>
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
@@ -33,11 +33,15 @@ const Navlinks: React.FC<navlinksProps> = () => {
               <br/>
               green
             </p>
-            <p className = 'z-20 mt-[5vh] ml-[4vw]'
-            data-scroll
-            data-scroll-speed = '0.7'>
-              UK based. Photographer.
-            </p>
+            <div className = 'w-screen  ml-[4vw] mt-[8vh]'>
+              <p className = 'z-20 text-[8vw]'
+              data-scroll
+              data-scroll-speed = '0.7'>
+                Capturing.
+                <br/>
+                The natural world.
+              </p>
+            </div>
         </div>
       </div>
     </div>
