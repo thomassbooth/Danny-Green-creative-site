@@ -21,22 +21,22 @@ const Navlinks: React.FC<navlinksProps> = () => {
       <div 
         data-scroll
         data-scroll-speed = '0.2'
-        className = {`sticky saturate-50 brightness-60 top-0 m-auto h-[130vh] w-[130vw]`}>
+        className = {`sticky saturate-50 brightness-90 top-0 m-auto h-[130vh] w-[130vw]`}>
         <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
       </div>
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
-        <div className = 'flex flex-col text-pastel-gray-light items-center justify-center w-screen h-[130vh]'>
+        <div className = 'flex flex-col text-pastel-gray-light items-center w-screen h-[130vh]'>
             <p className = 'z-20 mt-[30vh]'
             data-scroll
-            data-scroll-speed = '0.6'>
+            data-scroll-speed = '0.9'>
               danny
               <br/>
               green
             </p>
-            <p className = 'z-20 ml-[5vw] mt-[30vh]'
+            <p className = 'z-20 mt-[5vh] ml-[4vw]'
             data-scroll
-            data-scroll-speed = '0.8'>
-              Uk based photographer
+            data-scroll-speed = '0.7'>
+              UK based. Photographer.
             </p>
         </div>
       </div>
