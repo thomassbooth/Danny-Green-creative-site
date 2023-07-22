@@ -17,7 +17,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
   })
 
   return (
-    <div ref = {targetRef} className = 'h-[130vh]'>
+    <div ref = {targetRef} className = 'h-[100vh]'>
       <div 
         data-scroll
         data-scroll-speed = '0.2'
