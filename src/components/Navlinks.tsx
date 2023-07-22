@@ -25,13 +25,18 @@ const Navlinks: React.FC<navlinksProps> = () => {
         <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
       </div>
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
-        <div className = 'flex text-pastel-gray-light justify-center w-screen h-[130vh]'>
-            <p className = 'z-20 mt-[25vh]'
+        <div className = 'flex flex-col text-pastel-gray-light items-center justify-center w-screen h-[130vh]'>
+            <p className = 'z-20 mt-[30vh]'
             data-scroll
             data-scroll-speed = '0.6'>
               danny
               <br/>
               green
+            </p>
+            <p className = 'z-20 mt-[30vh]'
+            data-scroll
+            data-scroll-speed = '0.8'>
+              Uk based photographer
             </p>
         </div>
       </div>
