@@ -33,7 +33,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
               <br/>
               green
             </p>
-            <p className = 'z-20 mt-[30vh]'
+            <p className = 'z-20 ml-[5vw] mt-[30vh]'
             data-scroll
             data-scroll-speed = '0.8'>
               Uk based photographer
