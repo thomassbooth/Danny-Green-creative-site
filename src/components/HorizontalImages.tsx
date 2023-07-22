@@ -14,7 +14,7 @@ const HorizontalImages = () => {
       target: containerRef,
     })
 
-    const x = useTransform(scrollYProgress, [0.45, 0.86], ['0vw', '-130vw'])
+    const x = useTransform(scrollYProgress, [0.45, 1], ['0vw', '-100vw'])
     
     const scale = useTransform(scrollYProgress, [0.55, 0.8], [1, 0.4])
     
@@ -25,7 +25,7 @@ const HorizontalImages = () => {
     <>
     <section ref = {containerRef} >
         <div className = 'h-[450vh]'>
-            <div className = 'sticky rounded-sm top-0 w-[230vw] text-[10vw] font-bold text-white'>
+            <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold text-white'>
                 <motion.div
                 style = {{x}}
                 className = 'flex'>
@@ -35,7 +35,7 @@ const HorizontalImages = () => {
                         <Navlinks/>
                     </motion.div>
                     <div className = 'flex justify-center items-center h-screen bg-white text-black w-[100vw]'>
-                        Image
+                        Based in Leicestershire.
                     </div>
                 </motion.div>
             </div>

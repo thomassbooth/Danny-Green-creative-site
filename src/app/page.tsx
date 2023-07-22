@@ -21,6 +21,9 @@ export default function Home() {
     <main className = 'overflow-clip'>
       
       <HorizontalImages/>
+      <div className = 'flex justify-center items-center h-screen bg-white text-[10vw] font-bold text-black w-[100vw]'>
+          Imagesss
+      </div>
       <div className = 'h-screen'>
 
       </div>
