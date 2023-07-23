@@ -15,17 +15,16 @@ const HorizontalImages = () => {
       target: containerRef,
     })
 
-    const x = useTransform(scrollYProgress, [0.45, 1], ['0vw', '-100vw'])
+    const x = useTransform(scrollYProgress, [0.45, 1], ['0vw', '-130vw'])
     
     const scale = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.3])
     const opacity = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.8])
     const rounded = useTransform(scrollYProgress, [0, 0.45, 0.551, 0.8], [0, 0, 100, 1000])
-    
 
   return (
     <>
     <section ref = {containerRef} >
-        <div className = 'h-[400vh] bg-[#171717]'>
+        <div className = 'h-[400vh] bg-pastel-gray-light'>
             <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold'>
                 <motion.div
                 style = {{x}}
@@ -34,7 +33,7 @@ const HorizontalImages = () => {
                         style = {{scale, 
                         borderRadius: rounded,
                         opacity,
-                        overflow: 'hidden'}}>
+                        }}>
                         <Navlinks/>
                     </motion.div>
                     <div className = 'w-screen h-screen'>

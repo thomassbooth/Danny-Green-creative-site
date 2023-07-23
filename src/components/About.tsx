@@ -11,7 +11,7 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const About = () => {
 
   return (
-    <div className = 'flex flex-col justify-center tracking-tight items-center text-[6vw] text-pastel-gray-light h-screen w-screen'>
+    <div className = 'flex flex-col justify-center tracking-tight items-center text-[6vw] text-[#171717] h-screen w-screen'>
         <h1 className = {`${libre.className} italic font-extralight text-[3vw] leading-3`}>Danny Who?</h1>
         <h2 className = 'z-20 text-center'>Photographer based in Leicestershire.</h2>
         <p className = 'text-[4vw]'>Over 30 years of experience</p>
