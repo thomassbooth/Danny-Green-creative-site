@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import Text3D from './Text3D'
 import Navlinks from './Navlinks'
+import About from './About'
 
 const HorizontalImages = () => {
 
@@ -24,7 +25,7 @@ const HorizontalImages = () => {
   return (
     <>
     <section ref = {containerRef} >
-        <div className = 'h-[450vh]'>
+        <div className = 'h-[400vh] bg-[#171717]'>
             <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold'>
                 <motion.div
                 style = {{x}}
@@ -36,9 +37,10 @@ const HorizontalImages = () => {
                         overflow: 'hidden'}}>
                         <Navlinks/>
                     </motion.div>
-                    <div className = 'flex justify-center items-center h-screen bg-white text-black w-[100vw]'>
-                        Photographer based in Leicestershire.
+                    <div className = 'w-screen h-screen'>
+                        <About/>
                     </div>
+                    
                 </motion.div>
             </div>
         </div>
