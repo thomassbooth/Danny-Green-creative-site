@@ -17,7 +17,7 @@ const HorizontalImages = () => {
     const x = useTransform(scrollYProgress, [0.45, 1], ['0vw', '-100vw'])
     
     const scale = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.3])
-    const opacity = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.5])
+    const opacity = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.8])
     const rounded = useTransform(scrollYProgress, [0, 0.45, 0.551, 0.8], [0, 0, 100, 1000])
     
 
