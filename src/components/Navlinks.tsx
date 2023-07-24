@@ -25,18 +25,18 @@ const Navlinks: React.FC<navlinksProps> = () => {
         <Image src = '/images/18-Grizzlies-at-dawn.jpg' quality = {100} priority fill = {true} alt = 'grizzly'/>
       </div>
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
-        <div className = 'flex flex-col text-pastel-gray-light items-center w-screen h-[130vh]'>
-            <p className = 'z-20 mt-[30vh]'
+        <div className = 'flex flex-col text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
+            <p className = 'z-20 uppercase font-[800] mt-[30vh]'
             data-scroll
-            data-scroll-speed = '0.9'>
+            data-scroll-speed = '0.7'>
               danny
               <br/>
               green
             </p>
-            <div className = 'w-screen  ml-[4vw] mt-[8vh]'>
-              <p className = 'z-20 text-[8vw]'
+            <div className = 'w-screen  ml-[4vw] '>
+              <p className = 'z-20 text-[7.5vw]'
               data-scroll
-              data-scroll-speed = '0.7'>
+              data-scroll-speed = '0.4'>
                 Capturing.
                 <br/>
                 The natural world.

@@ -11,11 +11,12 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const About = () => {
 
   return (
-    <div className = 'flex flex-col justify-center tracking-tight items-center text-[6vw] text-[#171717] h-screen w-screen'>
-        <h1 className = {`${libre.className} italic font-extralight text-[3vw] leading-3`}>Danny Who?</h1>
-        <h2 className = 'z-20 text-center'>Photographer based in Leicestershire.</h2>
-        <p className = 'text-[4vw]'>Over 30 years of experience</p>
-        <p className = 'text-[4vw]'>Widely published around the world</p>
+    <div className = 'flex flex-col justify-center leading-none tracking-tight items-center text-[#171717] h-screen w-screen'>
+        <span className = {`${libre.className} italic font-extralight text-[3vw]`}>Danny Who?</span>
+        <span className = 'mb-14 z-20 text-center font-[800] tracking-[-.075em] text-[10vw] uppercase'>Photographer</span>
+        <span className = {`${libre.className} font-light text-[3vw]`}>30 years + of experience</span>
+        <span className = {`${libre.className} font-light text-[3vw]`}>Widely published around the world</span>
+        <span className = {`${libre.className} font-light text-[3vw]`}>Base in Leicestershire, UK</span>
     </div>
   )
 }

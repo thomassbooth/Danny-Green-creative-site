@@ -18,10 +18,10 @@ export default function Home() {
   }, [])
 
   return (
-    <main className = 'overflow-clip'>
+    <main className = 'overflow-clip bg-pastel-gray-light'>
       
       <HorizontalImages/>
-      <div className = 'flex justify-center items-center h-screen bg-white text-[10vw] font-bold text-black w-[100vw]'>
+      <div className = 'flex justify-center items-center h-screen text-[10vw] font-bold text-black w-[100vw]'>
           Imagesss
       </div>
       <div className = 'h-screen'>
