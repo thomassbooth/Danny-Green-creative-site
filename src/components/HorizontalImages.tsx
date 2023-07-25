@@ -19,32 +19,32 @@ const HorizontalImages = () => {
     
     const scale = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.3])
     const opacity = useTransform(scrollYProgress, [0.55, 0.9], [1, 0.8])
-    const rounded = useTransform(scrollYProgress, [0, 0.45, 0.551, 0.9], [0, 0, 100, 1000])
+    const rounded = useTransform(scrollYProgress, [0, 0.45, 0.551, 0.9], [0, 0, 100, 1200])
 
   return (
     <>
-    <section ref = {containerRef} >
-        <div className = 'h-[400vh]'>
-            <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold'>
-                <motion.div
-                style = {{x}}
-                className = 'flex'>
+        <section ref = {containerRef} >
+            <div className = 'h-[400vh]'>
+                <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold'>
                     <motion.div
-                        style = {{scale, 
-                        borderRadius: rounded,
-                        opacity,
-                        overflow: 'hidden'
-                        }}>
-                        <Navlinks/>
+                    style = {{x}}
+                    className = 'flex'>
+                        <motion.div
+                            style = {{scale, 
+                            borderRadius: rounded,
+                            opacity,
+                            overflow: 'hidden'
+                            }}>
+                            <Navlinks/>
+                        </motion.div>
+                        <div className = 'w-screen h-screen'>
+                            <About/>
+                        </div>
+                        
                     </motion.div>
-                    <div className = 'w-screen h-screen'>
-                        <About/>
-                    </div>
-                    
-                </motion.div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     </>
   )
 }
