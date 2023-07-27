@@ -36,7 +36,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
             <div className = 'w-screen flex justify-center  ml-[4vw] '>
               <p className = 'z-20 uppercase tracking-tight text-[2vw]'
               data-scroll
-              data-scroll-speed = '0.4'>
+              data-scroll-speed = '0.3'>
                 Capturing.
                 <br/>
                 The natural world.
