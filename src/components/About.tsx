@@ -33,8 +33,8 @@ const About = () => {
               hidden: {opacity: 0, x: '100%'},
               visible: {opacity: 1, x: '0%'}
           }}
-          transition = {{delay: 0.5, duration: 0.5}}
-          className = 'mb-20 z-20 text-center font-[900] leading-[13vh] tracking-[-.055em] text-[13vw] uppercase'>PHOTOS</motion.span>
+          transition = {{delay: 0.5, duration: 0.7}}
+          className = 'mb-[8vh] z-20 text-center font-[900] leading-[13vh] tracking-[-.055em] text-[13vw] uppercase'>PHOTOS</motion.span>
         <span className = 'h-[20vh] overflow-hidden '>
         <motion.div 
           initial = 'hidden'
@@ -44,7 +44,7 @@ const About = () => {
               hidden: {opacity: 0, y: '100%'},
               visible: {opacity: 1, y: '0%'}
           }}
-          transition = {{delay: 1, duration: 0.7}}
+          transition = {{delay: 2, duration: 0.7}}
           className = {`${libre.className} font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
           <span>passion for nature and wildlife. Today, I relish photographing the</span>
