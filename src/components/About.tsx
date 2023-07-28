@@ -11,13 +11,47 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const About = () => {
 
   return (
-    <div className = 'flex flex-col justify-center leading-none tracking-tight items-center text-[#171717] h-screen w-screen'>
-        <span className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Danny Who?</span>
-        <span className = ' z-20 text-center font-[800] tracking-[-.075em] text-[10vw] uppercase'>HE TAKES</span>
-        <span className = 'mb-10 z-20 text-center font-[800] leading-[10vh] tracking-[-.075em] text-[10vw] uppercase'>PHOTOS</span>
-        <span className = {`${libre.className} font-light text-[3vw]`}>30 years + of experience</span>
-        <span className = {`${libre.className} font-light text-[3vw]`}>Widely published around the world</span>
-        <span className = {`${libre.className} font-light text-[3vw]`}>Base in Leicestershire, UK</span>
+    <div className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center text-[#171717] h-screen w-screen'>
+        <motion.span
+          initial = 'hidden'
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+              hidden: {opacity: 0, y: '-100%'},
+              visible: {opacity: 1, y: '0%'}
+          }}
+          transition = {{delay: 0.5, duration: 0.5}}
+          className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Danny Who?</motion.span>
+        <span className = ' z-20 text-center font-[900] tracking-[-.055em] text-[13vw] uppercase'>HE TAKES</span>
+        <motion.span
+          initial = 'hidden'
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+              hidden: {opacity: 0, x: '100%'},
+              visible: {opacity: 1, x: '0%'}
+          }}
+          transition = {{delay: 0.5, duration: 0.5}}
+          className = 'mb-20 z-20 text-center font-[900] leading-[13vh] tracking-[-.055em] text-[13vw] uppercase'>PHOTOS</motion.span>
+        <span className = 'h-[20vh] overflow-hidden '>
+        <motion.div 
+          initial = 'hidden'
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+              hidden: {opacity: 0, y: '100%'},
+              visible: {opacity: 1, y: '0%'}
+          }}
+          transition = {{delay: 0.5, duration: 0.5}}
+          className = {`${libre.className} font-light text-[2vw] flex flex-col leading-8 justify-center tracking-[-0.01em] items-center`}>
+          <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
+          <span>passion for nature and wildlife. Today, I relish photographing the</span>
+          <span>Shetland Isles wildlife and exploring the challenging Arctic.</span>
+          <span>This journey deepens my lifelong connection to the natural world.</span>
+        </motion.div>
+        </span>
+        {/*<span className = {`${libre.className} font-light text-[2vw]`}>Widely published around the world</span>
+        <span className = {`${libre.className} font-light text-[2vw]`}>Based in Leicestershire, UK</span> */}
     </div>
   )
 }

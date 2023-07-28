@@ -40,7 +40,6 @@ const HorizontalImages = () => {
                         <div className = 'w-screen h-screen'>
                             <About/>
                         </div>
-                        
                     </motion.div>
                 </div>
             </div>
