@@ -45,7 +45,7 @@ const About = () => {
               visible: {opacity: 1, y: '0%'}
           }}
           transition = {{delay: 1, duration: 0.7}}
-          className = {`${libre.className} font-light text-[2vw] flex flex-col leading-8 justify-center tracking-[-0.01em] items-center`}>
+          className = {`${libre.className} font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
           <span>passion for nature and wildlife. Today, I relish photographing the</span>
           <span>Shetland Isles wildlife and exploring the challenging Arctic.</span>
