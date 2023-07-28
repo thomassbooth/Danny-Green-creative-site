@@ -8,6 +8,10 @@ import { useEffect } from 'react'
 
 export default function Home() {
 
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, []);
+
   useEffect( () => {
     (
       async () => {
