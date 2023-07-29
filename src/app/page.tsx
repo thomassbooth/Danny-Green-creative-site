@@ -1,9 +1,10 @@
 'use client'
 
-import HorizontalImages from '@/components/SideScrollImage'
+import SideScrollImage from '@/components/SideScrollImage'
 import Navlinks from '@/components/Navlinks'
 import Text3D from '@/components/Text3D'
 import { useEffect } from 'react'
+import Images from '@/components/Images'
 
 
 export default function Home() {
@@ -24,10 +25,8 @@ export default function Home() {
   return (
     <main className = 'overflow-clip bg-pastel-gray-light'>
       
-      <HorizontalImages/>
-      <div className = 'flex justify-center items-center h-[200vh] text-[10vw] font-bold bg-[#171717] text-white w-[100vw]'>
-          Imagesss
-      </div>
+      <SideScrollImage/>
+      <Images/>
       <div className = 'h-screen'>
 
       </div>

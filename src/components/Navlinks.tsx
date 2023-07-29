@@ -28,7 +28,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
         <div className = 'flex flex-col text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
             <p className = 'z-20 uppercase font-[800] mt-[30vh]'
             data-scroll
-            data-scroll-speed = '0.2'>
+            data-scroll-speed = '0.3'>
               danny
               <br/>
               green
@@ -36,7 +36,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
             <div className = 'w-screen inline-flex justify-center  ml-[4vw] '>
               <p className = 'z-20 uppercase tracking-tight text-[2vw]'
               data-scroll
-              data-scroll-speed = '0.1'>
+              data-scroll-speed = '0.2'>
                 Capturing.
                 <br/>
                 The natural world.

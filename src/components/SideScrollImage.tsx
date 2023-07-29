@@ -7,7 +7,7 @@ import Text3D from './Text3D'
 import Navlinks from './Navlinks'
 import About from './About'
 
-const HorizontalImages = () => {
+const SideScrollImage = () => {
 
     const containerRef = useRef<HTMLDivElement | null>(null)
   
@@ -20,7 +20,7 @@ const HorizontalImages = () => {
     const scale = useTransform(scrollYProgress, [0.35, 0.9], [1, 0.3])
     const opacity = useTransform(scrollYProgress, [0.35, 0.9], [1, 0.8])
     const rounded = useTransform(scrollYProgress, [0, 0.35, 0.551, 0.9], [0, 0, 100, 1300])
-    const slideInX = useTransform(scrollYProgress, [0.8, 1], ['50vw', '0vw'])
+    const slideInX = useTransform(scrollYProgress, [0.8, 1], ['30vw', '0vw'])
 
   return (
     <>
@@ -51,4 +51,4 @@ const HorizontalImages = () => {
   )
 }
 
-export default HorizontalImages
+export default SideScrollImage

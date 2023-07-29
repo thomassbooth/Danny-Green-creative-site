@@ -44,7 +44,7 @@ const About = () => {
               hidden: {opacity: 0, y: '100%'},
               visible: {opacity: 1, y: '0%'}
           }}
-          transition = {{delay: 2, duration: 0.7}}
+          transition = {{delay: 1.2, duration: 0.7}}
           className = {`${libre.className} font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
           <span>passion for nature and wildlife. Today, I relish photographing the</span>

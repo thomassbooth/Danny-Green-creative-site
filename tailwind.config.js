@@ -23,7 +23,9 @@ module.exports = {
             dark: '#65647C'
           },
           green: '#D4E2D4',
-          
+        },
+        background: {
+          gray: '#171717'
         }
       }
     },
