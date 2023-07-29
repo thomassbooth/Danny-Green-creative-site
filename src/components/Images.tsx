@@ -8,7 +8,7 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const Images = () => {
 
   return (
-      <div className = 'flex flex-col items-center h-[200vh] text-[10vw] font-bold bg-background-gray text-white w-[100vw]'>
+      <div className = 'flex flex-col items-center min-h-screen py-[15vh] text-[10vw] font-bold bg-background-gray text-white w-[100vw]'>
         <div 
           data-scroll
           className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center w-screen'>
@@ -41,7 +41,6 @@ const Images = () => {
             HELLO THERE
           </p>
         </div>
-        
       <div className = 'relative w-[30vw] h-[40vh] saturate-[0.75]'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
