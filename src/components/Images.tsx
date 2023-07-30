@@ -8,10 +8,10 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const Images = () => {
 
   return (
-      <div className = 'flex flex-col items-center min-h-screen py-[15vh] text-[10vw] font-bold bg-background-gray text-white w-[100vw]'>
+      <div className = 'flex flex-col items-center min-h-screen py-[15vh] text-[10vw] font-bold bg-background-gray text-pastel-gray-light w-[100vw]'>
         <div 
           data-scroll
-          className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center w-screen'>
+          className = 'flex flex-col mb-[8vh] justify-center leading-none tracking-[-0.01em] items-center w-screen'>
           <motion.span
             initial = 'hidden'
             whileInView="visible"
@@ -36,12 +36,16 @@ const Images = () => {
               PUBLISHED
           </motion.span>
         </div>
-        <div>
+        <div
+          className = {`${libre.className} w-[70vw] text-center font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <p>
-            HELLO THERE
+            I'm an award-winning photographer with my work featured in major
+            wildlife events and represented by leading agencies. I co-run Natures Images, 
+            a top UK-based photography tour business. We're considered one of 
+            Europe's premier photo tour companies.
           </p>
         </div>
-      <div className = 'relative w-[30vw] h-[40vh] saturate-[0.75]'>
+      <div className = 'relative w-[30vw] h-[40vh] saturate-[0.5]'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
     </div>
