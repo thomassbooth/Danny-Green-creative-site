@@ -11,8 +11,8 @@ const Gallery = () => {
 
     const height = useTransform(scrollYProgress, [0, 1], ['0vh', '50vh'])
     
-    const y = useTransform(scrollYProgress, [0, 1], ['0vh', '20vh'])
-    const negativey = useTransform(scrollYProgress, [0, 1], ['0vh', '-20vh'])
+    const y = useTransform(scrollYProgress, [0, 1], ['0vh', '32vh'])
+    const negativey = useTransform(scrollYProgress, [0, 1], ['0vh', '-32vh'])
 
   return (
     <section ref = {containerRef}>
@@ -30,7 +30,8 @@ const Gallery = () => {
                         className = 'w-screen bg-background-gray'>
                     </motion.div>
                 </div>
-                <motion.h1
+                <SplitText y = {y} negativey = {negativey} text = {'Gallery'}/>
+                {/* <motion.h1
                     style = {{y}}
                     className = 'absolute text-center font-[900] tracking-[-.055em] text-[22vw] uppercase'>
                         GALLERY
@@ -41,7 +42,7 @@ const Gallery = () => {
                         className = 'absolute text-center font-[900] tracking-[-.055em] text-[22vw] uppercase'>
                             GALLERY
                     </motion.h1>
-                </div>
+                </div> */}
             </div>
         </div>
     </section>
@@ -49,11 +50,22 @@ const Gallery = () => {
 }
 
 
-const SplitText = () => {
-  return (
-    <div>Gallery</div>
-  )
-}
+const SplitText = ({y, negativey, text}) => {
+    return (
+      <>
+          <motion.div
+              style = {{y: negativey}}
+              className="w-full flex justify-center items-center h-[13vw] overflow-hidden">
+              <span className="text-[22vw] font-[900] tracking-[-.055em] uppercase transform translate-y-[6.5vw]">{text}</span>
+          </motion.div>
+          <motion.div 
+              style = {{y}}
+              className="w-full flex justify-center items-center h-[13vw] overflow-hidden">
+              <span className="text-[22vw] transform -translate-y-[6.5vw] font-[900] tracking-[-.055em] uppercase">{text}</span>
+          </motion.div>
+      </>
+    )
+  }
 
 
 export default Gallery
