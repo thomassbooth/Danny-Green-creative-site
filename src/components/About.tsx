@@ -36,21 +36,21 @@ const About = () => {
           transition = {{delay: 0.5, duration: 0.7}}
           className = 'mb-[8vh] z-20 text-center font-[900] leading-[13vh] tracking-[-.055em] text-[13vw] uppercase'>PHOTOS</motion.span>
         <span className = 'h-[20vh] overflow-hidden '>
-        <motion.div 
-          initial = 'hidden'
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-              hidden: {opacity: 0, y: '100%'},
-              visible: {opacity: 1, y: '0%'}
-          }}
-          transition = {{delay: 1.2, duration: 0.7}}
-          className = {`${libre.className} font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
-          <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
-          <span>passion for nature and wildlife. Today, I relish photographing the</span>
-          <span>Shetland Isles wildlife and exploring the challenging Arctic.</span>
-          <span>This journey deepens my lifelong connection to the natural world.</span>
-        </motion.div>
+          <motion.div 
+            initial = 'hidden'
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+                hidden: {opacity: 0, y: '100%'},
+                visible: {opacity: 1, y: '0%'}
+            }}
+            transition = {{delay: 1.2, duration: 0.7}}
+            className = {`${libre.className} font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
+            <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
+            <span>passion for nature and wildlife. Today, I relish photographing the</span>
+            <span>Shetland Isles wildlife and exploring the challenging Arctic.</span>
+            <span>This journey deepens my lifelong connection to the natural world.</span>
+          </motion.div>
         </span>
         {/*<span className = {`${libre.className} font-light text-[2vw]`}>Widely published around the world</span>
         <span className = {`${libre.className} font-light text-[2vw]`}>Based in Leicestershire, UK</span> */}
