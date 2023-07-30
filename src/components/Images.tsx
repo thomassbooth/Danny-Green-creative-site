@@ -39,13 +39,13 @@ const Images = () => {
         <div
           className = {`${libre.className} w-[70vw] text-center font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <p>
-            I'm an award-winning photographer with my work featured in major
+            I&apos;m an award-winning photographer with my work featured in major
             wildlife events and represented by leading agencies. I co-run Natures Images, 
-            a top UK-based photography tour business. We're considered one of 
-            Europe's premier photo tour companies.
+            a top UK-based photography tour business. We&apos;re considered one of 
+            Europe&apos;s premier photo tour companies.
           </p>
         </div>
-      <div className = 'relative w-[30vw] h-[40vh] saturate-[0.5]'>
+      <div className = 'mt-[15vh] relative w-[30vw] h-[40vh] saturate-[0.5]'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
     </div>
