@@ -5,6 +5,7 @@ import Navlinks from '@/components/Navlinks'
 import Text3D from '@/components/Text3D'
 import { useEffect } from 'react'
 import Images from '@/components/Images'
+import Gallery from '@/components/Gallery'
 
 
 export default function Home() {
@@ -27,9 +28,7 @@ export default function Home() {
       
       <SideScrollImage/>
       <Images/>
-      <div className = 'h-screen'>
-
-      </div>
+      <Gallery/>
       
     </main>
   )

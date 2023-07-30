@@ -8,7 +8,7 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const Images = () => {
 
   return (
-      <div className = 'flex flex-col items-center min-h-screen py-[15vh] text-[10vw] font-bold bg-background-gray text-pastel-gray-light w-[100vw]'>
+      <div className = 'flex flex-col items-center min-h-screen py-[25vh] text-[10vw] font-bold bg-background-gray text-pastel-gray-light w-[100vw]'>
         <div 
           data-scroll
           className = 'flex flex-col mb-[8vh] justify-center leading-none tracking-[-0.01em] items-center w-screen'>
@@ -45,7 +45,7 @@ const Images = () => {
             Europe&apos;s premier photo tour companies.
           </p>
         </div>
-      <div className = 'mt-[15vh] relative w-[30vw] h-[40vh] saturate-[0.5]'>
+      <div className = 'mt-[20vh] relative w-[40vw] h-[60vh] saturate-[0.5]'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
     </div>
