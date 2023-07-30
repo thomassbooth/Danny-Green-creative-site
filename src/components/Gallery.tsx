@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion } from 'framer-motion'
+import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import React, { useRef } from 'react'
 
 const Gallery = () => {
@@ -31,26 +31,19 @@ const Gallery = () => {
                     </motion.div>
                 </div>
                 <SplitText y = {y} negativey = {negativey} text = {'Gallery'}/>
-                {/* <motion.h1
-                    style = {{y}}
-                    className = 'absolute text-center font-[900] tracking-[-.055em] text-[22vw] uppercase'>
-                        GALLERY
-                </motion.h1>
-                <div className = 'absolute top-1/2 overflow-hidden'>
-                    <motion.h1
-                        style = {{y: negativey}}
-                        className = 'absolute text-center font-[900] tracking-[-.055em] text-[22vw] uppercase'>
-                            GALLERY
-                    </motion.h1>
-                </div> */}
             </div>
         </div>
     </section>
   )
 }
 
+interface splitTextProps {
+    y: MotionValue<string>
+    negativey: MotionValue<string>
+    text: string
+}
 
-const SplitText = ({y, negativey, text}) => {
+const SplitText: React.FC<splitTextProps> = ({y, negativey, text}) => {
     return (
       <>
           <motion.div
