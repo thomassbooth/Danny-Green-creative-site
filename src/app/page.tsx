@@ -29,7 +29,9 @@ export default function Home() {
       <SideScrollImage/>
       <Images/>
       <Gallery/>
-      
+      <div className = 'w-screen h-[200vh]'>
+
+      </div>
     </main>
   )
 }
