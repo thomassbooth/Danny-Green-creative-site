@@ -9,12 +9,12 @@ const Gallery = () => {
         target: containerRef,
       })
 
-    const height = useTransform(scrollYProgress, [0.05, 0.5], ['0vh', '50vh'])
+    const height = useTransform(scrollYProgress, [0.05, 1], ['0vh', '50vh'])
     
-    const y = useTransform(scrollYProgress, [0.05, 0.5], ['0vh', '32vh'])
-    const negativey = useTransform(scrollYProgress, [0.05, 0.5], ['0vh', '-32vh'])
+    const y = useTransform(scrollYProgress, [0.05, 1], ['0vh', '32vh'])
+    const negativey = useTransform(scrollYProgress, [0.05, 1], ['0vh', '-32vh'])
 
-    const x = useTransform(scrollYProgress, [0.05, 0.5], ['0vw', '-100vw'])
+    const x = useTransform(scrollYProgress, [0.05, 1], ['0vw', '-100vw'])
 
     
   return (
