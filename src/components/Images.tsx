@@ -37,6 +37,8 @@ const Images = () => {
           </motion.span>
         </div>
         <div
+          data-scroll
+          data-scroll-speed = '0.1'
           className = {`${libre.className} w-[70vw] text-center font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <p>
             I&apos;m an award-winning photographer with my work featured in major
@@ -45,7 +47,10 @@ const Images = () => {
             Europe&apos;s premier photo tour companies.
           </p>
         </div>
-      <div className = 'mt-[20vh] relative w-[50vw] h-[70vh] saturate-0'>
+      <div 
+        data-scroll
+        data-scroll-speed = '0.3'
+        className = 'mt-[20vh] relative w-[50vw] h-[70vh] saturate-0'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
     </div>
