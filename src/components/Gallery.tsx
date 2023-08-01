@@ -30,9 +30,9 @@ const Gallery = () => {
                         style = {{x}}
                         className = 'text-pastel-gray-light z-50 flex items-center justify-center w-screen h-screen'>
                         <div className = 'text-center w-[35vw]'>
-                            <h1 className = 'uppercase font-bold mb-10'>gallery</h1>
+                            <h1 className = 'uppercase font-bold mb-10 text-[1vw]'>gallery</h1>
                             <p className = {`${libre.className} font-extralight text-[3.5vw]`}>
-                                <span className = 'italic'>Browse </span>some of my favorite images ive taken.
+                                <span className = 'italic'>Browse </span>some of my favorite images ive <span className = 'italic'>taken.</span>
                             </p>
                         </div>
                     </motion.div>
