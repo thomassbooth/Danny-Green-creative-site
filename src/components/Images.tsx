@@ -8,7 +8,7 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const Images = () => {
 
   return (
-      <div className = 'flex flex-col items-center min-h-screen py-[25vh] text-[10vw] font-bold bg-background-gray text-pastel-gray-light w-[100vw]'>
+      <div className = 'flex flex-col items-center min-h-screen py-[20vh] text-[10vw] font-bold bg-background-gray text-pastel-gray-light w-[100vw]'>
         <div 
           data-scroll
           className = 'flex flex-col mb-[8vh] justify-center leading-none tracking-[-0.01em] items-center w-screen'>
@@ -37,8 +37,6 @@ const Images = () => {
           </motion.span>
         </div>
         <div
-          data-scroll
-          data-scroll-speed = '0.1'
           className = {`${libre.className} w-[70vw] text-center font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <p>
             I&apos;m an award-winning photographer with my work featured in major
@@ -47,10 +45,7 @@ const Images = () => {
             Europe&apos;s premier photo tour companies.
           </p>
         </div>
-      <div 
-        data-scroll
-        data-scroll-speed = '0.3'
-        className = 'mt-[20vh] relative w-[50vw] h-[70vh] saturate-0'>
+      <div className = 'mt-[10vh] relative w-[30vw] h-[40vh] saturate-0'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
     </div>
