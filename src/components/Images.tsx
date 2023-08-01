@@ -45,7 +45,7 @@ const Images = () => {
             Europe&apos;s premier photo tour companies.
           </p>
         </div>
-      <div className = 'mt-[20vh] relative w-[40vw] h-[60vh] saturate-[0.5]'>
+      <div className = 'mt-[20vh] relative w-[50vw] h-[70vh] saturate-0'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
       </div>
     </div>
