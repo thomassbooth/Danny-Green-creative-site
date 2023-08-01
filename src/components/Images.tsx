@@ -2,7 +2,6 @@ import { Libre_Baskerville } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
-import SplitText from './SplitText'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 

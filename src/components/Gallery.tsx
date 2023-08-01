@@ -1,6 +1,7 @@
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
+import GalleryLink from './GalleryLink'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
@@ -21,41 +22,50 @@ const Gallery = () => {
 
     
   return (
-    <section ref = {containerRef}>
-        <div className = 'h-[200vh] w-screen'>
-            <div className = 'text-background-gray w-[200vw] h-screen sticky top-0 flex flex-col justify-center'>
-                <div className = 'absolute z-50 flex h-screen w-[200vw]'>
-                    <div className = 'w-screen h-screen'/>
-                    <motion.div 
-                        style = {{x}}
-                        className = 'text-pastel-gray-light z-50 flex items-center justify-center w-screen h-screen'>
-                        <div className = 'text-center w-[35vw]'>
-                            <h1 className = 'uppercase font-bold mb-10 text-[1vw]'>gallery</h1>
-                            <p className = {`${libre.className} font-extralight text-[3.5vw]`}>
-                                <span className = 'italic'>Browse </span>some of my favorite images ive <span className = 'italic'>taken.</span>
-                            </p>
-                        </div>
-                    </motion.div>
+    <>
+        <section ref = {containerRef}>
+            <div className = 'h-[200vh] w-screen'>
+                <div className = 'text-background-gray w-[200vw] h-screen sticky top-0 flex flex-col justify-center'>
+                    <div className = 'absolute z-50 flex h-screen w-[200vw]'>
+                        <div className = 'w-screen h-screen'/>
+                        <motion.div 
+                            style = {{x}}
+                            className = 'text-pastel-gray-light z-50 flex items-center justify-center w-screen h-screen'>
+                            <div className = 'text-center w-[35vw]'>
+                                <h1 className = 'uppercase font-bold mb-10 text-[1vw]'>gallery</h1>
+                                <p className = {`${libre.className} font-extralight text-[3.5vw]`}>
+                                    <span className = 'italic'>Browse </span>some of my favorite images ive <span className = 'italic'>taken.</span>
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+                    <div className = 'absolute top-1/2 h-screen w-screen'>
+                        <motion.div
+                            style = {{ height }}
+                            className = 'w-screen bg-background-gray'>
+                        </motion.div>
+                    </div>
+                    <div className = 'absolute rotate-180 bottom-1/2  h-screen w-screen'>
+                        <motion.div
+                            style = {{ height }}
+                            className = 'w-screen bg-background-gray'>
+                        </motion.div>
+                    </div>
+                    <div className = 'absolute'>
+                        <SplitText y = {y} negativey = {negativey} text = {'Gallery'}/>
+                    </div>
+                    
                 </div>
-                <div className = 'absolute top-1/2 h-screen w-screen'>
-                    <motion.div
-                        style = {{ height }}
-                        className = 'w-screen bg-background-gray'>
-                    </motion.div>
-                </div>
-                <div className = 'absolute rotate-180 bottom-1/2  h-screen w-screen'>
-                    <motion.div
-                        style = {{ height }}
-                        className = 'w-screen bg-background-gray'>
-                    </motion.div>
-                </div>
-                <div className = 'absolute'>
-                    <SplitText y = {y} negativey = {negativey} text = {'Gallery'}/>
-                </div>
-                
+            </div>
+        </section>
+        <div className = 'bg-background-gray h-screen'>
+            <div className = 'mx-10 relative grid grid-cols-3 gap-10'>
+                  <GalleryLink/>
+                  <GalleryLink/>
+                  <GalleryLink/>
             </div>
         </div>
-    </section>
+    </>
   )
 }
 

@@ -4,6 +4,7 @@ import SideScrollImage from '@/components/SideScrollImage'
 import { useEffect } from 'react'
 import Images from '@/components/Images'
 import Gallery from '@/components/Gallery'
+import GalleryLink from '@/components/GalleryLink'
 
 
 export default function Home() {
@@ -27,9 +28,6 @@ export default function Home() {
       <SideScrollImage/>
       <Images/>
       <Gallery/>
-      <div className = 'w-screen bg-background-gray h-[200vh]'>
-
-      </div>
     </main>
   )
 }
