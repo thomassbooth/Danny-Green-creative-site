@@ -1,5 +1,8 @@
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import React, { useRef } from 'react'
+import { Libre_Baskerville } from 'next/font/google'
+
+const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
 const Gallery = () => {
 
@@ -9,39 +12,44 @@ const Gallery = () => {
         target: containerRef,
       })
 
-    const height = useTransform(scrollYProgress, [0.05, 1], ['0vh', '50vh'])
+    const height = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '50vh'])
     
-    const y = useTransform(scrollYProgress, [0.05, 1], ['0vh', '32vh'])
-    const negativey = useTransform(scrollYProgress, [0.05, 1], ['0vh', '-32vh'])
+    const y = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '32vh'])
+    const negativey = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '-32vh'])
 
-    const x = useTransform(scrollYProgress, [0.05, 1], ['0vw', '-100vw'])
+    const x = useTransform(scrollYProgress, [0.05, 0.95], ['0vw', '-100vw'])
 
     
   return (
     <section ref = {containerRef}>
         <div className = 'h-[200vh] w-screen'>
             <div className = 'text-background-gray w-[200vw] h-screen sticky top-0 flex flex-col justify-center'>
-                <div className = 'absolute z-30 flex h-screen w-[200vw]'>
+                <div className = 'absolute z-50 flex h-screen w-[200vw]'>
                     <div className = 'w-screen h-screen'/>
                     <motion.div 
                         style = {{x}}
-                        className = 'text-red-500 z-50 flex items-center justify-center w-screen h-screen'>
-                        <p className = 'font-black text-[22vh]'>DAVE</p>
+                        className = 'text-pastel-gray-light z-50 flex items-center justify-center w-screen h-screen'>
+                        <div className = 'text-center w-[35vw]'>
+                            <h1 className = 'uppercase font-bold mb-10'>gallery</h1>
+                            <p className = {`${libre.className} font-extralight text-[3.5vw]`}>
+                                <span className = 'italic'>Browse </span>some of my favorite images ive taken.
+                            </p>
+                        </div>
                     </motion.div>
                 </div>
-                <div className = 'absolute top-1/2 z-20 h-screen w-screen'>
+                <div className = 'absolute top-1/2 h-screen w-screen'>
                     <motion.div
                         style = {{ height }}
                         className = 'w-screen bg-background-gray'>
                     </motion.div>
                 </div>
-                <div className = 'absolute rotate-180 bottom-1/2 z-20 h-screen w-screen'>
+                <div className = 'absolute rotate-180 bottom-1/2  h-screen w-screen'>
                     <motion.div
                         style = {{ height }}
                         className = 'w-screen bg-background-gray'>
                     </motion.div>
                 </div>
-                <div className = 'absolute z-50'>
+                <div className = 'absolute'>
                     <SplitText y = {y} negativey = {negativey} text = {'Gallery'}/>
                 </div>
                 

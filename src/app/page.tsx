@@ -1,8 +1,6 @@
 'use client'
 
 import SideScrollImage from '@/components/SideScrollImage'
-import Navlinks from '@/components/Navlinks'
-import Text3D from '@/components/Text3D'
 import { useEffect } from 'react'
 import Images from '@/components/Images'
 import Gallery from '@/components/Gallery'
@@ -29,7 +27,7 @@ export default function Home() {
       <SideScrollImage/>
       <Images/>
       <Gallery/>
-      <div className = 'w-screen h-[200vh]'>
+      <div className = 'w-screen bg-background-gray h-[200vh]'>
 
       </div>
     </main>
