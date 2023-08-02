@@ -59,10 +59,11 @@ const Gallery = () => {
             </div>
         </section>
         <div className = 'bg-background-gray h-screen'>
-            <div className = 'mx-10 relative grid grid-cols-3 gap-10'>
-                  <GalleryLink/>
-                  <GalleryLink/>
-                  <GalleryLink/>
+            <div className = 'mx-[2.5vw] relative grid grid-cols-3 gap-[2.5vw]'>
+                <GalleryLink imgSrc='Wolves-play-fighting.jpeg' link = 'wolves' name = 'Elusive Wolves'/>
+                <GalleryLink imgSrc='Arctic-1.jpeg' link = 'arctic' name = 'Arctic'/>
+                <GalleryLink imgSrc='Wild-Britain-coasts.jpeg' link = 'coasts' name = 'British Coasts'/>
+                <GalleryLink imgSrc='1-Arctic-Fox-in-the-snow.jpeg' link = 'coasts' name = 'British Coasts'/>
             </div>
         </div>
     </>
