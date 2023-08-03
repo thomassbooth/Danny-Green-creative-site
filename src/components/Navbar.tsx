@@ -19,7 +19,6 @@ useEffect(() => {
       } else if (previousScrollPosition - currentScrollPosition > 0) {
         setVisible(true);
       }
-      console.log (currentScrollPosition)
       // Update the previous value
       previousScrollPosition = currentScrollPosition;
     });
