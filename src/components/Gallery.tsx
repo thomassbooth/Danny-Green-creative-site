@@ -58,7 +58,7 @@ const Gallery = () => {
                 </div>
             </div>
         </section>
-        <div className = 'bg-background-gray h-screen'>
+        <div className = 'bg-background-gray'>
             <div className = 'mx-[2vw] relative grid grid-cols-3 gap-[2vw]'>
                 <GalleryLink imgSrc='Wolves-play-fighting.jpeg' link = 'wolves' name = 'Elusive Wolves'/>
                 <GalleryLink imgSrc='Arctic-1.jpeg' link = 'arctic' name = 'Arctic'/>
@@ -81,12 +81,12 @@ const SplitText: React.FC<splitTextProps> = ({y, negativey, text}) => {
       <>
           <motion.div
               style = {{y: negativey}}
-              className="w-full flex justify-center items-center h-[13vw] overflow-hidden">
+              className="w-screen flex justify-center items-center h-[13vw] overflow-hidden">
               <span className="text-[22vw] font-[900] tracking-[-.055em] uppercase transform translate-y-[6.5vw]">{text}</span>
           </motion.div>
           <motion.div 
               style = {{y}}
-              className="w-full flex justify-center items-center h-[13vw] overflow-hidden">
+              className="w-screen flex justify-center items-center h-[13vw] overflow-hidden">
               <span className="text-[22vw] transform -translate-y-[6.5vw] font-[900] tracking-[-.055em] uppercase">{text}</span>
           </motion.div>
       </>
