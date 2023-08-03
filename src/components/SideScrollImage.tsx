@@ -24,7 +24,7 @@ const SideScrollImage = () => {
     const rounded = useTransform(scrollYProgress, [0, 0.3, 0.35, 0.9], [0, 0, 100, (hasWindow ? window.screen.height : '900')])
     const slideInX = useTransform(scrollYProgress, [0.8, 0.98], ['30vw', '0vw'])
 
-    console.log(window.screen.height)
+    console.log(hasWindow ? window.screen.height : 'broken' )
   return (
     <>
         <section ref = {containerRef} >
