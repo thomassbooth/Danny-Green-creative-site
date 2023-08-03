@@ -26,7 +26,7 @@ useEffect(() => {
   }, []);
 
 return (
-    <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-20'} `}>
+    <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
         <ul className = 'mx-5 mt-5 flex justify-between gap-4 items-center'>
           <li className = 'text-[1.2vw] uppercase font-light'>
             <h2>DG</h2>
