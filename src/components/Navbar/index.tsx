@@ -31,7 +31,7 @@ return (
           <li className = 'text-[1.2vw] uppercase font-light'>
             <h2>DG</h2>
           </li>
-          <li className = 'flex gap-10 uppercase text-[1.2vw] font-light'>
+          <li className = 'flex gap-10 uppercase text-lg font-light'>
             <Link title = 'Home'/>
             <Link title = 'About'/>
             <Link title = 'Gallery'/>
