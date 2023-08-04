@@ -5,7 +5,7 @@ import Link from './Link';
 
 const Navbar = () => {
 
-const [visible, setVisible] = useState(true)
+const [visible, setVisible] = useState(false)
 
 useEffect(() => {
     let previousScrollPosition = 0;
@@ -15,7 +15,9 @@ useEffect(() => {
       // Get the new Value
       currentScrollPosition = window.pageYOffset;
       //Subtract the two and conclude
-      if (previousScrollPosition - currentScrollPosition < 0) {
+      if (currentScrollPosition <= window.screen.height) {
+        setVisible(false);
+      } else if (previousScrollPosition - currentScrollPosition < 0) {
         setVisible(false);
       } else if (previousScrollPosition - currentScrollPosition > 0) {
         setVisible(true);
