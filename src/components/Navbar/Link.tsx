@@ -5,13 +5,13 @@ import { useState } from 'react';
 
 const underlineVariants = {
     idle: {
-        x: '-3.6vw'
+        x: '-3.2vw'
     },
     enter: {
-        x: '3.6vw'
+        x: '3.2vw'
     },
     exit: {
-        x: '-3.6vw'
+        x: '-3.2vw'
     }
 }
 
