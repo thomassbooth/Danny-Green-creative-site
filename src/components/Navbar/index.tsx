@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef, useLayoutEffect} from 'react'
 import { motion } from 'framer-motion'
 import Link from './Link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -27,7 +27,7 @@ const Navbar = () => {
 
 const pathname = usePathname()
 const [visible, setVisible] = useState(true)
-const [layout, setLayout] = useState<string>('')
+const [layout, setLayout] = useState<string>('reset')
 const router = useRouter()
 
 
@@ -50,11 +50,18 @@ const changeRoute = async (url: string) => {
   setTimeout(() => setLayout('reset'), 1500);
 }
 
-useEffect(() => {
+const firstUpdate = useRef(true);
+useLayoutEffect(() => {
+  if (firstUpdate.current) {
+    firstUpdate.current = false;
+    return;
+  }
 
   setLayout('out')
+  
+}, [pathname]);
 
-}, [pathname])
+
 
 
 
