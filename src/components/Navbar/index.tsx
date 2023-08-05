@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from 'react'
 import { motion } from 'framer-motion'
 import Link from './Link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const layoutTransitions = {
   in: {
@@ -24,15 +24,34 @@ const layoutTransitions = {
 }
 
 const Navbar = () => {
+
+const pathname = usePathname()
 const [visible, setVisible] = useState(true)
 const [layout, setLayout] = useState<string>('')
 const router = useRouter()
+
+
 const changeRoute = async (url: string) => {
+
+  if (url === pathname) {
+    window.scrollTo(0, 0);
+    return
+  }
+
   setLayout('in')
-  setTimeout(() => router.push(url), 300);
-  setTimeout(() => setLayout('out'), 700);
-  setTimeout(() => setLayout('reset'), 1200);
+  setTimeout(() => {
+    router.push(url)}, 300);
+
+  setTimeout(() => setLayout('reset'), 1500);
 }
+
+useEffect(() => {
+
+  setLayout('out')
+
+}, [pathname])
+
+
 
 useEffect(() => {
     let previousScrollPosition = 0;
