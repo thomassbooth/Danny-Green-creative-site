@@ -62,7 +62,7 @@ return (
       animate = {layout}
       variants = {layoutTransitions}
       transition={{ ease: "easeOut", duration: 0.3}}
-      className = 'fixed top-0 z-[60] h-screen bg-emerald-300'>
+      className = 'fixed top-0 z-[60] h-screen bg-pastel-blue'>
     </motion.div>}
     <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
         <ul className = 'mx-5 mt-5 flex justify-end gap-4 items-center'>
