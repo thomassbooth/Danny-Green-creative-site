@@ -25,69 +25,70 @@ const layoutTransitions = {
 
 const Navbar = () => {
 
-const pathname = usePathname()
-const [visible, setVisible] = useState(true)
-const [layout, setLayout] = useState<string>('reset')
-const router = useRouter()
+  const pathname = usePathname()
+  const [visible, setVisible] = useState(true)
+  const [layout, setLayout] = useState<string>('reset')
+
+  const firstUpdate = useRef(true);
+
+  const router = useRouter()
 
 
-const changeRoute = async (url: string) => {
+  const changeRoute = async (url: string) => {
 
-  if (url === pathname) {
-    //maybe add a scroll to top of page here
-    window.scroll({
-      top: 0, 
-      left: 0, 
-      behavior: 'smooth' 
-     });
-    return
+    if (url === pathname) {
+      //maybe add a scroll to top of page here
+      window.scroll({
+        top: 0, 
+        left: 0, 
+        behavior: 'smooth' 
+      });
+      return
+    }
+
+    setLayout('in')
+    setTimeout(() => {
+      router.push(url)}, 300);
   }
 
-  setLayout('in')
-  setTimeout(() => {
-    router.push(url)}, 300);
+  useLayoutEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
 
-  setTimeout(() => setLayout('reset'), 1500);
-}
+    setLayout('out')
+    setTimeout(() => setLayout('reset'), 400);
 
-const firstUpdate = useRef(true);
-useLayoutEffect(() => {
-  if (firstUpdate.current) {
-    firstUpdate.current = false;
-    return;
-  }
-
-  setLayout('out')
-  
-}, [pathname]);
+  }, [pathname]);
 
 
 
 
 
-useEffect(() => {
-    let previousScrollPosition = 0;
-    let currentScrollPosition = 0;
+  useEffect(() => {
+      let previousScrollPosition = 0;
+      let currentScrollPosition = 0;
 
-    window.addEventListener('scroll', function (e) {
-      // Get the new Value
-      currentScrollPosition = window.pageYOffset;
-      //Subtract the two and conclude
-      if (currentScrollPosition < 2) {
-        setVisible(true);
-      } else if (currentScrollPosition < window.screen.height) {
-        setVisible(false);
-      } else if (previousScrollPosition - currentScrollPosition < 0) {
-        setVisible(false);
-      } else if (previousScrollPosition - currentScrollPosition > 0) {
-        setVisible(true);
-      }
-      // Update the previous value
-      previousScrollPosition = currentScrollPosition;
-    });
-  }, []);
+      window.addEventListener('scroll', function (e) {
+        // Get the new Value
+        currentScrollPosition = window.pageYOffset;
+        //Subtract the two and conclude
+        if (currentScrollPosition < 2) {
+          setVisible(true);
+        } else if (currentScrollPosition < window.screen.height) {
+          setVisible(false);
+        } else if (previousScrollPosition - currentScrollPosition < 0) {
+          setVisible(false);
+        } else if (previousScrollPosition - currentScrollPosition > 0) {
+          setVisible(true);
+        }
+        // Update the previous value
+        previousScrollPosition = currentScrollPosition;
+      });
+    }, []);
 
-return (
+  return (
     <>
     {<motion.div 
       animate = {layout}
