@@ -29,7 +29,7 @@ const [layout, setLayout] = useState<string>('')
 const router = useRouter()
 const changeRoute = async (url: string) => {
   setLayout('in')
-  setTimeout(() => router.push(url), 500);
+  setTimeout(() => router.push(url), 300);
   setTimeout(() => setLayout('out'), 700);
   setTimeout(() => setLayout('reset'), 1200);
 }
@@ -61,7 +61,7 @@ return (
     {<motion.div 
       animate = {layout}
       variants = {layoutTransitions}
-      transition={{ ease: "easeOut", duration: 0.5}}
+      transition={{ ease: "easeOut", duration: 0.3}}
       className = 'fixed top-0 z-[60] h-screen bg-emerald-300'>
     </motion.div>}
     <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
