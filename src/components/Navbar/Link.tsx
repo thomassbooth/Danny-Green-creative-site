@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react';
+import { useRouter } from 'next/navigation'
 
 const underlineVariants = {
     idle: {
@@ -23,6 +24,8 @@ const Link: React.FC<linkProps> = ({ title }) => {
 
     const [hoverState, setHoverState] = useState('idle')
 
+    const router = useRouter()
+
     console.log(hoverState)
     return (
       <motion.div 
@@ -30,6 +33,7 @@ const Link: React.FC<linkProps> = ({ title }) => {
         onHoverEnd={(e) => {
             setHoverState('exit')
         }}
+        onClick = {() => router.push('/')}
         className="relative cursor-pointer inline-block overflow-hidden">
         <h2>{title}</h2>
         <motion.div
