@@ -30,8 +30,8 @@ const router = useRouter()
 const changeRoute = async (url: string) => {
   setLayout('in')
   setTimeout(() => router.push(url), 500);
-  setTimeout(() => setLayout('out'), 600);
-  setTimeout(() => setLayout('reset'), 1000);
+  setTimeout(() => setLayout('out'), 700);
+  setTimeout(() => setLayout('reset'), 1200);
 }
 
 useEffect(() => {
