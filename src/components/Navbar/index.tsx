@@ -34,7 +34,12 @@ const router = useRouter()
 const changeRoute = async (url: string) => {
 
   if (url === pathname) {
-    window.scrollTo(0, 0);
+    //maybe add a scroll to top of page here
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth' 
+     });
     return
   }
 
