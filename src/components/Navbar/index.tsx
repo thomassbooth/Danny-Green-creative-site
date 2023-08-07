@@ -101,7 +101,7 @@ const Navbar = () => {
           <li className = 'flex gap-10 uppercase text-[1vw] font-normal'>
             <Link title = 'Home' url = '/' changeRoute = {changeRoute}/>
             <Link title = 'Awards' url = '/awards' changeRoute = {changeRoute}/>
-            <Link title = 'Contact' url = 'contact' changeRoute = {changeRoute}/>
+            <Link title = 'Contact' url = '/contact' changeRoute = {changeRoute}/>
           </li>
         </ul>
     </nav>
