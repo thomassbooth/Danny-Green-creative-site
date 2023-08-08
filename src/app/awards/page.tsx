@@ -9,7 +9,8 @@ const awards = [
   {
     title: 'British Wildlife Photography Awards',
     place: 'Highly Commended',
-    src: 'Mountain-Hare-BWPA.jpeg'
+    src: 'Mountain-Hare-BWPA.jpeg',
+    color: '#FDF4F5'
   },
   {
     title: 'Bird Photographer of the Year',
@@ -19,7 +20,8 @@ const awards = [
   {
     title: 'European Wildlife Photographer of the Year',
     place: 'Highly Commended',
-    src: 'Arctic_Fox_with_a_Ringed_Seal_Pup_GDT.jpeg'
+    src: 'Arctic_Fox_with_a_Ringed_Seal_Pup_GDT.jpeg',
+    color: '#AEE2FF'
   }
 ]
 
