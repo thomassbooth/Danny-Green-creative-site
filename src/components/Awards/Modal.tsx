@@ -18,9 +18,6 @@ const Modal: React.FC<modalProps> = ({modal, awards}) => {
 
   const { active, index } = modal;
   const modalContainer = useRef(null);
-  const cursor = useRef(null);
-  const cursorLabel = useRef(null);
-
   useEffect( () => {
     //Move Container
     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {duration: 0.8, ease: "power3"})
