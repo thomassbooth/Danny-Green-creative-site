@@ -33,6 +33,35 @@ const awards = [
     year: '2021',
     color: '#AAC8A7'
   },
+  {
+    title: 'Natures Best',
+    place: 'Highly Honoured',
+    src: 'Grizzly-at-Dawn.jpeg',
+    year: '2016',
+    color: '#AAC8A7'
+  },
+  {
+    title: 'British Wildlife Photography Awards',
+    place: 'Highly Commended',
+    src: 'Pine-Marten-portrait.jpeg',
+    year: '2016',
+    color: '#AAC8A7'
+  },
+  {
+    title: 'British Wildlife Photography Awards',
+    place: 'Highly Commended',
+    src: 'Pine-martens-play-fighting.jpeg',
+    year: '2015',
+    color: '#AAC8A7'
+  },
+  {
+    title: 'British Wildlife Photography Awards',
+    place: 'Highly Commended',
+    src: 'Common-Seal-pup-in-a-sandstorm.jpeg',
+    year: '2015',
+    color: '#AAC8A7'
+  },
+
 ]
 
 const AwardsPage = () => {
@@ -40,14 +69,14 @@ const AwardsPage = () => {
   const [modal, setModal] = useState({active: false, index: 0})
 
   return (
-    <div className = 'min-h-screen   flex items-center justify-center bg-pastel-gray-light'>
-      <div className = 'w-[70vw] flex flex-col items-center justify-center'>
+    <div className = 'min-h-screen py-[15vh] flex items-center justify-center bg-pastel-gray-light'>
+      <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
         {
           awards.map((award, index) => {
             return <Project key = {index} index = {index} title = {award.title} place = {award.place} setModal = {setModal} year = {award.year}/>
           })
         }
-      </div>
+      </ul>
       <Modal modal = {modal} awards = {awards}/>
     </div>
   )
