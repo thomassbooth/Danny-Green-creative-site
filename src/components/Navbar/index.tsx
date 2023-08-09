@@ -5,18 +5,35 @@ import { motion } from 'framer-motion'
 import Link from './Link';
 import { usePathname, useRouter } from 'next/navigation';
 
-const layoutTransitions = {
+const layoutTransitionsUp = {
   in: {
-    x: '0',
-    width: '100vw',
+    y: '0',
+    height: '100vh',
     
   },
   out: {
-    x: '100vw'
+    y: '100vh'
   },
   reset: {
-    x: '0',
-    width: 0,
+    y: '0',
+    height: 0,
+    transition: {
+      duration: 0
+    }
+  }
+}
+
+const layoutTransitionsDown = {
+  in: {
+    y: '0',
+    
+  },
+  out: {
+    height: '0'
+  },
+  reset: {
+    y: '100vh',
+    height: 0,
     transition: {
       duration: 0
     }
@@ -90,12 +107,20 @@ const Navbar = () => {
 
   return (
     <>
-    {<motion.div 
-      animate = {layout}
-      variants = {layoutTransitions}
-      transition={{ ease: "easeOut", duration: 0.3}}
-      className = 'fixed top-0 z-[60] h-screen bg-pastel-blue'>
-    </motion.div>}
+    {<>
+      <motion.div 
+        animate = {layout}
+        variants = {layoutTransitionsDown}
+        transition={{ ease: "easeOut", duration: 0.3}}
+        className = 'fixed top-0 z-[60] h-screen w-1/2 bg-pastel-blue'>
+      </motion.div>
+      <motion.div 
+        animate = {layout}
+        variants = {layoutTransitionsUp}
+        transition={{ ease: "easeOut", duration: 0.3}}
+        className = 'fixed top-0 left-1/2 z-[60] h-screen w-1/2 bg-pastel-blue'>
+      </motion.div>
+    </>}
     <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
         <ul className = 'mx-5 mt-5 flex justify-end gap-4 items-center'>
           <li className = 'flex gap-10 uppercase text-[1vw] font-normal'>
