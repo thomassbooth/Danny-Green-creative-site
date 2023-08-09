@@ -73,8 +73,8 @@ const Navbar = () => {
       return;
     }
 
-    setLayout('out')
-    setTimeout(() => setLayout('reset'), 400);
+    setTimeout(() => setLayout('out'), 100)
+    setTimeout(() => setLayout('reset'), 500);
 
   }, [pathname]);
 
