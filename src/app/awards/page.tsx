@@ -40,8 +40,8 @@ const AwardsPage = () => {
   const [modal, setModal] = useState({active: false, index: 0})
 
   return (
-    <div className = 'min-h-screen flex items-center justify-center bg-pastel-gray-light'>
-      <div className = 'w-[1000px] flex flex-col items-center justify-center'>
+    <div className = 'min-h-screen   flex items-center justify-center bg-pastel-gray-light'>
+      <div className = 'w-[70vw] flex flex-col items-center justify-center'>
         {
           awards.map((award, index) => {
             return <Project key = {index} index = {index} title = {award.title} place = {award.place} setModal = {setModal} year = {award.year}/>
