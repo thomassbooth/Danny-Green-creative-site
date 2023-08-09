@@ -12,7 +12,7 @@ const layoutTransitionsUp = {
     
   },
   out: {
-    y: '100vh'
+    x: '50vw'
   },
   reset: {
     y: '0',
@@ -26,10 +26,9 @@ const layoutTransitionsUp = {
 const layoutTransitionsDown = {
   in: {
     y: '0',
-    
   },
   out: {
-    height: '0'
+    x: '-50vw'
   },
   reset: {
     y: '100vh',
@@ -112,13 +111,13 @@ const Navbar = () => {
         animate = {layout}
         variants = {layoutTransitionsDown}
         transition={{ ease: "easeOut", duration: 0.3}}
-        className = 'fixed top-0 z-[60] h-screen w-1/2 bg-pastel-blue'>
+        className = 'fixed top-0 z-[60] h-screen w-1/2 bg-pastel-gray-light'>
       </motion.div>
       <motion.div 
         animate = {layout}
         variants = {layoutTransitionsUp}
         transition={{ ease: "easeOut", duration: 0.3}}
-        className = 'fixed top-0 left-1/2 z-[60] h-screen w-1/2 bg-pastel-blue'>
+        className = 'fixed top-0 left-1/2 z-[60] h-screen w-1/2 bg-pastel-gray-light'>
       </motion.div>
     </>}
     <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
