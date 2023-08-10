@@ -13,12 +13,10 @@ const layoutTransitionsUp = {
   },
   out: {
     x: '50vw',
-    opacity: 0.7
   },
   reset: {
     y: '0',
     height: 0,
-    opacity: 1,
     transition: {
       duration: 0
     }
@@ -31,12 +29,10 @@ const layoutTransitionsDown = {
   },
   out: {
     x: '-50vw',
-    opacity: 0.7
   },
   reset: {
     y: '100vh',
     height: 0,
-    opacity: 1,
     transition: {
       duration: 0
     }
