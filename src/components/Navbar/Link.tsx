@@ -27,8 +27,6 @@ const Link: React.FC<linkProps> = ({ title, url, changeRoute }) => {
     const [hoverState, setHoverState] = useState('idle')
 
     const router = useRouter()
-
-    console.log(hoverState)
     return (
     <>
         <motion.div 

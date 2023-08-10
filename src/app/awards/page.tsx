@@ -120,7 +120,7 @@ const AwardsPage = () => {
   return (
     <div className = 'min-h-screen py-[15vh] flex items-center justify-center bg-pastel-gray-light'>
       <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
-        {
+        { 
           awards.map((award, index) => {
             return <Project key = {index} index = {index} title = {award.title} place = {award.place} setModal = {setModal} year = {award.year} type = {award.type}/>
           })

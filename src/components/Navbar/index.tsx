@@ -12,11 +12,13 @@ const layoutTransitionsUp = {
     
   },
   out: {
-    x: '50vw'
+    x: '50vw',
+    opacity: 0.7
   },
   reset: {
     y: '0',
     height: 0,
+    opacity: 1,
     transition: {
       duration: 0
     }
@@ -28,11 +30,13 @@ const layoutTransitionsDown = {
     y: '0',
   },
   out: {
-    x: '-50vw'
+    x: '-50vw',
+    opacity: 0.7
   },
   reset: {
     y: '100vh',
     height: 0,
+    opacity: 1,
     transition: {
       duration: 0
     }
@@ -44,12 +48,8 @@ const Navbar = () => {
   const pathname = usePathname()
   const [visible, setVisible] = useState(true)
   const [layout, setLayout] = useState<string>('reset')
-
   const firstUpdate = useRef(true);
-
   const router = useRouter()
-
-
   const changeRoute = async (url: string) => {
 
     if (url === pathname) {
@@ -85,14 +85,14 @@ const Navbar = () => {
   useEffect(() => {
       let previousScrollPosition = 0;
       let currentScrollPosition = 0;
-
-      window.addEventListener('scroll', function (e) {
+      console.log('add: ', pathname)
+      function navbarListener() {
         // Get the new Value
         currentScrollPosition = window.pageYOffset;
         //Subtract the two and conclude
         if (currentScrollPosition < 2) {
           setVisible(true);
-        } else if (currentScrollPosition < window.screen.height) {
+        } else if (currentScrollPosition < window.screen.height && pathname === '/') {
           setVisible(false);
         } else if (previousScrollPosition - currentScrollPosition < 0) {
           setVisible(false);
@@ -101,8 +101,14 @@ const Navbar = () => {
         }
         // Update the previous value
         previousScrollPosition = currentScrollPosition;
-      });
-    }, []);
+      };
+      window.addEventListener('scroll', navbarListener)
+
+      return () => {
+        console.log('remove: ', pathname)
+        window.removeEventListener('scroll', navbarListener)
+      }
+    }, [pathname]);
 
   return (
     <>
