@@ -39,7 +39,7 @@ const Modal: React.FC<modalProps> = ({modal, awards}) => {
             {
                 awards.map((project, index) => {
                 const { src, color } = project
-                return <div className='h-full w-full flex justify-center items-center' style={{backgroundColor: color}} key={`modal_${index}`}>
+                return <div className='h-full w-full flex flex-col justify-center items-center' style={{backgroundColor: color}} key={`modal_${index}`}>
                     <Image 
                     className = 'h-auto'
                     src={`/images/awards/${src}`}
