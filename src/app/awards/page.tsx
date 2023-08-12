@@ -159,7 +159,7 @@ const AwardsPage = () => {
         </p>
       </header>
       <div
-        className = {`${libre.className} w-[70vw] text-center mb-10 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
+        className = {`${libre.className} w-[70vw] text-center mb-2 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
         <p>
         My pics won big in top-notch Natural History photo contests. 15 years of consistent entries paid off, despite the frustrations. Now, with multiple awards and my work published.
         </p>

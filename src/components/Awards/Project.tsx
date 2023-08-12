@@ -18,7 +18,7 @@ const slideIn = {
   }),
   open: (i: number) => ({
     x: '0%',
-    transition: {duration: 0.5, delay: 0.15 * i}
+    transition: {duration: 0.4, delay: 0.1+ 0.05* i}
   })
 }
 
