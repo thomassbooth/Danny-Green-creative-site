@@ -28,7 +28,8 @@ const Project: React.FC<projectProps> = ({setModal, index, title, place, year, t
         custom = {index}
         variants = {slideIn}
         initial = 'initial'
-        animate = 'open'
+        whileInView="open"
+        viewport={{ once: true }}
         className = 'group hover:opacity-50 flex w-full justify-between items-center py-[2vh] px-[50px] border-t border-[#C9C9C9] transition-all duration-200 cursor-pointer last-of-type:border-b'
         onMouseEnter={() => {setModal({active: true, index})}} onMouseLeave={() => {setModal({active: false, index})}}>
         <div className = 'group-hover:translate-x-[-10px] transition-all duration-[0.4] flex items-center gap-2'>

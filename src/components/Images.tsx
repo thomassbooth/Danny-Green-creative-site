@@ -36,7 +36,16 @@ const Images = () => {
               PUBLISHED
           </motion.span>
         </div>
-        <div
+           
+        <motion.div
+          initial = 'hidden'
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+              hidden: {opacity: 0, y: '100%'},
+              visible: {opacity: 1, y: '0%'}
+          }}
+          transition = {{delay: 0.5, duration: 0.7, type: "tween"}}
           className = {`${libre.className} w-[70vw] text-center font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
           <p>
             I&apos;m an award-winning photographer with my work featured in major
@@ -44,10 +53,19 @@ const Images = () => {
             a top UK-based photography tour business. We&apos;re considered one of 
             Europe&apos;s premier photo tour companies.
           </p>
-        </div>
-      <div className = 'mt-[10vh] relative w-[30vw] h-[40vh] saturate-0'>
+        </motion.div>
+      <motion.div 
+        initial = 'hidden'
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={{
+            hidden: {opacity: 0, scale: 0},
+            visible: {opacity: 1, scale: 1}
+        }}
+        transition = {{delay: 0.5, duration: 1, type: "spring"}}
+        className = 'mt-[10vh] relative w-[30vw] h-[40vh] saturate-0'>
         <Image src = '/images/Common-Frog-22.jpg' alt = 'froggy' fill/>
-      </div>
+      </motion.div>
     </div>
   )
 }

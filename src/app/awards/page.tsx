@@ -2,8 +2,12 @@
 
 import Modal from '@/components/Awards/Modal'
 import Project from '@/components/Awards/Project'
-import React from 'react'
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Libre_Baskerville } from 'next/font/google'
 import { useState } from 'react'
+
+const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
 const awards = [
   {
@@ -113,12 +117,53 @@ const awards = [
 
 ]
 
+const slideDown = {
+  initial: {
+    y: '-100%',
+    opacity: 0
+  },
+  open: (i: number) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0.3 + (i) * 0.02,
+      duration: 0.5
+    }
+  })
+}
+
 const AwardsPage = () => {
 
   const [modal, setModal] = useState({active: false, index: 0})
+  const title = useRef(null);
+  const isInView = useInView(title)
 
   return (
-    <div className = 'min-h-screen py-[15vh] flex items-center justify-center bg-pastel-gray-light'>
+    <div className = 'min-h-screen py-[15vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
+      <span ref = {title} className = 'relative flex'>
+        <p className = 'm-0'>
+          {'AWARDS'.split('').map((str, i) => {
+            return (
+            <span className = 'relative inline-flex overflow-hidden' key = {i}>
+              <motion.span
+                className = 'leading-[13vw] text-[13vw] text-[#171717] text-center tracking-tight uppercase font-[900]'
+                animate={isInView ? "open" : "inital"}
+                custom = {i}
+                viewport={{ once: true }}
+                initial={'initial'}
+                variants={slideDown}>
+                  {str}
+              </motion.span>
+            </span>
+          )})}
+        </p>
+      </span>
+      <div
+        className = {`${libre.className} w-[70vw] text-center mb-10 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
+        <p>
+        After 15 years of consistent entries, my images finally won prestigious awards in Natural History photo competitions, bringing a fulfilling sense of achievement and publication recognition.
+        </p>
+      </div>
       <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
         { 
           awards.map((award, index) => {
