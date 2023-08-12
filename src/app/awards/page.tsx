@@ -126,7 +126,7 @@ const slideDown = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.3 + (i) * 0.02,
+      delay: 0.1 + (i) * 0.02,
       duration: 0.5
     }
   })

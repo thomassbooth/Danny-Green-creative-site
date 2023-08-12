@@ -58,7 +58,7 @@ const Gallery = () => {
                 </div>
             </div>
         </section>
-        <div className = 'bg-background-gray h-screen'>
+        <div className = 'bg-background-gray py-[3vh]'>
             <div className = 'mx-[2vw] relative grid grid-cols-3 gap-[2vw]'>
                 <GalleryLink imgSrc='Wolves-play-fighting.jpeg' link = 'wolves' name = 'Elusive Wolves'/>
                 <GalleryLink imgSrc='Arctic-1.jpeg' link = 'arctic' name = 'Arctic'/>
