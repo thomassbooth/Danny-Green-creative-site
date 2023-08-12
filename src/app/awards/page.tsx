@@ -120,7 +120,7 @@ const awards = [
 const slideDown = {
   initial: {
     y: '-100%',
-    opacity: 0
+    opacity: 0.7
   },
   open: (i: number) => ({
     y: 0,
@@ -139,8 +139,8 @@ const AwardsPage = () => {
   const isInView = useInView(title)
 
   return (
-    <div className = 'min-h-screen py-[15vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
-      <span ref = {title} className = 'relative flex'>
+    <div className = 'min-h-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
+      <header ref = {title} className = 'relative flex'>
         <p className = 'm-0'>
           {'AWARDS'.split('').map((str, i) => {
             return (
@@ -157,14 +157,17 @@ const AwardsPage = () => {
             </span>
           )})}
         </p>
-      </span>
+      </header>
       <div
         className = {`${libre.className} w-[70vw] text-center mb-10 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
         <p>
-        After 15 years of consistent entries, my images finally won prestigious awards in Natural History photo competitions, bringing a fulfilling sense of achievement and publication recognition.
+        My pics won big in top-notch Natural History photo contests. 15 years of consistent entries paid off, despite the frustrations. Now, with multiple awards and my work published.
         </p>
       </div>
+      
+      
       <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
+      <p className = 'opacity-10  mb-4 w-full'>HOVER ME</p>
         { 
           awards.map((award, index) => {
             return <Project key = {index} index = {index} title = {award.title} place = {award.place} setModal = {setModal} year = {award.year} type = {award.type}/>
