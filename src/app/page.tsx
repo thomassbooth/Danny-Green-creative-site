@@ -39,7 +39,6 @@ export default function Home() {
 
   return (
     <main className = 'overflow-clip bg-pastel-gray-light'>
-      
       <SideScrollImage/>
       <Images/>
       <Gallery/>

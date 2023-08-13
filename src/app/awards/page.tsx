@@ -167,7 +167,7 @@ const AwardsPage = () => {
       
       
       <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
-      <p className = 'opacity-10  mb-4 w-full'>HOVER ME</p>
+      <p className = 'opacity-20  mb-4 w-full'>HOVER ME</p>
         { 
           awards.map((award, index) => {
             return <Project key = {index} index = {index} title = {award.title} place = {award.place} setModal = {setModal} year = {award.year} type = {award.type}/>
