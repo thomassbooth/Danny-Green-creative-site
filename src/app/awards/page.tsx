@@ -2,7 +2,7 @@
 
 import Modal from '@/components/Awards/Modal'
 import Project from '@/components/Awards/Project'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Libre_Baskerville } from 'next/font/google'
 import { useState } from 'react'
@@ -137,6 +137,12 @@ const AwardsPage = () => {
   const [modal, setModal] = useState({active: false, index: 0})
   const title = useRef(null);
   const isInView = useInView(title)
+
+  useEffect(() => {
+
+    window.scrollTo({top: 0})
+    
+  }, [])
 
   return (
     <div className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
