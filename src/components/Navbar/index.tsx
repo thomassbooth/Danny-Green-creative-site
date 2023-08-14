@@ -2,8 +2,9 @@
 
 import React, {useState, useEffect, useRef, useLayoutEffect} from 'react'
 import { motion } from 'framer-motion'
-import Link from './Link';
+import Link from './LinkItem';
 import { usePathname, useRouter } from 'next/navigation';
+import LinkItem from './LinkItem';
 
 const layoutTransitionsUp = {
   in: {
@@ -46,33 +47,17 @@ const Navbar = () => {
   const [layout, setLayout] = useState<string>('reset')
   const firstUpdate = useRef(true);
   const router = useRouter()
-  const changeRoute = async (url: string) => {
 
-    if (url === pathname) {
-      //maybe add a scroll to top of page here
-      window.scroll({
-        top: 0, 
-        left: 0, 
-        behavior: 'smooth' 
-      });
-      return
-    }
+  // useLayoutEffect(() => {
+  //   if (firstUpdate.current) {
+  //     firstUpdate.current = false;
+  //     return;
+  //   }
 
-    setLayout('in')
-    setTimeout(() => {
-      router.push(url)}, 300);
-  }
+  //   setTimeout(() => setLayout('out'), 100)
+  //   setTimeout(() => setLayout('reset'), 500);
 
-  useLayoutEffect(() => {
-    if (firstUpdate.current) {
-      firstUpdate.current = false;
-      return;
-    }
-
-    setTimeout(() => setLayout('out'), 100)
-    setTimeout(() => setLayout('reset'), 500);
-
-  }, [pathname]);
+  // }, [pathname]);
 
 
 
@@ -125,9 +110,9 @@ const Navbar = () => {
     <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
         <ul className = 'mx-5 mt-5 flex justify-end gap-4 items-center'>
           <li className = 'flex gap-10 uppercase text-xl font-normal'>
-            <Link title = 'Home' url = '/' changeRoute = {changeRoute}/>
-            <Link title = 'Awards' url = '/awards' changeRoute = {changeRoute}/>
-            <Link title = 'Contact' url = '/contact' changeRoute = {changeRoute}/>
+            <LinkItem title = 'Home' url = '/'/>
+            <LinkItem title = 'Awards' url = '/awards'/>
+            <LinkItem title = 'Contact' url = '/contact'/>
           </li>
         </ul>
     </nav>
