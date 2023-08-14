@@ -43,20 +43,15 @@ const Navbar = () => {
   const pathname = usePathname()
   const [visible, setVisible] = useState(true)
   const router = useRouter()
+
   const changeRoute = async (url: string) => {
+    window.scroll({
+      top: 0, 
+      left: 0, 
+      behavior: 'auto' 
+    });
 
-    if (url === pathname) {
-      //maybe add a scroll to top of page here
-      window.scroll({
-        top: 0, 
-        left: 0, 
-        behavior: 'smooth' 
-      });
-      return
-    }
-
-    setTimeout(() => {
-      router.push(url)}, 300);
+    router.push(url)
   }
 
   useEffect(() => {
