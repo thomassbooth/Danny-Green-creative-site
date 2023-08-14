@@ -25,11 +25,9 @@ const ContactPage = () => {
   const isInView = useInView(title)
 
   useEffect(() => {
-
-    window.scrollTo({top: 0, left: 0, behavior: 'auto' })
-
-  }, [])
-
+    window.scrollTo(0, 0);
+  }, []);
+  
   return (
     <div className = 'min-h-screen py-[20vh] w-screen flex flex-col items-center  bg-background-gray'>
       <header ref = {title} className = 'relative flex text-pastel-gray-light'>

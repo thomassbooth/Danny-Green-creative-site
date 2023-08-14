@@ -138,11 +138,10 @@ const AwardsPage = () => {
   const title = useRef(null);
   const isInView = useInView(title)
 
-  useEffect(() => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
-    window.scrollTo({top: 0, left: 0, behavior: 'auto' })
-
-  }, [])
 
   return (
     <div className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>

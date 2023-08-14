@@ -9,12 +9,6 @@ import GalleryLink from '@/components/GalleryLink'
 
 export default function Home() {
 
-  useEffect(() => {
-
-    window.scrollTo({top: 0, left: 0, behavior: 'auto' })
-
-  }, [])
-
   useEffect( () => {
     (
       async () => {
@@ -38,6 +32,10 @@ export default function Home() {
       }
     )()
   }, [])
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <main className = 'overflow-clip bg-pastel-gray-light'>
