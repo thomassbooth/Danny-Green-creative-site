@@ -10,12 +10,10 @@ export function useLayoutRouterContext() {
 }
 
 function FrozenRouter(props: PropsWithChildren<{}>) {
+    
   const context = useLayoutRouterContext();
   const frozen = useRef(context).current;
 
-  const newPage = useRef(props)
-
-  
   return (
     <LayoutRouterContext.Provider value={frozen}>
       {props.children}

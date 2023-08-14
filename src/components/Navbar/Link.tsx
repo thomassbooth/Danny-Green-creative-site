@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import Link from 'next/link';
 
 const underlineVariants = {
     idle: {
@@ -20,13 +19,12 @@ const underlineVariants = {
 interface linkProps {
     title: string
     url: string
+    changeRoute: (url: string) => void
 }
 
-const LinkItem: React.FC<linkProps> = ({ title, url }) => {
+const Link: React.FC<linkProps> = ({ title, url, changeRoute }) => {
 
     const [hoverState, setHoverState] = useState('idle')
-
-    const router = useRouter()
     return (
     <>
         <motion.div 
@@ -34,10 +32,9 @@ const LinkItem: React.FC<linkProps> = ({ title, url }) => {
             onHoverEnd={(e) => {
                 setHoverState('exit')
             }}
+            onClick = {() => changeRoute(url)}
             className="relative cursor-pointer inline-block overflow-hidden">
-                <Link href = {url}>
-                    {title}
-                </Link>
+            <h2>{title}</h2>
             <motion.div
             className="absolute left-0 w-full h-[2px] bg-pastel-gray-light bottom-0"
             animate={hoverState}
@@ -49,4 +46,4 @@ const LinkItem: React.FC<linkProps> = ({ title, url }) => {
     );
   };
 
-export default LinkItem
+export default Link
