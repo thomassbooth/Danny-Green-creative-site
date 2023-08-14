@@ -108,7 +108,7 @@ const Navbar = () => {
 
   return (
     <>
-    {<>
+    {/* {<>
       <motion.div 
         animate = {layout}
         variants = {layoutTransitionsDown}
@@ -121,7 +121,7 @@ const Navbar = () => {
         transition={{ ease: "easeOut", duration: 0.3}}
         className = 'fixed top-0 left-1/2 z-[60] h-screen w-1/2 bg-pastel-gray-light'>
       </motion.div>
-    </>}
+    </>} */}
     <nav className={`mix-blend-difference text-pastel-gray-light w-full overflow-hidden transition-all duration-500 fixed z-50 ${visible ? 'translate-y-0' : '-translate-y-[9vh]'} `}>
         <ul className = 'mx-5 mt-5 flex justify-end gap-4 items-center'>
           <li className = 'flex gap-10 uppercase text-xl font-normal'>

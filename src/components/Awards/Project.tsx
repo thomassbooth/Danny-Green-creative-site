@@ -14,11 +14,13 @@ interface projectProps {
 
 const slideIn = {
   initial: (i: number) => ({
-    x: ((-1)**i) * 120 + '%'
+    x: ((-1)**i) * 120 + '%', 
+    opacity: 0
   }),
   open: (i: number) => ({
     x: '0%',
-    transition: {duration: 0.4, delay: 0.1+ 0.05* i}
+    opacity: 1,
+    transition: {duration: 0.4, delay: i > 2 ? 0.1 + 0.05* i : 0.5 + 0.05 * i}
   })
 }
 

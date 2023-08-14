@@ -139,7 +139,7 @@ const AwardsPage = () => {
   const isInView = useInView(title)
 
   return (
-    <div className = 'min-h-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
+    <div className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
       <header ref = {title} className = 'relative flex'>
         <p className = 'm-0'>
           {'AWARDS'.split('').map((str, i) => {
