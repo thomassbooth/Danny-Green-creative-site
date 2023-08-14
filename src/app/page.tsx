@@ -9,9 +9,11 @@ import GalleryLink from '@/components/GalleryLink'
 
 export default function Home() {
 
-  // useEffect(() => {
-  //   window.history.scrollRestoration = 'manual'
-  // }, []);
+  useEffect(() => {
+
+    window.scrollTo({top: 0, left: 0, behavior: 'auto' })
+
+  }, [])
 
   useEffect( () => {
     (
