@@ -32,7 +32,7 @@ const ContactPage = () => {
     <div className = 'min-h-screen py-[20vh] w-screen flex flex-col items-center  bg-background-gray'>
       <header ref = {title} className = 'relative flex text-pastel-gray-light'>
         <p className = 'm-0'>
-          {'CONTACT'.split('').map((str, i) => {
+          {'HEY'.split('').map((str, i) => {
             return (
             <span className = 'relative inline-flex overflow-hidden' key = {i}>
               <motion.span

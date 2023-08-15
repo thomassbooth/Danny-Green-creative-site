@@ -2,8 +2,16 @@ import { Libre_Baskerville } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
 import { motion } from 'framer-motion'
+import AnimatePhrase from './AnimatePhrase'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
+
+const phrase = [
+  "I'm an award-winning photographer with my work featured in major",
+  "wildlife events and represented by leading agencies. I co-run Natures Images,",
+  "a top UK-based photography tour business. We're considered one of",
+  "Europe&apos;s premier photo tour companies."
+]
 
 const Images = () => {
 
@@ -36,24 +44,7 @@ const Images = () => {
               PUBLISHED
           </motion.span>
         </div>
-           
-        <motion.div
-          initial = 'hidden'
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-              hidden: {opacity: 0, y: '100%'},
-              visible: {opacity: 1, y: '0%'}
-          }}
-          transition = {{delay: 0.5, duration: 0.7, type: "tween"}}
-          className = {`${libre.className} w-[70vw] text-center font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
-          <p>
-            I&apos;m an award-winning photographer with my work featured in major
-            wildlife events and represented by leading agencies. I co-run Natures Images, 
-            a top UK-based photography tour business. We&apos;re considered one of 
-            Europe&apos;s premier photo tour companies.
-          </p>
-        </motion.div>
+        <AnimatePhrase phrase = {phrase} className = {`${libre.className} text-center font-light text-[2vw] flex flex-col leading-[5vh] justify-center tracking-[-0.01em] items-center`}/>
       <motion.div 
         initial = 'hidden'
         whileInView="visible"
