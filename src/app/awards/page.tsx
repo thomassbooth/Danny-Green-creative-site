@@ -171,7 +171,7 @@ const AwardsPage = () => {
       </div>
       
       
-      <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
+      <ul className = 'w-[80vw] flex flex-col items-center justify-center'>
       <p className = 'opacity-20  mb-4 w-full'>HOVER ME</p>
         { 
           awards.map((award, index) => {
