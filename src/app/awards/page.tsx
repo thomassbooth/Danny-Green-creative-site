@@ -123,7 +123,6 @@ const AwardsPage = () => {
 
   const [modal, setModal] = useState({active: false, index: 0})
   const title = useRef(null);
-  const isInView = useInView(title)
 
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -132,8 +131,8 @@ const AwardsPage = () => {
 
   return (
     <div className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
-      <header ref = {title} className = 'relative flex'>
-        <Title className = 'font-[700]' titleRef = {title} text = {'Awards'} />
+      <header ref = {title}>
+        <Title className = 'font-[700] text-[13vw]' titleRef = {title} text = {'Awards'} />
       </header>
       <div
         className = {`${libre.className} w-[70vw] text-center mb-6 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>

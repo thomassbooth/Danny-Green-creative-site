@@ -1,9 +1,7 @@
 'use client'
 
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Image from 'next/image'
 import { useRef } from 'react'
-import Text3D from './Text3D'
 import Navlinks from './Navlinks'
 import About from './About'
 

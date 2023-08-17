@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from 'react'
 import Title from '@/components/Title';
-import { motion, useTransform } from 'framer-motion'
+import { cubicBezier, motion, useTransform } from 'framer-motion'
 import { useScroll } from 'framer-motion';
 
 
@@ -11,29 +11,35 @@ const ContactPage = () => {
   const title = useRef(null);
   const container = useRef(null)
 
-  const { scrollYProgress } = useScroll({target: container}) 
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['end end', 'end start']
+  }) 
 
-  const x = useTransform(scrollYProgress, [0, 1], ['0px', '100px'])
-  const y = useTransform(scrollYProgress, [0, 1], ['0px', '100px'])
+  const x = useTransform(scrollYProgress, [0, 1], ['15vh', '0vh'], { ease: cubicBezier(0.17, 0.67, 0.83, 0.67) })
+  const y = useTransform(scrollYProgress, [0, 1], ['0px', '-200px'])
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   return (
-    <div className = 'min-h-screen py-[20vh] px-[5vw] w-screen flex flex-col bg-background-gray'>
-      <header ref = {title} className = 'relative flex flex-col text-pastel-gray-light'>
+    <div ref = {title} className = ' py-[20vh] px-[5vw] w-screen flex flex-col justify-center bg-background-gray'>
+      <header ref = {container} className = 'flex flex-col text-pastel-gray-light'>
         <motion.div
           style = {{y}}>
-          <Title className = 'font-[500]' titleRef = {title} text = {'Lets'} />
+          <Title className = 'font-[300] text-[11vw]' titleRef = {title} text = {'Lets'} />
           <motion.div 
             style = {{x}}
-            ref = {container} className = ''>
-            <Title className = 'font-[700]' titleRef = {title} text = {'Work'} />
+            ref = {container}>
+            <Title className = 'font-[700] text-[11vw]' titleRef = {title} text = {'Work'} />
           </motion.div>
-          <Title className = 'font-[900]' titleRef = {title} text = {'Together'} />
+          <Title className = 'font-[700] text-[11vw]' titleRef = {title} text = {'Together'} />
         </motion.div>
       </header>
-      
+      <div className = 'h-screen'>
+
+      </div>
     </div>
   )
 }

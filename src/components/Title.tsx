@@ -37,7 +37,7 @@ const Title: React.FC<titleProps> = ({text, titleRef, className}) => {
         return (
         <span className = 'relative inline-flex overflow-hidden' key = {i}>
           <motion.span
-            className = {`${className} leading-[13vw] text-[13vw] text-center tracking-tight uppercase`}
+            className = {`${className} leading-[11vw] text-center tracking-tight uppercase`}
             animate={isInView ? "open" : "inital"}
             custom = {i}
             viewport={{ once: true }}
