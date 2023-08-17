@@ -23,13 +23,11 @@ const slideDown = {
 
 interface titleProps {
   text: string
-  titleRef: React.MutableRefObject<null>
   className?: string
 }
 
-const Title: React.FC<titleProps> = ({text, titleRef, className}) => {
+const Title: React.FC<titleProps> = ({text, className}) => {
 
-  const isInView = useInView(titleRef)
 
   return (
     <p className = 'm-0 inline-block'>
@@ -38,8 +36,8 @@ const Title: React.FC<titleProps> = ({text, titleRef, className}) => {
         <span className = 'relative inline-flex overflow-hidden' key = {i}>
           <motion.span
             className = {`${className} text-center tracking-tight uppercase`}
-            animate={isInView ? "open" : "inital"}
             custom = {i}
+            whileInView="open"
             viewport={{ once: true }}
             initial={'initial'}
             variants={slideDown}>

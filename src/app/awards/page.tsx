@@ -132,7 +132,7 @@ const AwardsPage = () => {
   return (
     <div className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
       <header ref = {title}>
-        <Title className = 'leading-[11vw] font-[700] text-[13vw]' titleRef = {title} text = {'Awards'} />
+        <Title className = 'leading-[11vw] font-[700] text-[13vw]' text = {'Awards'} />
       </header>
       <div
         className = {`${libre.className} w-[70vw] text-center mb-6 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>

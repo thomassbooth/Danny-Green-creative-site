@@ -17,38 +17,38 @@ const ContactPage = () => {
   }) 
 
   const x = useTransform(scrollYProgress, [0, 1], ['0vw', '5vw'])
-  const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
+  const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-15vh'])
   
-  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0px', '100px'])
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0px', '50px'])
+  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '18vh'])
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '-5vh'])
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   return (
-    <div className = 'px-[4vw] w-screen flex flex-col justify-center bg-background-gray'>
-      <header ref = {container} className = 'flex h-screen mt-[10vh] justify-between items-center text-pastel-gray-light'>
+    <div className = 'px-[2vw] w-screen flex flex-col justify-center bg-background-gray'>
+      <header ref = {container} className = 'flex h-screen mt-[12vh] justify-between items-center text-pastel-gray-light'>
         <div>
           <motion.div
             className ='inline-flex flex-col'
             ref = {title}
             style = {{y}}>
-            <Title className = 'leading-[9vw] font-[300] text-[10vw]' titleRef = {title} text = {'Lets'} />
+            <Title className = 'leading-[9vw] font-[300] text-[10vw]' text = {'Lets'} />
             <motion.div 
               className = 'inline-block'
               style = {{x}}
               ref = {container}>
-              <Title className = 'leading-[9vw] font-[700] text-[10vw]' titleRef = {title} text = {'Work'} />
+              <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'Work'} />
             </motion.div>
-            <Title className = 'leading-[9vw] font-[700] text-[10vw]' titleRef = {title} text = {'Together'} />
+            <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'Together'} />
           </motion.div>
-          <p className = 'p-5 font-[300] text-[1.5vw]'>Have a few questions? Let me know.</p>
+          <p className = 'p-10 font-[300] text-[1.5vw]'>Have a few questions? Let me know.</p>
         </div>
 
         <motion.div 
           style = {{y: imageWrapperY}}
-          className = 'w-[15vw] h-[23vw] relative overflow-hidden'>
+          className = 'w-[15vw] h-[18vw] relative overflow-hidden'>
           <motion.div 
             style = {{y: imageY}}
             className = 'w-[20vw] h-[30vw] relative'>
