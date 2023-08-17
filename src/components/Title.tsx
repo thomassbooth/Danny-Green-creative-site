@@ -32,12 +32,12 @@ const Title: React.FC<titleProps> = ({text, titleRef, className}) => {
   const isInView = useInView(titleRef)
 
   return (
-    <p className = 'm-0'>
+    <p className = 'm-0 inline-block'>
       {text.split('').map((str, i) => {
         return (
         <span className = 'relative inline-flex overflow-hidden' key = {i}>
           <motion.span
-            className = {`${className} leading-[11vw] text-center tracking-tight uppercase`}
+            className = {`${className} text-center tracking-tight uppercase`}
             animate={isInView ? "open" : "inital"}
             custom = {i}
             viewport={{ once: true }}
