@@ -27,8 +27,8 @@ const ContactPage = () => {
   }, []);
   
   return (
-    <div className = 'px-[2vw] w-screen flex flex-col justify-center bg-background-gray'>
-      <header ref = {container} className = 'flex flex-col h-screen mt-[12vh] justify-center text-pastel-gray-light'>
+    <div className = 'px-[2vw] w-screen flex flex-col justify-center bg-pastel-gray-light'>
+      <header ref = {container} className = 'flex flex-col h-screen mt-[12vh] justify-center text-background-gray'>
         <div className = 'flex w-full justify-between '>
           <motion.div
             className ='inline-flex flex-col'
