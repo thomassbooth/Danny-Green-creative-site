@@ -7,6 +7,7 @@ import { useScroll } from 'framer-motion';
 import Image from 'next/image';
 
 
+
 const ContactPage = () => {
 
   const container = useRef(null)
@@ -19,7 +20,7 @@ const ContactPage = () => {
   const x = useTransform(scrollYProgress, [0, 1], ['0vw', '5vw'])
   const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-15vh'])
   
-  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '24vh'])
+  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '21vh'])
   const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '9vh'])
 
   useEffect(() => {
@@ -62,7 +63,6 @@ const ContactPage = () => {
         <p className = 'p-10 font-[300] text-[1.5vw]'>Have a few questions? Let me know.</p>
       </header>
       <div className = 'h-screen'>
-
       </div>
     </div>
   )

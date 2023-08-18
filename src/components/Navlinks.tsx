@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import Text3D from './Text3D'
 import { useScroll, useTransform, motion } from 'framer-motion'
 import Image from 'next/image'
 
