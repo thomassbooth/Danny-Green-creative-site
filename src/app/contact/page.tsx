@@ -19,8 +19,8 @@ const ContactPage = () => {
   const x = useTransform(scrollYProgress, [0, 1], ['0vw', '5vw'])
   const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-15vh'])
   
-  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '25vh'])
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '-6vh'])
+  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '24vh'])
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '9vh'])
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,16 +46,16 @@ const ContactPage = () => {
 
         <motion.div 
           style = {{y: imageWrapperY}}
-          className = 'w-[16vw] h-[22vw] mr-[5vw] relative overflow-hidden'>
+          className = 'flex justify-start items-end w-[16vw] h-[22vw] mr-[5vw] relative overflow-hidden'>
           <motion.div 
             style = {{y: imageY}}
-            className = 'w-[20vw] h-[30vw] relative'>
-            <Image 
+            className = 'w-[20vw] h-[28vw] relative'>
+            <Image
+              className = 'object-cover'
               src = '/images/21-Grizzly-fishing-2.jpg'
               alt = 'polar bear'
-              layout='fill' 
-              objectFit='cover' 
-              objectPosition='center' />
+              fill
+               />
           </motion.div>
         </motion.div>
         </div>

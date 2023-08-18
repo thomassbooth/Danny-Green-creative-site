@@ -3,7 +3,7 @@
 import Modal from '@/components/Awards/Modal'
 import Project from '@/components/Awards/Project'
 import React, { useEffect, useRef } from 'react'
-import { motion, useScroll } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Libre_Baskerville } from 'next/font/google'
 import { useState } from 'react'
 import Title from '@/components/Title'
@@ -130,6 +130,10 @@ const AwardsPage = () => {
       offset: ['start start', 'end start']
     }) 
 
+    const titleY = useTransform(scrollYProgress, [0, 0.5], ['0vh', '-15vh'])
+    const textY = useTransform(scrollYProgress, [0, 0.5], ['0vh', '-5vh'])
+    const hoverX = useTransform(scrollYProgress, [0, 0.5], ['0vh', '-10vh'])
+    const awardsY = useTransform(scrollYProgress, [0, 1], ['0vh', '15vh'])
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
@@ -138,26 +142,32 @@ const AwardsPage = () => {
   return (
     <div ref = {container} className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
       <motion.header
-        style={{}}
+        style={{y: titleY}}
         ref = {title}>
         <Title className = 'leading-[11vw] font-[700] text-[13vw]' text = {'Awards'} />
       </motion.header>
-      <div
+      <motion.div
+        style = {{y: textY}}
         className = {`${libre.className} w-[70vw] text-center mb-6 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
         <p>
         My pics won big in top-notch Natural History photo contests. 15 years of consistent entries paid off, despite the frustrations. Now, with multiple awards and my work published.
         </p>
-      </div>
+      </motion.div>
       
-      
-      <ul className = 'w-[70vw] flex flex-col items-center justify-center'>
-      <p className = 'opacity-20  mb-4 w-full'>HOVER ME</p>
+      <motion.p
+        style = {{x: hoverX}}
+        className = 'opacity-20 mb-4 ml-[30vw] w-full'>
+        HOVER ME
+      </motion.p>
+      <motion.ul 
+        style = {{y: awardsY}}
+        className = 'w-[70vw] flex flex-col items-center justify-center'>
         { 
           awards.map((award, index) => {
             return <Project key = {index} index = {index} title = {award.title} place = {award.place} setModal = {setModal} year = {award.year} type = {award.type}/>
           })
         }
-      </ul>
+      </motion.ul>
       <Modal modal = {modal} awards = {awards}/>
     </div>
   )
