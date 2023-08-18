@@ -7,7 +7,7 @@ import { useInView } from 'framer-motion';
 const slideDown = {
   initial: {
     y: '100%',
-    opacity: 0.7,
+    opacity: 0,
     rotate: 10
   },
   open: (i: number) => ({

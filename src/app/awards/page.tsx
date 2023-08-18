@@ -3,7 +3,7 @@
 import Modal from '@/components/Awards/Modal'
 import Project from '@/components/Awards/Project'
 import React, { useEffect, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { Libre_Baskerville } from 'next/font/google'
 import { useState } from 'react'
 import Title from '@/components/Title'
@@ -121,8 +121,14 @@ const awards = [
 
 const AwardsPage = () => {
 
-  const [modal, setModal] = useState({active: false, index: 0})
-  const title = useRef(null);
+    const [modal, setModal] = useState({active: false, index: 0})
+    const title = useRef(null)
+    const container = useRef(null)
+
+    const { scrollYProgress } = useScroll({
+      target: container,
+      offset: ['start start', 'end start']
+    }) 
 
     useEffect(() => {
       window.scrollTo(0, 0);
@@ -130,10 +136,12 @@ const AwardsPage = () => {
 
 
   return (
-    <div className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
-      <header ref = {title}>
+    <div ref = {container} className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
+      <motion.header
+        style={{}}
+        ref = {title}>
         <Title className = 'leading-[11vw] font-[700] text-[13vw]' text = {'Awards'} />
-      </header>
+      </motion.header>
       <div
         className = {`${libre.className} w-[70vw] text-center mb-6 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
         <p>
