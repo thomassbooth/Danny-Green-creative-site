@@ -6,6 +6,19 @@ import { motion, useTransform } from 'framer-motion'
 import { useScroll } from 'framer-motion';
 import Image from 'next/image';
 
+const imageOpen = {
+  initial: {
+    y: '50%',
+    opacity: 1,
+  },
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1
+    }
+  }
+}
 
 
 const ContactPage = () => {
@@ -21,7 +34,7 @@ const ContactPage = () => {
   const y = useTransform(scrollYProgress, [0, 1], ['0vh', '-15vh'])
   
   const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '21vh'])
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '9vh'])
+  const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,21 +57,27 @@ const ContactPage = () => {
             </motion.div>
             <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'Together'} />
           </motion.div>
-
-        <motion.div 
-          style = {{y: imageWrapperY}}
-          className = 'flex justify-start items-end w-[16vw] h-[22vw] mr-[5vw] relative overflow-hidden'>
-          <motion.div 
-            style = {{y: imageY}}
-            className = 'w-[20vw] h-[28vw] relative'>
-            <Image
-              className = 'object-cover'
-              src = '/images/21-Grizzly-fishing-2.jpg'
-              alt = 'polar bear'
-              fill
-               />
+          <motion.div
+            style = {{y: imageWrapperY}} 
+            className = 'overflow-hidden'>
+            <motion.div
+              whileInView="open"
+              viewport={{ once: true }}
+              initial={'initial'}
+              variants={imageOpen}
+              className = 'flex justify-start items-end w-[16vw] h-[22vw] mr-[5vw] relative overflow-hidden'>
+              <motion.div 
+                style = {{y: imageY}}
+                className = 'w-[20vw] h-[28vw] relative'>
+                <Image
+                  className = 'object-cover'
+                  src = '/images/21-Grizzly-fishing-2.jpg'
+                  alt = 'polar bear'
+                  fill
+                  />
+              </motion.div>
+            </motion.div>
           </motion.div>
-        </motion.div>
         </div>
         <p className = 'p-10 font-[300] text-[1.5vw]'>Have a few questions? Let me know.</p>
       </header>

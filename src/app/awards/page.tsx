@@ -134,6 +134,7 @@ const AwardsPage = () => {
     const textY = useTransform(scrollYProgress, [0, 0.5], ['0vh', '-4vh'])
     const hoverX = useTransform(scrollYProgress, [0, 0.5], ['0vh', '5vh'])
     const awardsY = useTransform(scrollYProgress, [0, 1], ['0vh', '15vh'])
+    
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
