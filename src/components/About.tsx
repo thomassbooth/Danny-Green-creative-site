@@ -28,24 +28,16 @@ const About = () => {
       className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center text-[#171717] h-screen w-screen'>
         <motion.span
           style = {{y: questionY}}
-          initial = 'hidden'
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-              hidden: {opacity: 0, y: '-100%'},
-              visible: {opacity: 1, y: '0%'}
-          }}
-          transition = {{delay: 0.5, duration: 0.5}}
           className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Danny Who?</motion.span>
         <motion.div
           className = 'flex flex-col items-center'
           style = {{y: titlesY}}
           >
-          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'He takes'} />
+          <Title className = 'leading-[11vw] font-[700] tracking-[-.055em] text-[13vw] ' text = {'He takes'} />
           <motion.div
             style = {{x: title2X}}
             >
-            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Photos'} />
+            <Title className = 'leading-[11vw] font-[700] tracking-[-.055em] text-[13vw] ' text = {'Photos'} />
           </motion.div>
         </motion.div>
         <motion.span
@@ -58,7 +50,7 @@ const About = () => {
                 hidden: {opacity: 0, y: '100%'},
                 visible: {opacity: 1, y: '0%'}
             }}
-            transition = {{delay: 0.5, duration: 0.7}}
+            transition = {{delay: 1, duration: 0.7}}
             className = {`${libre.className} font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
             <span>Growing up in Leicestershire, UK, my grandfather sparked my</span>
             <span>passion for nature and wildlife. Today, I relish photographing the</span>

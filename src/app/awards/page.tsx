@@ -155,11 +155,10 @@ const AwardsPage = () => {
         </p>
       </motion.div>
       
-      <motion.p
-        style = {{x: hoverX}}
+      <p
         className = 'opacity-20 mb-4 ml-[30vw] w-full'>
         HOVER ME
-      </motion.p>
+      </p>
       <motion.ul 
         style = {{y: awardsY}}
         className = 'w-[70vw] flex flex-col items-center justify-center'>
