@@ -5,16 +5,29 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
 import { motion } from 'framer-motion'
+import Title from './Title'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
 const About = () => {
 
+  const container = useRef(null)
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start start', 'end start']
+  }) 
+
+  const questionY = useTransform(scrollYProgress, [0, 1], ['0vh', '-5vh'])
+  const titlesY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
+  const title2X = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
+  const textY = useTransform(scrollYProgress, [0, 1], ['0vh', '5vh'])
+
   return (
-    <div 
-      data-scroll
+    <div ref = {container}
       className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center text-[#171717] h-screen w-screen'>
         <motion.span
+          style = {{y: questionY}}
           initial = 'hidden'
           whileInView="visible"
           viewport={{ once: true }}
@@ -24,19 +37,21 @@ const About = () => {
           }}
           transition = {{delay: 0.5, duration: 0.5}}
           className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Danny Who?</motion.span>
-        <span className = ' z-20 text-center font-[900] tracking-[-.055em] text-[13vw] uppercase'>HE TAKES</span>
+        <motion.div
+          className = 'flex flex-col items-center'
+          style = {{y: titlesY}}
+          >
+          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'He takes'} />
+          <motion.div
+            style = {{x: title2X}}
+            >
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Photos'} />
+          </motion.div>
+        </motion.div>
         <motion.span
-          initial = 'hidden'
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-              hidden: {opacity: 0, x: '100%'},
-              visible: {opacity: 1, x: '0%'}
-          }}
-          transition = {{delay: 0.5, duration: 0.7}}
-          className = 'mb-[8vh] z-20 text-center font-[900] leading-[13vh] tracking-[-.055em] text-[13vw] uppercase'>PHOTOS</motion.span>
-        <span className = 'h-[20vh] overflow-hidden '>
-          <motion.div 
+          style = {{y: textY}}
+          className = 'h-[20vh] overflow-hidden '>
+          <motion.div
             initial = 'hidden'
             whileInView="visible"
             variants={{
@@ -50,7 +65,7 @@ const About = () => {
             <span>Shetland Isles wildlife and exploring the challenging Arctic.</span>
             <span>This journey deepens my lifelong connection to the natural world.</span>
           </motion.div>
-        </span>
+        </motion.span>
     </div>
   )
 }

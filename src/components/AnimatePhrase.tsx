@@ -9,11 +9,9 @@ interface animatePhraseProps {
 const animateVar = {
     initial: {
         y: '100%',
-        rotate: 2,
     },
     open: (i: number) => ({
         y: '0%',
-        rotate: 0,
         transition: {
             duration: 0.5,
             delay: 0.1 * i
