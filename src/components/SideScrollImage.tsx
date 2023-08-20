@@ -24,7 +24,7 @@ const SideScrollImage = () => {
 
     const slideImageY = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-30vh'])
     const slideText1 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-25vh'])
-    const slideText2 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-10vh'])
+    const slideText2 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-15vh'])
 
   return (
     <>
