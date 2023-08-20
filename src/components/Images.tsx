@@ -54,8 +54,8 @@ const Images = () => {
             transition = {{delay: 0.5, duration: 0.5}}
             className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Where?</motion.span>
           {/* <span className = ' z-20 text-center font-[900] tracking-[-.055em] text-[13vw] uppercase'>WIDELY</span> */}
-          <Title className = 'leading-[11vw] font-[700] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
-          <Title className = 'leading-[11vw] font-[700] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
+          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
+          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
         </div>
         <AnimatePhrase phrase = {phrase} className = {`${libre.className} text-center font-light text-[2vw] flex flex-col leading-[5vh] justify-center tracking-[-0.01em] items-center`}/>
         <motion.div

@@ -33,11 +33,11 @@ const About = () => {
           className = 'flex flex-col items-center'
           style = {{y: titlesY}}
           >
-          <Title className = 'leading-[11vw] font-[700] tracking-[-.055em] text-[13vw] ' text = {'He takes'} />
+          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'He takes'} />
           <motion.div
             style = {{x: title2X}}
             >
-            <Title className = 'leading-[11vw] font-[700] tracking-[-.055em] text-[13vw] ' text = {'Photos'} />
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Photos'} />
           </motion.div>
         </motion.div>
         <motion.span
