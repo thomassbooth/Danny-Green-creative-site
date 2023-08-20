@@ -22,6 +22,10 @@ const SideScrollImage = () => {
     const rounded = useTransform(scrollYProgress, [0, 0.3, 0.35, 0.9], [0, 0, 100, (hasWindow ? window.screen.width/2 : '900')])
     const slideInX = useTransform(scrollYProgress, [0.8, 0.98], ['30vw', '0vw'])
 
+    const slideImageY = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-30vh'])
+    const slideText1 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-25vh'])
+    const slideText2 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-10vh'])
+
   return (
     <>
         <section ref = {containerRef} >
@@ -36,7 +40,7 @@ const SideScrollImage = () => {
                             opacity,
                             overflow: 'hidden'
                             }}>
-                            <Navlinks/>
+                            <Navlinks slideImageY={slideImageY} slideText1 = {slideText1} slideText2 = {slideText2} />
                         </motion.div>
                         <motion.div 
                             style = {{x: slideInX}}
