@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import Image from 'next/image'
+import Title from './Title'
 
 interface navlinksProps {
   slideImageY: MotionValue<string>
@@ -28,20 +29,16 @@ const Navlinks: React.FC<navlinksProps> = ({slideImageY, slideText1, slideText2}
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
         <motion.div
           style = {{y: slideText1}}
-          className = 'flex flex-col text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
-            <p
-              className = 'z-20 uppercase font-[800] mt-[30vh]'>
-              danny
-              <br/>
-              green
-            </p>
+          className = 'flex flex-col mt-[30vh] text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
+            <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'danny'} />
+            <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'green'} />
             <motion.div
               style = {{x: slideText2}}
               className = 'w-screen inline-flex justify-center  ml-[4vw] '>
-              <p className = 'z-20 uppercase tracking-tight text-[2vw]'>
+              <p className = 'z-20 font-[500] uppercase tracking-tight text-[2vw]'>
                 Capturing.
                 <br/>
-                The natural world.
+                The natural world
               </p>
             </motion.div>
         </motion.div>

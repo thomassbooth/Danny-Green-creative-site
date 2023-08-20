@@ -16,7 +16,8 @@ body {
     height: 100vh;
     position: fixed;
     z-index: 6;
-    opacity: 0.05
+    opacity: 0.05;
+    pointer-events: none;
 }
 
 /* The scrollbar track */
