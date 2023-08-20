@@ -14,7 +14,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
       <div 
         data-scroll
         data-scroll-speed = '0.2'
-        className = {`sticky top-0 m-auto h-[130vh] w-[130vw]`}>
+        className = {`sticky top-0 m-auto h-[130vh] w-[100vw]`}>
         <Image 
           src = '/images/18-Grizzlies-at-dawn.jpg' 
           quality = {100} 
@@ -27,7 +27,7 @@ const Navlinks: React.FC<navlinksProps> = () => {
         <div className = 'flex flex-col text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
             <p className = 'z-20 uppercase font-[800] mt-[30vh]'
             data-scroll
-            data-scroll-speed = '0.3'>
+            data-scroll-speed = '0.2'>
               danny
               <br/>
               green

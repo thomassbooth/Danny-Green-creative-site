@@ -23,7 +23,7 @@ const imageOpen = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1
+      duration: 0.5
     }
   }
 }
@@ -35,7 +35,7 @@ const Images = () => {
     target: container,
     offset: ['start start', 'end start']
   }) 
-  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
+  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '15vh'])
   const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
 
   return (
@@ -66,7 +66,7 @@ const Images = () => {
             viewport={{ once: true }}
             initial={'initial'}
             variants={imageOpen}
-            className = 'flex justify-start items-end w-[30vw] h-[40vh] saturate-50 mr-[5vw] relative overflow-hidden'>
+            className = 'flex justify-start items-end w-[30vw] h-[40vh] saturate-0 mr-[5vw] relative overflow-hidden'>
             <motion.div 
               style = {{y: imageY}}
               className = 'w-[40vw] h-[60vh] relative'>
