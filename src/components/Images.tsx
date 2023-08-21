@@ -35,7 +35,11 @@ const Images = () => {
     target: container,
     offset: ['start start', 'end start']
   }) 
+
+  const questionY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
   const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '15vh'])
+  const titlesY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
+  const titlesX = useTransform(scrollYProgress, [0, 1], ['0vh', '-5vh'])
   const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
 
   return (
@@ -44,6 +48,7 @@ const Images = () => {
         <div 
           className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center w-screen'>
           <motion.span
+            style = {{y: questionY}}
             initial = 'hidden'
             whileInView="visible"
             viewport={{ once: true }}
@@ -52,10 +57,19 @@ const Images = () => {
                 visible: {opacity: 1, y: '0%'}
             }}
             transition = {{delay: 0.5, duration: 0.5}}
-            className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Where?</motion.span>
+            className = {`${libre.className} italic font-extralight text-[2.5vw]`}>
+            Where?
+          </motion.span>
           {/* <span className = ' z-20 text-center font-[900] tracking-[-.055em] text-[13vw] uppercase'>WIDELY</span> */}
-          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
-          <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
+          <motion.div
+            className = 'flex flex-col items-center'
+            style = {{y: titlesY}}>
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
+            <motion.div
+              style = {{x: titlesX}}>
+              <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
+            </motion.div>
+          </motion.div>
         </div>
         <AnimatePhrase phrase = {phrase} className = {`${libre.className} text-center font-light text-[2vw] flex flex-col leading-[5vh] justify-center tracking-[-0.01em] items-center`}/>
         <motion.div

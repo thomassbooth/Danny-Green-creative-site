@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Navlinks from './Navlinks'
 import About from './About'
@@ -24,16 +24,16 @@ const SideScrollImage = () => {
 
     const slideImageY = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-30vh'])
     const slideText1 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-25vh'])
-    const slideText2 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-15vh'])
-
+    const slideText2 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-4vw'])
+    
   return (
     <>
         <section ref = {containerRef} >
             <div className = 'h-[400vh]'>
                 <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold'>
                     <motion.div
-                    style = {{x}}
-                    className = 'flex'>
+                        style = {{x}}
+                        className = 'flex'>
                         <motion.div
                             style = {{scale, 
                             borderRadius: rounded,

@@ -8,7 +8,7 @@ const slideDown = {
   initial: {
     y: '100%',
     opacity: 0,
-    rotate: 10
+    rotate: 15,
   },
   open: (i: number) => ({
     y: 0,
@@ -16,7 +16,8 @@ const slideDown = {
     opacity: 1,
     transition: {
       delay: 0.4 + (i) * 0.02,
-      duration: 0.5
+      duration: 0.5,
+      
     }
   })
 }

@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
       <Navbar/>
       <LocomotiveScrollProvider>
-      <Grain/>
+      {/* <Grain/> */}
         {children}
       </LocomotiveScrollProvider>
       </body>
