@@ -5,6 +5,8 @@ import Title from '@/components/Title';
 import { motion, useTransform } from 'framer-motion'
 import { useScroll } from 'framer-motion';
 import Image from 'next/image';
+import Form from '@/components/Contact/FormElement';
+import FormElement from '@/components/Contact/FormElement';
 
 const imageOpen = {
   initial: {
@@ -15,7 +17,7 @@ const imageOpen = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 1
+      duration: 0.7
     }
   }
 }
@@ -35,13 +37,14 @@ const ContactPage = () => {
   
   const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '21vh'])
   const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
+  const textY = useTransform(scrollYProgress, [0, 1], ['0vh', '-4vh'])
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   return (
-    <div className = 'px-[2vw] w-screen flex flex-col justify-center bg-pastel-gray-light'>
+    <div className = 'px-[5vw] w-screen flex flex-col justify-center bg-pastel-gray-light'>
       <header ref = {container} className = 'flex flex-col h-screen justify-end text-background-gray'>
         <div className = 'flex w-full justify-between '>
           <motion.div
@@ -79,10 +82,24 @@ const ContactPage = () => {
             </motion.div>
           </motion.div>
         </div>
-        <p className = 'p-10 font-[300] text-[1.5vw]'>Have a few questions? Let me know.</p>
+        <div className = 'overflow-hidden'>
+          <motion.p
+            style = {{y: textY}}
+            whileInView="open"
+            viewport={{ once: true }}
+            initial={'initial'}
+            variants={imageOpen}
+            className = 'py-10 font-[300] text-[1.3vw]'>
+            Have a few questions? Let me know.
+          </motion.p>
+        </div>
       </header>
-      <div className = 'h-screen'>
-      </div>
+      <ul className = 'min-h-screen mt-[7vh]'>
+        <form>
+          <FormElement title = {'WHATS YOUR NAME?'} placeholder = {'James Deen *'} />
+          <FormElement title = {'WHATS YOUR EMAIL?'} placeholder = {'James Deen *'} />
+        </form>
+      </ul>
     </div>
   )
 }
