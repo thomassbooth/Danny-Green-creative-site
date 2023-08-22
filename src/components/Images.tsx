@@ -1,6 +1,6 @@
 import { Libre_Baskerville } from 'next/font/google'
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import AnimatePhrase from './AnimatePhrase'
 import Title from './Title'
@@ -33,7 +33,7 @@ const Images = () => {
   const container = useRef(null)
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ['start start', 'end start']
+    offset: ['start end', 'end start']
   }) 
 
   const questionY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
