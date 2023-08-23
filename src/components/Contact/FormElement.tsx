@@ -18,11 +18,11 @@ const FormElement: React.FC<formElementProps> = ({no, title, placeholder, input}
         <div className = 'flex flex-col w-full'>
             <label className = ' m-0 font-normal text-2xl '>{title}</label>
             {input 
-              ? <input className = 'bg-transparent pt-3 pb-[6vh] font-light focus:outline-none w-full text-xl' placeholder = {placeholder}/>
-              : <textarea className = 'bg-transparent pt-3 pb-[6vh] font-light focus:outline-none w-full text-xl resize-none' placeholder = {placeholder}/>
+              ? <input className = 'bg-transparent pt-3 pb-10 font-light focus:outline-none w-full text-xl' placeholder = {placeholder}/>
+              : <textarea className = 'bg-transparent pt-3 pb-10 font-light focus:outline-none w-full text-xl resize-none' placeholder = {placeholder}/>
             }
         </div>
-        <h3 className = {`${libre.className} opacity-80 text-[1.6vw] font-[400]`}>{no}</h3>
+        <h3 className = {`${libre.className} opacity-80 text-xl font-[400]`}>{no}</h3>
     </div>
   )
 }
