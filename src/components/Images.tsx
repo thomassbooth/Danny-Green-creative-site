@@ -37,10 +37,10 @@ const Images = () => {
   }) 
 
   const questionY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
-  const imageWrapperY = useTransform(scrollYProgress, [0, 1], ['0vh', '15vh'])
+  const imageWrapperY = useTransform(scrollYProgress, [0.3, 1], ['0vh', '15vh'])
   const titlesY = useTransform(scrollYProgress, [0, 1], ['0vh', '-13vh'])
   const titlesX = useTransform(scrollYProgress, [0, 1], ['0vh', '-7vh'])
-  const imageY = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
+  const imageY = useTransform(scrollYProgress, [0.3, 1], ['0vh', '10vh'])
 
   return (
       <div ref = {container}
