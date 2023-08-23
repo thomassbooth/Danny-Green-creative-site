@@ -14,7 +14,7 @@ interface formElementProps {
 
 const FormElement: React.FC<formElementProps> = ({no, title, placeholder, input}) => {
   return (
-    <div className = 'group flex w-full justify-between items-start pt-[6vh] border-t border-[#C9C9C9] transition-all duration-200 last-of-type:border-b'>
+    <div className = 'group flex w-full justify-between items-start pt-10 border-t border-[#C9C9C9] transition-all duration-200 last-of-type:border-b'>
         <div className = 'flex flex-col w-full'>
             <label className = ' m-0 font-normal text-2xl '>{title}</label>
             {input 
@@ -22,7 +22,7 @@ const FormElement: React.FC<formElementProps> = ({no, title, placeholder, input}
               : <textarea className = 'bg-transparent pt-3 pb-10 font-light focus:outline-none w-full text-xl resize-none' placeholder = {placeholder}/>
             }
         </div>
-        <h3 className = {`${libre.className} opacity-80 text-xl font-[400]`}>{no}</h3>
+        <h3 className = {`${libre.className} text-2xl font-[400]`}>{no}</h3>
     </div>
   )
 }
