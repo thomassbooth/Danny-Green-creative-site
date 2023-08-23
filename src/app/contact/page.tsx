@@ -99,7 +99,7 @@ const ContactPage = () => {
         <FormElement no = {'01'} title = {'WHATS YOUR NAME?'} placeholder = {'John Doe *'} input = {true} />
         <FormElement no = {'02'} title = {'WHATS YOUR EMAIL?'} placeholder = {'John@doe.com *'} input = {true} />
         <FormElement no = {'03'} title = {'WHAT SERVICE ARE YOU LOOKING FOR?'} placeholder = {'Purchasing, workshop or trips...'} input = {true} />
-        <FormElement no = {'03'} title = {'YOUR MESSAGE'} placeholder = {'Hey Danny, your trips are booked out...'} input = {false} />
+        <FormElement no = {'04'} title = {'YOUR MESSAGE'} placeholder = {'Hey Danny, your trips are booked out...'} input = {false} />
         <section className = 'w-full flex justify-end py-10'>
           <button className = 'text-[1.4vw]'>
             <FallingText text = {'SEND MESSAGE'} />
