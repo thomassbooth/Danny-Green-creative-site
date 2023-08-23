@@ -101,9 +101,9 @@ const ContactPage = () => {
         <FormElement no = {'03'} title = {'WHAT SERVICE ARE YOU LOOKING FOR?'} placeholder = {'Purchasing, workshop or trips...'} input = {true} />
         <FormElement no = {'03'} title = {'YOUR MESSAGE'} placeholder = {'Hey Danny, your trips are booked out...'} input = {false} />
         <section className = 'w-full flex justify-end py-10'>
-          <button className = 'text-[1.7vw]'>
+          <button className = 'text-[1.4vw]'>
             <FallingText text = {'SEND MESSAGE'} />
-            <div className = '-translate-y-1 p-0 m-0 w-full h-[2px] bg-black'></div>
+            <div className = '-translate-y-1 p-0 m-0 w-full h-[1px] bg-black'></div>
           </button>
         </section>
       </form>
