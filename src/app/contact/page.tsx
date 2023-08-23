@@ -68,7 +68,7 @@ const ContactPage = () => {
               viewport={{ once: true }}
               initial={'initial'}
               variants={imageOpen}
-              className = 'flex justify-start items-end w-[16vw] h-[22vw] mr-[5vw] relative overflow-hidden'>
+              className = 'flex justify-start items-end w-[16vw] h-[22vw] relative overflow-hidden'>
               <motion.div 
                 style = {{y: imageY}}
                 className = 'w-[20vw] h-[28vw] relative'>
@@ -94,12 +94,12 @@ const ContactPage = () => {
           </motion.p>
         </div>
       </header>
-      <ul className = 'min-h-screen mt-[7vh]'>
-        <form>
-          <FormElement title = {'WHATS YOUR NAME?'} placeholder = {'James Deen *'} />
-          <FormElement title = {'WHATS YOUR EMAIL?'} placeholder = {'James Deen *'} />
-        </form>
-      </ul>
+      <form className = 'min-h-screen mt-[7vh] mb-[7vh]'>
+        <FormElement no = {'01'} title = {'WHATS YOUR NAME?'} placeholder = {'John Doe *'} input = {true} />
+        <FormElement no = {'02'} title = {'WHATS YOUR EMAIL?'} placeholder = {'John@doe.com *'} input = {true} />
+        <FormElement no = {'03'} title = {'WHAT SERVICE ARE YOU LOOKING FOR?'} placeholder = {'Purchasing, workshop or trips...'} input = {true} />
+        <FormElement no = {'03'} title = {'YOUR MESSAGE'} placeholder = {'Hey Danny, your trips are booked out...'} input = {false} />
+      </form>
     </div>
   )
 }
