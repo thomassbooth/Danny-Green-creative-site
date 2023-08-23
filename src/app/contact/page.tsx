@@ -95,7 +95,7 @@ const ContactPage = () => {
           </motion.p>
         </div>
       </header>
-      <form className = 'min-h-screen mt-[7vh] mb-[7vh] w-3/4'>
+      <form className = 'mt-[7vh] mb-[7vh] w-3/4'>
         <FormElement no = {'01'} title = {'WHATS YOUR NAME?'} placeholder = {'John Doe *'} input = {true} />
         <FormElement no = {'02'} title = {'WHATS YOUR EMAIL?'} placeholder = {'John@doe.com *'} input = {true} />
         <FormElement no = {'03'} title = {'WHAT SERVICE ARE YOU LOOKING FOR?'} placeholder = {'Purchasing, workshop or trips...'} input = {true} />
