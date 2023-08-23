@@ -7,6 +7,7 @@ import { useScroll } from 'framer-motion';
 import Image from 'next/image';
 import Form from '@/components/Contact/FormElement';
 import FormElement from '@/components/Contact/FormElement';
+import FallingText from '@/components/FallingText';
 
 const imageOpen = {
   initial: {
@@ -94,11 +95,17 @@ const ContactPage = () => {
           </motion.p>
         </div>
       </header>
-      <form className = 'min-h-screen mt-[7vh] mb-[7vh]'>
+      <form className = 'min-h-screen mt-[7vh] mb-[7vh] w-3/4'>
         <FormElement no = {'01'} title = {'WHATS YOUR NAME?'} placeholder = {'John Doe *'} input = {true} />
         <FormElement no = {'02'} title = {'WHATS YOUR EMAIL?'} placeholder = {'John@doe.com *'} input = {true} />
         <FormElement no = {'03'} title = {'WHAT SERVICE ARE YOU LOOKING FOR?'} placeholder = {'Purchasing, workshop or trips...'} input = {true} />
         <FormElement no = {'03'} title = {'YOUR MESSAGE'} placeholder = {'Hey Danny, your trips are booked out...'} input = {false} />
+        <section className = 'w-full flex justify-end py-10'>
+          <button className = 'text-[1.7vw]'>
+            <FallingText text = {'SEND MESSAGE'} />
+            <div className = '-translate-y-1 p-0 m-0 w-full h-[2px] bg-black'></div>
+          </button>
+        </section>
       </form>
     </div>
   )
