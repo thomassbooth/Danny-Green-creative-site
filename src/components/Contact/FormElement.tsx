@@ -14,12 +14,12 @@ interface formElementProps {
 
 const FormElement: React.FC<formElementProps> = ({no, title, placeholder, input}) => {
   return (
-    <div className = 'group flex w-full justify-between items-start pt-10 border-t border-[#C9C9C9] transition-all duration-200 last-of-type:border-b'>
+    <div className = 'group flex w-full justify-between items-start pt-11 border-t border-[#C9C9C9] transition-all duration-200 last-of-type:border-b'>
         <div className = 'flex flex-col w-full'>
             <label className = ' m-0 font-normal text-2xl '>{title}</label>
             {input 
-              ? <input className = 'bg-transparent pt-3 pb-10 font-light focus:outline-none w-full text-xl' placeholder = {placeholder}/>
-              : <textarea className = 'bg-transparent h-[20vh] pt-3 pb-10 font-light focus:outline-none w-full text-xl resize-none' placeholder = {placeholder}/>
+              ? <input className = 'bg-transparent pt-3 pb-11 font-light focus:outline-none w-full text-xl' placeholder = {placeholder}/>
+              : <textarea className = 'bg-transparent h-[20vh] pt-3 pb-11 font-light focus:outline-none w-full text-xl resize-none' placeholder = {placeholder}/>
             }
         </div>
         <h3 className = {`${libre.className} text-2xl font-[400]`}>{no}</h3>
