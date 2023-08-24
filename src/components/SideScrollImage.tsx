@@ -18,13 +18,16 @@ const SideScrollImage = () => {
     const x = useTransform(scrollYProgress, [0.3, 0.98], ['0vw', '-100vw'])
     
     const scale = useTransform(scrollYProgress, [0.3, 0.95], [1, 0.1])
+    const imageScale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1])
+
     const opacity = useTransform(scrollYProgress, [0.3, 0.9], [1, 0.8])
     const rounded = useTransform(scrollYProgress, [0, 0.3, 0.35, 0.9], [0, 0, 100, (hasWindow ? window.screen.width/2 : '900')])
     const slideInX = useTransform(scrollYProgress, [0.8, 0.98], ['30vw', '0vw'])
 
     const slideImageY = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-30vh'])
-    const slideText1 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-25vh'])
-    const slideText2 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-4vw'])
+    const slideText1 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-45vh'])
+    const slideText2X = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-4vw'])
+    const slideText2Y = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-35vh'])
     
   return (
     <>
@@ -40,7 +43,7 @@ const SideScrollImage = () => {
                             opacity,
                             overflow: 'hidden'
                             }}>
-                            <Navlinks slideImageY={slideImageY} slideText1 = {slideText1} slideText2 = {slideText2} />
+                            <Navlinks imageScale = {imageScale} slideImageY={slideImageY} slideText1 = {slideText1} slideText2X = {slideText2X} slideText2Y = {slideText2Y} />
                         </motion.div>
                         <motion.div 
                             style = {{x: slideInX}}

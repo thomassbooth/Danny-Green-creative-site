@@ -4,9 +4,11 @@ import Image from 'next/image'
 import Title from './Title'
 
 interface navlinksProps {
+  imageScale: MotionValue<number>
   slideImageY: MotionValue<string>
   slideText1: MotionValue<string>
-  slideText2: MotionValue<string>
+  slideText2X: MotionValue<string>
+  slideText2Y: MotionValue<string>
 }
 
 const underTextVar = {
@@ -19,12 +21,12 @@ const underTextVar = {
   }
 }
 
-const Navlinks: React.FC<navlinksProps> = ({slideImageY, slideText1, slideText2}) => {
+const Navlinks: React.FC<navlinksProps> = ({imageScale, slideImageY, slideText1, slideText2X, slideText2Y}) => {
 
   return (
     <div  className = 'h-[100vh] relative overflow-hidden'>
       <motion.div 
-        style = {{y: slideImageY}}
+        style = {{y: slideImageY, scale: imageScale}}
         className = {`sticky top-0 m-auto h-[130vh] w-[100vw]`}>
         <Image 
           src = '/images/18-Grizzlies-at-dawn.jpg' 
@@ -35,13 +37,16 @@ const Navlinks: React.FC<navlinksProps> = ({slideImageY, slideText1, slideText2}
           alt = 'grizzly'/>
       </motion.div>
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
-        <motion.div
-          style = {{y: slideText1}}
-          className = 'flex flex-col mt-[30vh] text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
-            <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'danny'} />
-            <Title className = 'leading-[9vw] font-[700] text-[10vw]' text = {'green'} />
+        <div
+          className = 'flex flex-col mt-[20vh] text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
             <motion.div
-              style = {{x: slideText2}}
+              style = {{y: slideText1}}
+              className = 'flex flex-col w-screen items-center '>
+              <Title className = 'leading-[12vw] font-[700] text-[15vw]' text = {'danny'} />
+              <Title className = 'leading-[12vw] font-[700] text-[15vw]' text = {'green'} />
+            </motion.div>
+            <motion.div
+              style = {{x: slideText2X, y: slideText2Y}}
               className = 'overflow-hidden block ml-[4vw] '>
               <motion.p
                  whileInView="enter"
@@ -54,7 +59,7 @@ const Navlinks: React.FC<navlinksProps> = ({slideImageY, slideText1, slideText2}
                 The natural world
               </motion.p>
             </motion.div>
-        </motion.div>
+        </div>
       </div>
     </div>
   )
