@@ -22,7 +22,7 @@ const SideScrollImage = () => {
 
     const opacity = useTransform(scrollYProgress, [0.3, 0.9], [1, 0.8])
     const rounded = useTransform(scrollYProgress, [0, 0.3, 0.35, 0.9], [0, 0, 100, (hasWindow ? window.screen.width/2 : '900')])
-    const slideInX = useTransform(scrollYProgress, [0.8, 0.98], ['30vw', '0vw'])
+    const slideInX = useTransform(scrollYProgress, [0.6, 0.98], ['20vw', '0vw'])
 
     const slideImageY = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-30vh'])
     const slideText1 = useTransform(scrollYProgress, [0, 0.3], ['0vh', '-45vh'])
