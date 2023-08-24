@@ -18,7 +18,7 @@ const SideScrollImage = () => {
     const x = useTransform(scrollYProgress, [0.4, 0.98], ['0vw', '-100vw'])
     
     const scale = useTransform(scrollYProgress, [0.4, 0.95], [1, 0.1])
-    const imageScale = useTransform(scrollYProgress, [0, 0.3], [1.2, 1])
+    const imageScale = useTransform(scrollYProgress, [0, 0.4], [1.2, 1])
 
     const opacity = useTransform(scrollYProgress, [0.4, 0.9], [1, 0.8])
     const rounded = useTransform(scrollYProgress, [0, 0.4, 0.45, 0.9], [0, 0, 100, (hasWindow ? window.screen.width/2 : '900')])
