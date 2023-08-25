@@ -30,11 +30,10 @@ const Header = () => {
         </div>
     </div>
     <div className = 'fixed w-full bg-[#f4f0ea] z-40'>
-
         <AnimatePresence mode = 'wait'>
             {isOpen && <Nav/>}
         </AnimatePresence>
-        <motion.div variants = {background} animate = {isOpen ? 'open' : 'closed'} className = 'h-full w-full absolute bg-black opacity-50' ></motion.div>
+        <motion.div variants = {background} animate = {isOpen ? 'open' : 'closed'} className = 'h-full w-full absolute bg-background-gray' ></motion.div>
     </div>
     </>
     )

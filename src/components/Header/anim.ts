@@ -16,10 +16,10 @@ export const opacity = {
 
 export const height = {
     initial: {
-        height: 0
+        height: 0,
     },
     enter: {
-        height: 'auto',
+        height: '100vh',
         transition
     },
     exit: {
@@ -48,10 +48,10 @@ export const background = {
     },
     open: {
         height: '100vh',
-        transition
+        transition: {...transition, duration: 0.9}
     },
     closed: {
         height: 0,
-        transition
+        transition: {...transition, duration: 1.1}
     }
 }

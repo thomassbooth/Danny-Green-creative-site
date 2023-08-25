@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import { motion } from 'framer-motion'
 import { translate } from '../anim'
+import { usePathname } from 'next/navigation'
 
 type link = {
     title: string,
@@ -24,6 +25,7 @@ interface bodyProps {
 
 const Body: React.FC<bodyProps> = ({ links, hoveredLink, setHoveredLink }) => {
 
+    const pathname = usePathname()
 
     const getChars = (title: string) => {
         return title.split('').map((char: string, indx: number) => {
@@ -42,16 +44,16 @@ const Body: React.FC<bodyProps> = ({ links, hoveredLink, setHoveredLink }) => {
     }
     
   return (
-    <div className = 'flex flex-wrap mt-10'>
+    <div className = 'inline-flex flex-col flex-wrap mt-10'>
         {
             links.map((link, indx) => {
                 return (
-                    <Link className = 'max-w-[1000px] overflow-hidden text-black text-[10vw] pr-[5vw] pt-8 uppercase font-light'
+                    <Link className = 'overflow-hidden text-black text-[10vw] leading-[10vw] pt-[5vh] uppercase font-light'
                         onMouseOver = {() => setHoveredLink({isActive: true, index: indx})} 
                         onMouseLeave = {() => setHoveredLink({isActive: false, index: indx})} 
                         href = {link.href}
                         key = {indx}>
-                        <p className = 'flex'>
+                        <p className = {`${pathname === link.href ? 'font-medium' : ''} hover:text-[#65647C] flex transition-all duration-500`}>
                             {getChars(link.title)}
                         </p>
                     </Link>

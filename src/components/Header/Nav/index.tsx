@@ -30,9 +30,7 @@ const Nav = () => {
   return (
     <motion.div className = 'overflow-hidden'
         variants = {height} initial = 'initial' animate = 'enter' exit = 'exit'>
-        <div className = 'p-0'>
             <Body links = {links} hoveredLink={hoveredLink} setHoveredLink={setHoveredLink}/>
-        </div>
     </motion.div>
   )
 }
