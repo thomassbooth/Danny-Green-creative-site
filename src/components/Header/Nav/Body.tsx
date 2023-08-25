@@ -48,13 +48,13 @@ const Body: React.FC<bodyProps> = ({ links, hoveredLink, setHoveredLink }) => {
         {
             links.map((link, indx) => {
                 return (
-                    <Link className = 'group overflow-hidden text-black text-[10vw] leading-[10vw] uppercase font-light'
+                    <Link className = 'group overflow-hidden text-black text-[10vw] leading-[10vw] uppercase font-medium'
                         onMouseOver = {() => setHoveredLink({isActive: true, index: indx})} 
                         onMouseLeave = {() => setHoveredLink({isActive: false, index: indx})} 
                         href = {link.href}
                         key = {indx}>
                         <div>
-                            <p className = {`${pathname === link.href ? 'font-medium' : ''} group-hover:text-[#65647C] flex transition-all duration-500`}>
+                            <p className = {`${pathname === link.href ? 'font-bold' : ''} group-hover:text-[#65647C] flex transition-all duration-500`}>
                                 {getChars(link.title)}
                             </p>
                         </div>

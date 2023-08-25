@@ -25,7 +25,11 @@ const Navlinks: React.FC<navlinksProps> = ({imageScale, slideImageY, slideText1,
 
   return (
     <div  className = 'h-[100vh] relative overflow-hidden'>
-      <motion.div 
+      <motion.div
+        whileInView={{opacity: 1}}
+        viewport={{ once: true }}
+        initial={{opacity: 0}}
+        transition={{delay: 0.5, duration: 0.8}}
         style = {{y: slideImageY, scale: imageScale}}
         className = {`sticky top-0 m-auto h-[130vh] w-[100vw]`}>
         <Image 
