@@ -18,7 +18,7 @@ const imageOpen = {
     y: 0,
     opacity: 1,
     transition: {
-      delay: 0.4,
+      delay: 0.6,
       duration: 0.5
     }
   }
@@ -91,7 +91,7 @@ const ContactPage = () => {
             viewport={{ once: true }}
             initial={'initial'}
             variants={imageOpen}
-            className = 'py-10 font-[300] text-[1.3vw]'>
+            className = 'py-[7vh] font-[300] text-[1.3vw]'>
             Have a few questions? Let me know.
           </motion.p>
         </div>
