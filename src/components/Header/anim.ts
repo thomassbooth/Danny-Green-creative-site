@@ -30,14 +30,14 @@ export const height = {
 
 export const translate = {
     initial: {
-        y: '100%'
+        y: '150%'
     },
     enter: (i: number[]) => ({
         y: 0,
         transition: {...transition, delay: 0.2 + i[0] * 0.03}
     }),
     exit: (i: number[]) => ({
-        y: '100%',
+        y: '150%',
         transition: {...transition, duration: 0.7, delay: i[1] * 0.03}
     })
 }
