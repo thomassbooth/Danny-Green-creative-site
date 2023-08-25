@@ -12,13 +12,14 @@ import FallingText from '@/components/FallingText';
 const imageOpen = {
   initial: {
     y: '50%',
-    opacity: 1,
+    opacity: 0,
   },
   open: {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.7
+      delay: 0.4,
+      duration: 0.5
     }
   }
 }
