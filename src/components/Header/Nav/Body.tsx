@@ -5,6 +5,7 @@ import React, { Dispatch, SetStateAction, useState } from 'react'
 import { motion } from 'framer-motion'
 import { translate } from '../anim'
 import { usePathname } from 'next/navigation'
+import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin } from 'react-icons/bi'
 
 type link = {
     title: string,
@@ -23,7 +24,7 @@ interface bodyProps {
     hoveredLink: hoveredLink
 }
 
-const Body: React.FC<bodyProps> = ({ links, hoveredLink, setHoveredLink }) => {
+const Body: React.FC<bodyProps> = ({ links, setHoveredLink }) => {
 
     const pathname = usePathname()
 
@@ -44,17 +45,18 @@ const Body: React.FC<bodyProps> = ({ links, hoveredLink, setHoveredLink }) => {
     }
     
   return (
-    <div className = 'h-full inline-flex flex-col justify-evenly mt-10'>
+    <div className = 'h-full inline-flex flex-col ml-[5vw] justify-end'>
+        <div className = 'h-full flex flex-col gap-[5vh] justify-center'>        
         {
             links.map((link, indx) => {
                 return (
-                    <Link className = 'group overflow-hidden text-black text-[10vw] leading-[10vw] uppercase font-medium'
+                    <Link className = 'group overflow-hidden text-black text-[8vw] leading-[8vw] uppercase font-medium'
                         onMouseOver = {() => setHoveredLink({isActive: true, index: indx})} 
                         onMouseLeave = {() => setHoveredLink({isActive: false, index: indx})} 
                         href = {link.href}
                         key = {indx}>
                         <div>
-                            <p className = {`${pathname === link.href ? 'font-bold' : ''} group-hover:text-[#65647C] flex transition-all duration-500`}>
+                            <p className = {` group-hover:text-[#65647C] tracking-tighter flex transition-all duration-500`}>
                                 {getChars(link.title)}
                             </p>
                         </div>
@@ -62,6 +64,14 @@ const Body: React.FC<bodyProps> = ({ links, hoveredLink, setHoveredLink }) => {
                 )
             })
         }
+        </div>
+        <footer className = 'w-full p-[5vh]'>
+            <section className = 'flex gap-5'>
+                <BiLogoFacebook className = 'hover:scale-110 cursor-pointer transition-all' size = {25} />
+                <BiLogoLinkedin className = 'hover:scale-110 cursor-pointer transition-all' size = {25} />
+                <BiLogoInstagram className = 'hover:scale-110 cursor-pointer transition-all' size = {25} />
+            </section>
+        </footer>
     </div>
   )
 }

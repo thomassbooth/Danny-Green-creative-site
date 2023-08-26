@@ -31,6 +31,9 @@ const Nav = () => {
     <motion.div className = 'overflow-hidden'
         variants = {height} initial = 'initial' animate = 'enter' exit = 'exit'>
             <Body links = {links} hoveredLink={hoveredLink} setHoveredLink={setHoveredLink}/>
+            {/* <motion.div className = 'bg-gray-200 absolute right-0 top-0 w-[115px]' variants = {height} initial = 'initial' animate = 'enter' exit = 'exit'>
+
+            </motion.div> */}
     </motion.div>
   )
 }
