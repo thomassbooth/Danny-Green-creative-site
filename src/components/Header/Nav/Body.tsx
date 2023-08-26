@@ -3,9 +3,22 @@
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import { motion } from 'framer-motion'
-import { translate } from '../anim'
+import { iconTranslate, translate } from '../anim'
 import { usePathname } from 'next/navigation'
 import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin } from 'react-icons/bi'
+
+const icons = [
+    {
+        icon: BiLogoFacebook
+    },
+    {
+        icon: BiLogoLinkedin
+    },
+    {
+        icon: BiLogoInstagram
+    }
+
+]
 
 type link = {
     title: string,
@@ -43,6 +56,28 @@ const Body: React.FC<bodyProps> = ({ links, setHoveredLink }) => {
             )
         })
     }
+
+    const getLinks = () => {
+        return icons.map((link, indx) => {
+
+            const { icon: Icon } = link
+
+            return (
+                <motion.div
+                    key = {indx}
+                    variants={iconTranslate}
+                    custom = {indx}
+                    initial = {'initial'}
+                    animate = {'enter'}  
+                    exit = {'exit'}
+                    >
+                    <Icon 
+                        className = 'hover:scale-110 cursor-pointer transition-all' size = {25} 
+                    />
+                </motion.div>
+            )
+        })
+    }
     
   return (
     <div className = 'h-full inline-flex flex-col ml-[5vw] justify-end'>
@@ -65,11 +100,9 @@ const Body: React.FC<bodyProps> = ({ links, setHoveredLink }) => {
             })
         }
         </div>
-        <footer className = 'w-full p-[5vh]'>
-            <section className = 'flex gap-5'>
-                <BiLogoFacebook className = 'hover:scale-110 cursor-pointer transition-all' size = {25} />
-                <BiLogoLinkedin className = 'hover:scale-110 cursor-pointer transition-all' size = {25} />
-                <BiLogoInstagram className = 'hover:scale-110 cursor-pointer transition-all' size = {25} />
+        <footer className = 'w-full px-[5vh] pb-[10vh] '>
+            <section className = 'flex gap-5 overflow-hidden'>
+                {getLinks()}
             </section>
         </footer>
     </div>

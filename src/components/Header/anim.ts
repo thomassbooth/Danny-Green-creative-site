@@ -42,6 +42,20 @@ export const translate = {
     })
 }
 
+export const iconTranslate = {
+    initial: {
+        y: '150%'
+    },
+    enter: (i: number) => ({
+        y: 0,
+        transition: {...transition, delay: 0.8 + i * 0.05}
+    }),
+    exit: (i: number) => ({
+        y: '150%',
+        transition: {...transition, duration: 0.5, delay: i * 0.03}
+    })
+}
+
 export const background = {
     initial: {
         height: 0
