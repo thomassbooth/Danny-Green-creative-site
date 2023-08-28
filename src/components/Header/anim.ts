@@ -6,11 +6,25 @@ export const opacity = {
     }, 
     open: {
         opacity: 1,
-        transition: {duration: 0.35}
+        transition: {delay: 0.5, duration: 0.35}
     },
     closed: {
         opacity: 0,
         transition: {duration: 0.35}
+    }
+}
+
+export const textOpacity = {
+    initial: {
+        opacity: 1
+    },
+    open: {
+        opacity: 0.2,
+        transition: {duration: 0.3}
+    },
+    closed: {
+        opacity: 1,
+        transition: {duration: 0.3}
     }
 }
 

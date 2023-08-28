@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import React, { Dispatch, SetStateAction, useState } from 'react'
 import { motion } from 'framer-motion'
-import { iconTranslate, translate } from '../anim'
+import { iconTranslate, textOpacity, translate } from '../anim'
 import { usePathname } from 'next/navigation'
+import { GoDotFill } from 'react-icons/go'
 import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin } from 'react-icons/bi'
 
 const icons = [
@@ -35,9 +36,10 @@ interface bodyProps {
     links: Array<link>
     setHoveredLink: React.Dispatch<React.SetStateAction<hoveredLink>>
     hoveredLink: hoveredLink
+    setIsOpen: React.Dispatch<SetStateAction<boolean>>
 }
 
-const Body: React.FC<bodyProps> = ({ links, setHoveredLink }) => {
+const Body: React.FC<bodyProps> = ({ setIsOpen, links, hoveredLink, setHoveredLink }) => {
 
     const pathname = usePathname()
 
@@ -57,54 +59,39 @@ const Body: React.FC<bodyProps> = ({ links, setHoveredLink }) => {
         })
     }
 
-    const getLinks = () => {
-        return icons.map((link, indx) => {
-
-            const { icon: Icon } = link
-
-            return (
-                <motion.div
-                    key = {indx}
-                    variants={iconTranslate}
-                    custom = {indx}
-                    initial = {'initial'}
-                    animate = {'enter'}  
-                    exit = {'exit'}
-                    >
-                    <Icon 
-                        className = 'hover:scale-110 cursor-pointer transition-all' size = {25} 
-                    />
-                </motion.div>
-            )
-        })
-    }
     
   return (
-    <div className = 'h-full inline-flex flex-col ml-[5vw] justify-end'>
-        <div className = 'h-full flex flex-col gap-[5vh] justify-center'>        
+    <div className = 'h-full inline-flex flex-col ml-[5vw] justify-center'>
+        <div className = 'h-full flex flex-col gap-[3vh] justify-center'>        
         {
             links.map((link, indx) => {
                 return (
-                    <Link className = 'group overflow-hidden text-black text-[8vw] leading-[8vw] uppercase font-medium'
-                        onMouseOver = {() => setHoveredLink({isActive: true, index: indx})} 
-                        onMouseLeave = {() => setHoveredLink({isActive: false, index: indx})} 
-                        href = {link.href}
+                    <div className = 'flex items-center'
                         key = {indx}>
-                        <div>
-                            <p className = {` group-hover:text-[#65647C] tracking-tighter flex transition-all duration-500`}>
-                                {getChars(link.title)}
-                            </p>
-                        </div>
-                    </Link>
+                        <Link className = 'group overflow-hidden text-background-gray text-[8vw] leading-[8vw] uppercase font-medium'
+                            onMouseOver = {() => setHoveredLink({isActive: true, index: indx})} 
+                            onMouseLeave = {() => setHoveredLink({isActive: false, index: indx})} 
+                            onClick = {() => {
+                                if (pathname === link.href) {
+                                    setIsOpen(false)}
+                            }}
+                            href = {link.href}>
+                            <div>
+                                <motion.p 
+                                    variants={textOpacity}
+                                    initial={'initial'}
+                                    animate={hoveredLink.isActive && hoveredLink.index != indx ? 'open' : 'closed'}
+                                    className = {` tracking-tighter flex items-center transition-all duration-500`}>
+                                    {getChars(link.title)}
+                                </motion.p>
+                            </div>
+                        </Link>
+                    </div>
                 )
             })
         }
+        
         </div>
-        <footer className = 'w-full px-[5vh] pb-[10vh] '>
-            <section className = 'flex gap-5 overflow-hidden'>
-                {getLinks()}
-            </section>
-        </footer>
     </div>
   )
 }
