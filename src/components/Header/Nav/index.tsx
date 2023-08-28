@@ -4,6 +4,7 @@ import { height, iconTranslate, opacity } from '../anim'
 import Body from './Body'
 import NavImage from './NavImage'
 import { BiLogoFacebook, BiLogoInstagram, BiLogoLinkedin } from 'react-icons/bi'
+import { BsFillTelephoneFill } from 'react-icons/bs'
 
 interface navProps {
     setIsOpen: React.Dispatch<SetStateAction<boolean>>
@@ -43,10 +44,11 @@ const icons = [
 
 const endLinks = [
     {
-        title: '01509 269209'
+        title: '01509 269209',
+        icon: BsFillTelephoneFill
     },
     {
-        title: 'danny@dannygreenphotography.com'
+        title: 'danny@dannygreenphotography.com',
     },
     {
         title: 'Privacy Policy'
@@ -60,9 +62,11 @@ const Nav: React.FC<navProps> = ({setIsOpen}) => {
     const getEndLinks = () => {
         return endLinks.map((link, indx) => {
 
+            const { icon: Icon } = link
 
             return (
                 <motion.div
+                    className = 'flex items-center gap-2 text-[0.8vw] text-[#8E8E8E] cursor-pointer font-medium'
                     key = {indx}
                     variants={iconTranslate}
                     custom = {indx}
@@ -70,7 +74,8 @@ const Nav: React.FC<navProps> = ({setIsOpen}) => {
                     animate = {'enter'}  
                     exit = {'exit'}
                     >
-                    <p>{link.title}</p>
+                    {Icon && <Icon/>}
+                    <p className = 'hover:underline transition-all duration-300'>{link.title}</p>
                 </motion.div>
             )
         })
@@ -102,7 +107,7 @@ const Nav: React.FC<navProps> = ({setIsOpen}) => {
 
     <motion.div className = 'overflow-hidden flex flex-col justify-end'
         variants = {height} initial = 'initial' animate = 'enter' exit = 'exit'>
-        <div className = 'flex justify-evenly items-center'>
+        <div className = 'flex items-center'>
             <NavImage src = {links[hoveredLink.index].src} isActive = {hoveredLink.isActive}/>
             <Body setIsOpen = {setIsOpen} links = {links} hoveredLink={hoveredLink} setHoveredLink={setHoveredLink}/>
         </div>
@@ -110,7 +115,7 @@ const Nav: React.FC<navProps> = ({setIsOpen}) => {
             <section className = 'flex gap-5 overflow-hidden text-background-gray'>
                 {getLinks()}
             </section>
-            <section className = 'flex gap-5 overflow-hidden'>
+            <section className = 'flex gap-5 overflow-hidden text-background-gray'>
                 {getEndLinks()}
             </section>
         </footer>

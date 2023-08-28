@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <>
-        <div className = 'right-0 mix-blend-difference fixed z-50 p-5'>
+        <div className = 'right-0 mix-blend-difference fixed z-50 p-5'> 
             <div onClick = {() => setIsOpen(!isOpen)} className = 'flex items-center justify-center relative gap-2 cursor-pointer'>
                 <div className = 'mix-blend-difference text-pastel-gray-light flex relative'>
                     <motion.p variants = {opacity} animate = {isOpen ? 'closed' : 'open'}>Menu</motion.p>

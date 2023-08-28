@@ -10,13 +10,13 @@ interface imageProps {
 
 const NavImage: React.FC<imageProps> = ({src}) => {
   return (
-    <>
+    <div className = 'w-1/2 flex justify-center'>
       <motion.div
           variants={opacity}
           initial = {'initial'}
           animate = {'open'}  
           exit = {'closed'}
-          className = {`relative h-[60vh] w-[30vw]`}>
+          className = {`relative h-[60vh] w-[30vw] `}>
           <Image
             src = {src}
             quality = {100} 
@@ -25,7 +25,7 @@ const NavImage: React.FC<imageProps> = ({src}) => {
             objectPosition='center' 
             alt = 'grizzly'/>
         </motion.div>
-    </>
+    </div>
   )
 }
 
