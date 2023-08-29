@@ -6,7 +6,21 @@ export const opacity = {
     }, 
     open: {
         opacity: 1,
-        transition: {delay: 0.5, duration: 0.35}
+        transition: { delay: 0.5, duration: 0.35}
+    },
+    closed: {
+        opacity: 0,
+        transition: {duration: 0.35}
+    }
+}
+
+export const opacityImage = {
+    initial: {
+        opacity: 0
+    }, 
+    open: {
+        opacity: 1,
+        transition: { duration: 0.35}
     },
     closed: {
         opacity: 0,
@@ -76,10 +90,10 @@ export const background = {
     },
     open: {
         height: '100vh',
-        transition: {...transition, duration: 0.9}
+        transition: {...transition, duration: 0.85}
     },
     closed: {
         height: 0,
-        transition: {...transition, duration: 1.1}
+        transition: {...transition, duration: 1.05}
     }
 }

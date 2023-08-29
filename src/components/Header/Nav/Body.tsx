@@ -68,7 +68,7 @@ const Body: React.FC<bodyProps> = ({ setIsOpen, links, hoveredLink, setHoveredLi
                 return (
                     <div className = 'flex items-center'
                         key = {indx}>
-                        <Link className = 'group overflow-hidden text-background-gray text-[6vw] leading-[8vw] uppercase font-light'
+                        <Link className = 'group overflow-hidden text-background-gray text-[6.5vw] leading-[8vw] uppercase font-normal'
                             onMouseOver = {() => setHoveredLink({isActive: true, index: indx})} 
                             onMouseLeave = {() => setHoveredLink({isActive: false, index: indx})} 
                             onClick = {() => {
