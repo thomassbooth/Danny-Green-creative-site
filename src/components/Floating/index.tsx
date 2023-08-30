@@ -55,6 +55,7 @@ const Floating = () => {
         <div className = 'flex flex-col z-20 justify-center text-[10vw] opacity-90 leading-[10vw] font-bold items-center absolute w-screen h-screen '>
             <p ref = {plane4}>Danny</p>
             <p ref = {plane5}>Green</p>
+        
         </div>    
         <div ref = {plane1} className = 'absolute h-full w-full brightness-[0.9] z-20'>
             <FloatingImage src = '7-Capercaillie-Male-Displaying-in-the-snow-2.jpg' top = {'0%'} left = {'10%'} size = {'w-[15vw] h-[35vh]'} />
