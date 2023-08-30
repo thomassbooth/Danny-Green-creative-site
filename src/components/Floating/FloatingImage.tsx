@@ -12,7 +12,7 @@ const FloatingImage: React.FC<floatingImageProps> = ({src, top, left, size}) => 
   return (
     <div 
         style = {{top: top, left: left}}
-        className = {` ${size} absolute block transition-all duration-300`}>
+        className = {` ${size} absolute cursor-crosshair block transition-all duration-300`}>
         <Image
             className = 'object-cover'
             src = {`/images/gallery/${src}`}

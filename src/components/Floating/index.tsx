@@ -51,8 +51,8 @@ const Floating = () => {
 
 
   return (
-    <div onMouseMove={(e) => {manageMouseMove(e)}} className = 'cursor-crosshair h-screen relative bg-pastel-gray-light'>    
-        <div className = 'flex flex-col z-20 justify-center text-[10vw] opacity-90 leading-[10vw] font-bold items-center absolute w-screen h-screen '>
+    <div onMouseMove={(e) => {manageMouseMove(e)}} className = 'h-screen relative bg-pastel-gray-light'>    
+        <div className = 'flex flex-col z-20 justify-center text-[10vw] leading-[10vw] font-bold items-center absolute w-screen h-screen '>
             <p ref = {plane4}>Danny</p>
             <p ref = {plane5}>Green</p>
         
