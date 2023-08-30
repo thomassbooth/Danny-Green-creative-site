@@ -2,6 +2,7 @@ import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
 import GalleryLink from './GalleryLink'
+import FloatingGallery from './FloatingGallery'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
@@ -58,14 +59,16 @@ const Gallery = () => {
                 </div>
             </div>
         </section>
-        <div className = 'bg-background-gray py-[3vh]'>
+        {/* <div className = 'bg-background-gray py-[3vh]'>
             <div className = 'mx-[2vw] relative grid grid-cols-3 gap-[2vw]'>
                 <GalleryLink imgSrc='Wolves-play-fighting.jpeg' link = 'wolves' name = 'Elusive Wolves'/>
                 <GalleryLink imgSrc='Arctic-1.jpeg' link = 'arctic' name = 'Arctic'/>
-                <GalleryLink imgSrc='Wild-Britain-coasts.jpeg' link = 'coasts' name = 'British Coasts'/>
+                <GalleryLink imgSrc= link = 'coasts' name = 'British Coasts'/>
                 <GalleryLink imgSrc='1-Arctic-Fox-in-the-snow.jpeg' link = 'coasts' name = 'British Coasts'/>
             </div>
-        </div>
+        </div> */}
+
+        <FloatingGallery />
     </>
   )
 }

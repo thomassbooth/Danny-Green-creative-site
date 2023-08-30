@@ -66,13 +66,13 @@ const Nav: React.FC<navProps> = ({setIsOpen}) => {
 
             return (
                 <motion.div
-                    className = 'flex items-center gap-2 text-[0.8vw] text-[#8E8E8E] cursor-pointer font-medium'
+                    className = 'flex items-center gap-2 text-sm text-[#8E8E8E] cursor-pointer font-medium'
                     key = {indx}
                     variants={iconTranslate}
                     custom = {indx}
                     initial = {'initial'}
                     animate = {'enter'}  
-                    exit = {'exit'}
+                    exit = {'exit'} 
                     >
                     {Icon && <Icon/>}
                     <p className = 'hover:underline transition-all duration-300'>{link.title}</p>
