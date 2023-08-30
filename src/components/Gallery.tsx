@@ -2,7 +2,8 @@ import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
 import GalleryLink from './GalleryLink'
-import FloatingGallery from './FloatingGallery'
+import FloatingGallery from './Floating'
+import Floating from './Floating'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
@@ -68,7 +69,7 @@ const Gallery = () => {
             </div>
         </div> */}
 
-        <FloatingGallery />
+        <Floating />
     </>
   )
 }
