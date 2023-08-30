@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion, useMotionValueEvent, MotionValue } from 'framer-motion'
+import { useScroll, useTransform, motion, useMotionValueEvent, MotionValue, cubicBezier } from 'framer-motion'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
 import GalleryLink from './GalleryLink'
@@ -25,7 +25,7 @@ const Gallery = () => {
             return 'none'
         else return 'block'
     })
-    const colour = useTransform(scrollYProgress2, [0.5, 1], ['#171717', '#FAF3F0'])
+    const colour = useTransform(scrollYProgress2, [0.5, 1], ['#171717', '#FAF3F0'], { ease: cubicBezier(.64,.26,.83,.67)})
     const y = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '32vh'])
     const negativey = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '-32vh'])
     
