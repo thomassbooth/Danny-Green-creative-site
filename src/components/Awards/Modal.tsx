@@ -32,7 +32,7 @@ const Modal: React.FC<modalProps> = ({modal, awards}) => {
 
   return (
     <>
-    <motion.div className = 'h-[350px] w-[400px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center' 
+    <motion.div className = 'h-[300px] w-[400px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center' 
         ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>
         <div className = 'h-full w-full absolute transition-all duration-500'
             style={{top: index * -100 + "%"}}>
@@ -43,8 +43,8 @@ const Modal: React.FC<modalProps> = ({modal, awards}) => {
                     <Image 
                     className = 'h-auto'
                     src={`/images/awards/${src}`}
-                    width={300}
-                    height={0}
+                    width={400}
+                    height={400}
                     alt="image"
                     />
                 </div>
