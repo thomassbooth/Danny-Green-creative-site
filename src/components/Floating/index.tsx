@@ -2,8 +2,13 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import gsap from 'gsap';
 import FloatingImage from './FloatingImage';
+import { MotionValue, motion } from 'framer-motion';
 
-const Floating = () => {
+interface floatingProps {
+    backgroundColor: MotionValue<string>
+}
+
+const Floating: React.FC<floatingProps> = ({backgroundColor}) => {
 
     const plane1 = useRef(null)
     const plane2 = useRef(null)
@@ -51,7 +56,7 @@ const Floating = () => {
 
 
   return (
-    <div onMouseMove={(e) => {manageMouseMove(e)}} className = 'h-screen relative bg-pastel-gray-light'>    
+    <motion.div onMouseMove={(e) => {manageMouseMove(e)}} style = {{backgroundColor: backgroundColor}} className = 'h-screen relative '>    
         <div className = 'text-background-gray flex flex-col z-20 justify-center text-[10vw] leading-[10vw] font-bold items-center absolute w-screen h-screen '>
             <p ref = {plane4}>Danny</p>
             <p ref = {plane5}>Green</p>
@@ -74,7 +79,7 @@ const Floating = () => {
             <FloatingImage src = '124-Tawny-Owl-amongst-Oak-leaves-6.jpg' top = {'5%'} left = {'55%'} size = {'w-[15vw] h-[40vh]'} custom = {10}/>
             <FloatingImage src = '31-Red-Squirrel-7.jpg' top = {'55%'} left = {'2%'} size = {'w-[15vw] h-[40vh]'} custom = {11}/>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

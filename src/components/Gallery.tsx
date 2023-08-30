@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
+import { useScroll, useTransform, motion, useMotionValueEvent, MotionValue } from 'framer-motion'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
 import GalleryLink from './GalleryLink'
@@ -10,21 +10,31 @@ const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'nor
 const Gallery = () => {
 
     const containerRef = useRef<HTMLDivElement | null>(null)
+    const containerRef2 = useRef(null)
+
+    const scrollYProgress2 = useScroll({target: containerRef2}).scrollYProgress
 
     const { scrollYProgress } = useScroll({
         target: containerRef,
       })
 
-    const height = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '50vh'])
     
+    const height = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '50vh'])
+    const display = useTransform(scrollYProgress2, (e) => {
+        if(e > 0.5)
+            return 'none'
+        else return 'block'
+    })
+    const colour = useTransform(scrollYProgress2, [0.5, 1], ['#171717', '#FAF3F0'])
     const y = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '32vh'])
     const negativey = useTransform(scrollYProgress, [0.05, 0.95], ['0vh', '-32vh'])
-
+    
     const x = useTransform(scrollYProgress, [0.05, 0.95], ['0vw', '-100vw'])
 
     
   return (
-    <>
+    <>  
+        <div ref = {containerRef2}>
         <section ref = {containerRef}>
             <div className = 'h-[200vh] w-screen'>
                 <div className = 'text-background-gray w-[200vw] h-screen sticky top-0 flex flex-col justify-center'>
@@ -43,33 +53,25 @@ const Gallery = () => {
                     </div>
                     <div className = 'absolute top-1/2 h-screen w-screen'>
                         <motion.div
-                            style = {{ height }}
+                            style = {{ height, backgroundColor: colour}}
                             className = 'w-screen bg-background-gray'>
                         </motion.div>
                     </div>
                     <div className = 'absolute rotate-180 bottom-1/2  h-screen w-screen'>
                         <motion.div
-                            style = {{ height }}
-                            className = 'w-screen bg-background-gray'>
+                            style = {{ height, background: colour }}
+                            className = 'w-screen'>
                         </motion.div>
                     </div>
-                    <div className = 'absolute'>
+                    <motion.div className = 'absolute' style = {{display: display}}>
                         <SplitText y = {y} negativey = {negativey} text = {'Gallery'}/>
-                    </div>
+                    </motion.div>
                     
                 </div>
             </div>
         </section>
-        {/* <div className = 'bg-background-gray py-[3vh]'>
-            <div className = 'mx-[2vw] relative grid grid-cols-3 gap-[2vw]'>
-                <GalleryLink imgSrc='Wolves-play-fighting.jpeg' link = 'wolves' name = 'Elusive Wolves'/>
-                <GalleryLink imgSrc='Arctic-1.jpeg' link = 'arctic' name = 'Arctic'/>
-                <GalleryLink imgSrc= link = 'coasts' name = 'British Coasts'/>
-                <GalleryLink imgSrc='1-Arctic-Fox-in-the-snow.jpeg' link = 'coasts' name = 'British Coasts'/>
-            </div>
-        </div> */}
-
-        <Floating />
+        <Floating backgroundColor = {colour}/>
+        </div>
     </>
   )
 }
