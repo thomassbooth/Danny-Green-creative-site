@@ -60,7 +60,7 @@ const Floating = () => {
         <div ref = {plane1} className = 'absolute h-full w-full brightness-[0.9] z-20'>
             <FloatingImage src = '7-Capercaillie-Male-Displaying-in-the-snow-2.jpg' top = {'0%'} left = {'10%'} size = {'w-[15vw] h-[35vh]'} custom = {1}/>
             <FloatingImage src = '38-Red-Squirrel-Jumping-5-1.jpg' top = {'40%'} left = {'70%'} size = {'w-[15vw] h-[30vh]'} custom = {2}/>
-            <FloatingImage src = '101-Black-Bear-Cubs.jpg' top = {'70%'} left = {'30%'} size = {'w-[15vw] h-[30vh]'} custom = {3}/>
+            <FloatingImage src = '101-Black-Bear-Cubs.jpg' top = {'65%'} left = {'30%'} size = {'w-[15vw] h-[35vh]'} custom = {3}/>
             <FloatingImage src = '49-Grizzly-Bear-with-a-fish-2.jpg' top = {'70%'} left = {'80%'} size = {'w-[15vw] h-[30vh]'} custom = {4}/>
         </div>
         <div ref = {plane2} className = 'absolute h-full w-full brightness-[0.8] z-0'>
