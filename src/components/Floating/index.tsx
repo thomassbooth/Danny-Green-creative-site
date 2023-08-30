@@ -34,7 +34,7 @@ const Floating = () => {
         gsap.set(plane1.current, {x: `+=${xForce}`, y: `+=${yForce}`})
         gsap.set(plane2.current, {x: `+=${xForce * 0.5}`, y: `+=${yForce * 0.5}`})
         gsap.set(plane3.current, {x: `+=${xForce * 0.25}`, y: `+=${yForce * 0.25}`})
-        gsap.set(plane4.current, {x: `+=${xForce * 0.6}`, y: `+=${yForce * 0.3}`})
+        gsap.set(plane4.current, {x: `+=${xForce * 0.1}`, y: `+=${yForce * 0.4}`})
         gsap.set(plane5.current, {x: `+=${xForce * -0.1}`, y: `+=${yForce * -0.4}`})
 
         if(Math.abs(xForce) < 0.01) xForce = 0;
