@@ -14,17 +14,17 @@ const links = [
     {
         title: "Home",
         href: '/',
-        src: '/images/18-Grizzlies-at-dawn.jpg'
+        src: '/images/link/98-Sea-Otter-resting.jpg'
     },
     {
         title: 'Awards',
         href: '/awards',
-        src: '/images/1-Arctic-Fox-in-the-snow.jpeg'
+        src: '/images/link/107-Red-Fox-in-the-snow-16.jpg'
     },
     {
         title: 'Contact',
         href: '/contact',
-        src: '/images/21-Grizzly-fishing-2.jpg'
+        src: '/images/link/30-Red-Grouse-amongst-the-heather.jpg'
     },
     
 ]
@@ -108,7 +108,6 @@ const Nav: React.FC<navProps> = ({setIsOpen}) => {
     <motion.div className = 'overflow-hidden flex flex-col justify-end'
         variants = {height} initial = 'initial' animate = 'enter' exit = 'exit'>
         <div className = 'flex items-center'>
-            <NavImage src = {links[hoveredLink.index].src} isActive = {hoveredLink.isActive}/>
             <Body setIsOpen = {setIsOpen} links = {links} hoveredLink={hoveredLink} setHoveredLink={setHoveredLink}/>
         </div>
         <footer className = 'relative w-full flex justify-between p-[10vh]'>

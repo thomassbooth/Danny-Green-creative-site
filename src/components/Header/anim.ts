@@ -42,6 +42,40 @@ export const textOpacity = {
     }
 }
 
+export const textHoverOverlay = {
+    initial: {
+        opacity: 0,
+        y: '5%',
+        x: 0
+    },
+    hover: {
+        opacity: 1,
+        y: '0%',
+        x: '-5%',
+        transition: {...transition, duration: 0.5}
+    },
+    off: {
+        opacity: 0,
+        y: '5%',
+        x: 0,
+        transition: {...transition, duration: 0.5}
+    }
+}
+
+export const textHoverImage = {
+    initial: {
+        scale: 0
+    },
+    hover: {
+        scale: 1,
+        transition: {...transition, duration: 0.5}
+    },
+    off: {
+        scale: 0,
+        transition: {...transition, duration: 0.1}
+    }
+}
+
 export const height = {
     initial: {
         height: 0,
