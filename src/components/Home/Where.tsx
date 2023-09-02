@@ -63,6 +63,9 @@ const Where = () => {
             className = 'flex flex-col items-center'
             style = {{y: titlesY}}>
             <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
+            <motion.div>
+              <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
+            </motion.div>
             <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
           </motion.div>
         </div>
