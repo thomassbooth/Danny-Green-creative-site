@@ -58,14 +58,10 @@ const Where = () => {
             className = {`${libre.className} italic font-extralight text-[2.5vw]`}>
             Where?
           </motion.span>
-          <motion.div
-            className = 'flex flex-col items-center'
-            style = {{y: titlesY}}>
-            {/* <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
-            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} /> */}
-            <span className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] uppercase'>widely</span>
-            <span className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] uppercase'>published</span>
-          </motion.div>
+          <div className = 'flex flex-col items-center'>
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
+          </div>
         </div>
         <AnimatePhrase phrase = {phrase} className = {`${libre.className} text-center font-light text-[2vw] flex flex-col leading-[5vh] justify-center tracking-[-0.01em] items-center`}/>
         {/* Parallax image, the wrapper of the image will move down
