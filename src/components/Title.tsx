@@ -1,8 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion';
 
 const slideDown = {
   initial: {
@@ -27,6 +25,12 @@ interface titleProps {
   className?: string
 }
 
+/**
+ * Takes in a title string and animates it
+ * 
+ * @param text: text string to animate 
+ * @returns an animated div with each character in an individual span that will animate with different delays
+ */
 const Title: React.FC<titleProps> = ({text, className}) => {
 
 

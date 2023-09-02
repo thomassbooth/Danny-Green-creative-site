@@ -122,7 +122,7 @@ const awards = [
 const AwardsPage = () => {
 
     const [modal, setModal] = useState({active: false, index: 0})
-    const title = useRef(null)
+
     const container = useRef(null)
 
     const { scrollYProgress } = useScroll({
@@ -132,7 +132,6 @@ const AwardsPage = () => {
 
     const titleY = useTransform(scrollYProgress, [0, 0.5], ['0vh', '-10vh'])
     const textY = useTransform(scrollYProgress, [0, 0.5], ['0vh', '-4vh'])
-    const hoverX = useTransform(scrollYProgress, [0, 0.5], ['0vh', '5vh'])
     const awardsY = useTransform(scrollYProgress, [0, 1], ['0vh', '15vh'])
     
     useEffect(() => {
@@ -142,11 +141,12 @@ const AwardsPage = () => {
 
   return (
     <div ref = {container} className = 'min-h-screen w-screen py-[20vh] flex flex-col items-center justify-center bg-pastel-gray-light'>
+      {/* Move the title up as we scroll */}
       <motion.header
-        style={{y: titleY}}
-        ref = {title}>
+        style={{y: titleY}}>
         <Title className = 'leading-[11vw] font-[700] text-[13vw]' text = {'Awards'} />
       </motion.header>
+      {/* move the text up as we scroll but not as much as the title */}
       <motion.div
         style = {{y: textY}}
         className = {`${libre.className} w-[70vw] text-center mb-6 font-light text-[2vw] flex flex-col leading-[4.5vh] justify-center tracking-[-0.01em] items-center`}>
@@ -159,6 +159,7 @@ const AwardsPage = () => {
         className = 'opacity-20 mb-4 ml-[30vw] w-full'>
         HOVER ME
       </p>
+      
       <motion.ul 
         style = {{y: awardsY}}
         className = 'w-[70vw] flex flex-col items-center justify-center'>
@@ -168,6 +169,7 @@ const AwardsPage = () => {
           })
         }
       </motion.ul>
+      
       <Modal modal = {modal} awards = {awards}/>
     </div>
   )

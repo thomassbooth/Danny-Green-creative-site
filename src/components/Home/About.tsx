@@ -5,7 +5,7 @@ import Image from 'next/image'
 import React, { useRef } from 'react'
 import { Libre_Baskerville } from 'next/font/google'
 import { motion } from 'framer-motion'
-import Title from './Title'
+import Title from '../Title'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
@@ -13,32 +13,32 @@ const About = () => {
 
   const container = useRef(null)
 
+  //when the start of the container hits the start of the window
+  //when the end of the container hits the start of the window
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ['start start', 'end start']
   }) 
 
-  const questionY = useTransform(scrollYProgress, [0, 1], ['0vh', '-5vh'])
   const titlesY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
-  const title2X = useTransform(scrollYProgress, [0, 1], ['0vh', '10vh'])
   const textY = useTransform(scrollYProgress, [0, 1], ['0vh', '5vh'])
 
   return (
     <div ref = {container}
       className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center text-[#171717] h-screen w-screen'>
+        {/* Slides down as you scroll */}
         <motion.span
-          style = {{y: questionY}}
-          className = {`${libre.className} italic font-extralight text-[2.5vw]`}>Danny Who?</motion.span>
+          style = {{y: titlesY}}
+          className = {`${libre.className} italic font-extralight text-[2.5vw]`}>
+            Danny Who?
+        </motion.span>
         <motion.div
           className = 'flex flex-col items-center'
-          style = {{y: titlesY}}
-          >
+          style = {{y: titlesY}}>
           <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'He takes'} />
-          <motion.div
-            style = {{x: title2X}}
-            >
+          <div>
             <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Photos'} />
-          </motion.div>
+          </div>
         </motion.div>
         <motion.span
           style = {{y: textY}}

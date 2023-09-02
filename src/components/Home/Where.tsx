@@ -1,9 +1,9 @@
 import { Libre_Baskerville } from 'next/font/google'
 import Image from 'next/image'
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import AnimatePhrase from './AnimatePhrase'
-import Title from './Title'
+import AnimatePhrase from '../AnimatePhrase'
+import Title from '../Title'
 
 const libre = Libre_Baskerville({ weight: ['400', '700'], style: ['italic', 'normal'], subsets: ['latin'] })
 
@@ -28,7 +28,7 @@ const imageOpen = {
   }
 }
 
-const Images = () => {
+const Where = () => {
 
   const container = useRef(null)
   const { scrollYProgress } = useScroll({
@@ -36,10 +36,8 @@ const Images = () => {
     offset: ['start end', 'end start']
   }) 
 
-  const questionY = useTransform(scrollYProgress, [0, 1], ['0vh', '-10vh'])
   const imageWrapperY = useTransform(scrollYProgress, [0.3, 1], ['0vh', '15vh'])
   const titlesY = useTransform(scrollYProgress, [0, 1], ['0vh', '-13vh'])
-  const titlesX = useTransform(scrollYProgress, [0, 1], ['0vh', '-7vh'])
   const imageY = useTransform(scrollYProgress, [0.3, 1], ['0vh', '10vh'])
 
   return (
@@ -48,7 +46,7 @@ const Images = () => {
         <div 
           className = 'flex flex-col justify-center leading-none tracking-[-0.01em] items-center w-screen'>
           <motion.span
-            style = {{y: questionY}}
+            style = {{y: titlesY}}
             initial = 'hidden'
             whileInView="visible"
             viewport={{ once: true }}
@@ -60,18 +58,18 @@ const Images = () => {
             className = {`${libre.className} italic font-extralight text-[2.5vw]`}>
             Where?
           </motion.span>
-          {/* <span className = ' z-20 text-center font-[900] tracking-[-.055em] text-[13vw] uppercase'>WIDELY</span> */}
+          
           <motion.div
             className = 'flex flex-col items-center'
             style = {{y: titlesY}}>
             <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
-            <motion.div
-              style = {{x: titlesX}}>
-              <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
-            </motion.div>
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
           </motion.div>
         </div>
         <AnimatePhrase phrase = {phrase} className = {`${libre.className} text-center font-light text-[2vw] flex flex-col leading-[5vh] justify-center tracking-[-0.01em] items-center`}/>
+        {/* Parallax image, the wrapper of the image will move down
+            has overflow hidden so we can translate the image inside to move as we scroll
+            creating a parallax effect*/}
         <motion.div
           style = {{y: imageWrapperY}} 
           className = 'mt-[3vh] overflow-hidden'>
@@ -81,6 +79,7 @@ const Images = () => {
             initial={'initial'}
             variants={imageOpen}
             className = 'flex justify-start items-end w-[30vw] h-[40vh] saturate-0 mr-[5vw] relative overflow-hidden'>
+            {/* Moves up as we scroll giving us a nice parallax effect */}
             <motion.div 
               style = {{y: imageY}}
               className = 'w-[40vw] h-[60vh] relative'>
@@ -94,4 +93,4 @@ const Images = () => {
   )
 }
 
-export default Images
+export default Where

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 import Image from 'next/image'
-import Title from './Title'
+import Title from '../Title'
 
 interface navlinksProps {
   imageScale: MotionValue<number>
@@ -21,10 +21,12 @@ const underTextVar = {
   }
 }
 
-const Navlinks: React.FC<navlinksProps> = ({imageScale, slideImageY, slideText1, slideText2X, slideText2Y}) => {
+const OpenImage: React.FC<navlinksProps> = ({imageScale, slideImageY, slideText1, slideText2X, slideText2Y}) => {
 
+  
   return (
     <div  className = 'h-[100vh] relative overflow-hidden'>
+      {/* The div will translate up as you scroll and will also zoom out*/}
       <motion.div
         whileInView={{opacity: 1}}
         viewport={{ once: true }}
@@ -43,12 +45,14 @@ const Navlinks: React.FC<navlinksProps> = ({imageScale, slideImageY, slideText1,
       <div className = 'pointer-events-none absolute text-[10vw] font-bold z-20 top-0'>
         <div
           className = 'flex flex-col mt-[20vh] text-pastel-gray-light tracking-tight items-center leading-none w-screen h-[130vh]'>
+            {/* This moves the text as you scroll for a nice parallax effect */}
             <motion.div
               style = {{y: slideText1}}
               className = 'flex flex-col w-screen items-center '>
               <Title className = 'leading-[12vw] font-[700] text-[15vw]' text = {'danny'} />
               <Title className = 'leading-[12vw] font-[700] text-[15vw]' text = {'green'} />
             </motion.div>
+            {/* slides the text when you scroll, moves it on the x and y axis */}
             <motion.div
               style = {{x: slideText2X, y: slideText2Y}}
               className = 'overflow-hidden block ml-[4vw] '>
@@ -69,4 +73,4 @@ const Navlinks: React.FC<navlinksProps> = ({imageScale, slideImageY, slideText1,
   )
 }
 
-export default Navlinks
+export default OpenImage

@@ -19,6 +19,13 @@ const animateVar = {
     })
 }
 
+/**
+ * animation function that takes in a phrase that each line is an entry in an array
+ * 
+ * @param phrase array
+ * @param className add className properties to the phrase animation 
+ * @returns The phrase that will animate when it comes into view, each line is delayed a different amount
+ */
 const AnimatePhrase: React.FC<animatePhraseProps> = ({phrase, className}) => {
   return (
     <div className = {` ${className} flex flex-col item-center justify-center`}>

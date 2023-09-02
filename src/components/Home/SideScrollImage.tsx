@@ -2,11 +2,12 @@
 
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import Navlinks from './Navlinks'
 import About from './About'
+import OpenImage from './OpenImage'
 
 const SideScrollImage = () => {
 
+    //nextjs throws error when you try to access window before its defined in client component
     const hasWindow = typeof window !== "undefined"
 
     const containerRef = useRef<HTMLDivElement | null>(null)
@@ -32,8 +33,12 @@ const SideScrollImage = () => {
   return (
     <>
         <section ref = {containerRef} >
+            
             <div className = 'h-[400vh]'>
+                {/* for the duration of 4 screen widths this div will stick to the top of our screen
+                    we use the scroll tracking to manipulate teh translations on how it moves */}
                 <div className = 'sticky rounded-sm top-0 w-[200vw] text-[10vw] font-bold'>
+                    {/* This slides the opening image to the left when it reaches 0.4 (40%) */}
                     <motion.div
                         style = {{x}}
                         className = 'flex'>
@@ -43,8 +48,9 @@ const SideScrollImage = () => {
                             opacity,
                             overflow: 'hidden'
                             }}>
-                            <Navlinks imageScale = {imageScale} slideImageY={slideImageY} slideText1 = {slideText1} slideText2X = {slideText2X} slideText2Y = {slideText2Y} />
+                            <OpenImage imageScale = {imageScale} slideImageY={slideImageY} slideText1 = {slideText1} slideText2X = {slideText2X} slideText2Y = {slideText2Y} />
                         </motion.div>
+                        {/* slides in our about page at the end of the scroll */}
                         <motion.div 
                             style = {{x: slideInX}}
                             className = 'w-screen h-screen'>

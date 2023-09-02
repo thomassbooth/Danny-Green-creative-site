@@ -19,10 +19,11 @@ const Modal: React.FC<modalProps> = ({modal, awards}) => {
   const { active, index } = modal;
   const modalContainer = useRef(null);
   useEffect( () => {
-    //Move Container
+    //Move Container to mouse location
     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {duration: 0.8, ease: "power3"})
     let yMoveContainer = gsap.quickTo(modalContainer.current, "top", {duration: 0.8, ease: "power3"})
-
+    
+    //listens to our mouse moves and when it moves use gsap to animate the modal to follow the mouse
     window.addEventListener('mousemove', (e) => {
       const { pageX, pageY } = e;
       xMoveContainer(pageX)
@@ -35,8 +36,11 @@ const Modal: React.FC<modalProps> = ({modal, awards}) => {
     <motion.div className = 'h-[300px] w-[400px] absolute bg-white overflow-hidden pointer-events-none flex items-center justify-center' 
         ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>
         <div className = 'h-full w-full absolute transition-all duration-500'
+            //this is how we move our images, based upon the index we move the top location down or up,
+            //transition is on it to animate this! easy pleasy :D (we have overflow hidden so we only see this image)
             style={{top: index * -100 + "%"}}>
             {
+              //we loop over all of our award images and keep them in a long line
                 awards.map((project, index) => {
                 const { src, color } = project
                 return <div className='h-full w-full flex flex-col justify-center items-center' style={{backgroundColor: color}} key={`modal_${index}`}>

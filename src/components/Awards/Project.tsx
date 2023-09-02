@@ -24,6 +24,10 @@ const slideIn = {
   })
 }
 
+/**
+ * Project prop, will slide in with different direction and different delay based upon its order and inview
+ * On hover of each project, we set a state value to true for a modal to hover and display an image
+ */
 const Project: React.FC<projectProps> = ({setModal, index, title, place, year, type}) => {
   return (
     <motion.li 

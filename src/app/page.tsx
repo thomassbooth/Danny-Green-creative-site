@@ -1,16 +1,16 @@
 'use client'
 
-import SideScrollImage from '@/components/SideScrollImage'
+import SideScrollImage from '@/components/Home/SideScrollImage'
 import { useEffect } from 'react'
-import Images from '@/components/Images'
-import Gallery from '@/components/Gallery'
-import GalleryLink from '@/components/GalleryLink'
+import Where from '@/components/Home/Where'
+import Gallery from '@/components/Home/Gallery/Gallery'
 
 
 export default function Home() {
 
   useEffect( () => {
     (
+      //smooth scroll initialising (consider using lenis smooth scroll for this)
       async () => {
         const LocomotiveScroll = (await import('locomotive-scroll')).default
         const locomotiveScroll = new LocomotiveScroll({
@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <main className = 'overflow-clip bg-pastel-gray-light'>
       <SideScrollImage/>
-      <Images/>
+      <Where/>
       <Gallery/>
     </main>
   )

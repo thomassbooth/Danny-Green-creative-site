@@ -20,7 +20,7 @@ const Floating: React.FC<floatingProps> = ({backgroundColor}) => {
     let yForce = 0;
     const easing = 0.1;
     const speed = 0.01;
-
+    
     const manageMouseMove = (e: any) => {
         const { movementX, movementY } = e
         xForce += movementX * speed;
