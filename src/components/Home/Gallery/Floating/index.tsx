@@ -76,12 +76,7 @@ const Floating: React.FC<floatingProps> = ({backgroundColor}) => {
             <p ref = {plane5}>Green</p>
         
         </div>    
-        <motion.div
-            variants = {slideIn}
-            initial = 'initial'
-            whileInView="open"
-            custom = {1}
-            viewport={{ once: true }}
+        <motion.div 
             ref = {plane1} 
             className = 'absolute h-full w-full brightness-[0.9] z-20'>
             <FloatingImage src = '7-Capercaillie-Male-Displaying-in-the-snow-2.jpg' top = {'0%'} left = {'10%'} size = {'w-[15vw] h-[35vh]'} custom = {1}/>
@@ -90,11 +85,6 @@ const Floating: React.FC<floatingProps> = ({backgroundColor}) => {
             <FloatingImage src = '49-Grizzly-Bear-with-a-fish-2.jpg' top = {'70%'} left = {'80%'} size = {'w-[15vw] h-[30vh]'} custom = {4}/>
         </motion.div>
         <motion.div 
-            variants = {slideIn}
-            initial = 'initial'
-            whileInView="open"
-            custom = {3}
-            viewport={{ once: true }}
             ref = {plane2} 
             className = 'absolute h-full w-full brightness-[0.8] z-0'>
             <FloatingImage src = '16-Sparrowhawk-5.jpg' top = {'5%'} left = {0} size = {'w-[10vw] h-[40vh]'} custom = {5}/>
@@ -102,12 +92,7 @@ const Floating: React.FC<floatingProps> = ({backgroundColor}) => {
             <FloatingImage src = '31-European-Brown-Bear-cubs-play-fighting-2.jpg' top = {'2%'} left = {'85%'} size = {'w-[10vw] h-[40vh]'} custom = {7}/>
             <FloatingImage src = '96-Sea-Otter-resting-1.jpg' top = {'70%'} left = {'55%'} size = {'w-[20vw] h-[25vh]'} custom = {8}/>
         </motion.div>
-        <motion.div
-            variants = {slideIn}
-            initial = 'initial'
-            whileInView="open"
-            custom = {6}
-            viewport={{ once: true }} 
+        <motion.div 
             ref = {plane3} 
             className = 'absolute h-full z-30 w-full brightness-[0.7]'>
             <FloatingImage src = '10-Puffin-20.jpg' top = {'25%'} left = {'20%'} size = {'w-[15vw] h-[40vh]'} custom = {9} />

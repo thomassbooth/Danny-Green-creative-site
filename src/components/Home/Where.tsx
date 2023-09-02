@@ -58,14 +58,11 @@ const Where = () => {
             className = {`${libre.className} italic font-extralight text-[2.5vw]`}>
             Where?
           </motion.span>
-          
           <motion.div
             className = 'flex flex-col items-center'
             style = {{y: titlesY}}>
             <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Widely'} />
-            <div>
-              <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
-            </div>
+            <Title className = 'leading-[11vw] font-[900] tracking-[-.055em] text-[13vw] ' text = {'Published'} />
           </motion.div>
         </div>
         <AnimatePhrase phrase = {phrase} className = {`${libre.className} text-center font-light text-[2vw] flex flex-col leading-[5vh] justify-center tracking-[-0.01em] items-center`}/>
