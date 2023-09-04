@@ -21,6 +21,7 @@ function FrozenRouter(props: PropsWithChildren<{}>) {
   );
 }
 
+//This is for layout transitions, unfortunately I cant use it here
 export function Animate({ children }: PropsWithChildren) {
   const pathname = usePathname();
 
