@@ -1,6 +1,10 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Danny Green - Creative Development Site
 
-## Getting Started
+## Preview:
+
+## Live Site:
+
+https://danny-green.vercel.app/
 
 First, run the development server:
 
