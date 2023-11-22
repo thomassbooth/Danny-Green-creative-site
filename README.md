@@ -1,8 +1,17 @@
 # Danny Green - Creative Development Site
 
-## Preview:
+Built with Nextjs 13 App Router, Typescript, Framer motion, GSAP, Tailwind
 
-## Live Site:
+## Features
+
+- 3 Page site
+- Beautiful Homepage and micro animations throughout each page
+- Drop down navbar with unique hover effects
+- Contact form
+- Hover photos for all awards
+- ...much more!
+
+## Live Site
 
 https://danny-green.vercel.app/
 
