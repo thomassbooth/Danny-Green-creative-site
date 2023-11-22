@@ -15,6 +15,8 @@ Built with Nextjs 13 App Router, Typescript, Framer motion, GSAP, Tailwind
 
 https://danny-green.vercel.app/
 
+## Deploy or Develop
+
 First, run the development server:
 
 ```bash
